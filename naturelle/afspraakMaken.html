@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Natur'elle - Afspraak</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/icoon64.png">
+</head>
+<body>
+    <header>
+    <h1>Kapsalon Natur'elle</h1> <!-- verbergen -->
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="img/logoNaturelle3-2.png" alt="logo"></a></li>
+                <li><a href="producten.html">Producten</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="afspraakMaken.html" class="current">Maak een afspraak</a></li>
+            </ul>
+        </nav>
+        <div id="headerFoto"></div>
+    </header>
+    <main>
+        <form name="afspraakMaken" action="#"> <!-- label rond <input> of enkel rond tekst ervoor? -->
+            <h3>Maak een afspraak</h3>
+                <p>Om een afspraak te maken om uw haar te laten verzorgen kan u ons <a href="contact.html">bellen</a> of onderstaand formulier invullen.</p>
+                <p><label for="voornaam">Voornaam:</label> <input type="text" id="voornaam" name="voornaam" required></p>
+                
+                <p><label for="naam">Naam:</label> <input type="text" id="naam" name="naam" required></p>
+                
+                <p><label for="geslacht">Geslacht:</label>
+                <select name="geslacht" id="geslacht">
+                    <option value="">Maak uw keuze</option>
+                    <option value="man">Man</option>
+                    <option value="vrouw">Vrouw</option>
+                    <option value="overig">Overig</option>
+                </select></p>
+                
+                <p><label for="email">Email adres:</label> <input type="email" id="email" name="email"></p>
+                
+                <p><label for="gsm">GSM nummer:</label> <input type="tel" id="gsm" name="gsm"></p>
+                
+                <p><label for="datumAfspraak">Datum:</label> <input type="date" id="datumAfspraak" name="datumAfspraak"></p>
+                
+                <p>Kies de uren waartussen u graag een afspraak maakt</p>
+                <p><label for="uurAfspraakBegin">Tussen:</label> <input type="time" id="uurAfspraakBegin" name="uurAfspraakBegin"></p>
+                <p><label for="uurAfspraakEind">en:</label> <input type="time" id="uurAfspraakEind" name="uurAfspraakEind"></p>
+
+            <p class="noLabel"><input type="submit" value="Maak deze afspraak"></p>
+        </form>
+    </main>
+    <footer>
+        <p>Kapsalon Natur'elle - Galgenstraat 134 1785 Merchtem - &copy; 2016 Kevin Vanthuyne</p>
+    </footer>
+</body>
+</html>

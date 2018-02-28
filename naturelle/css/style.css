@@ -1,0 +1,426 @@
+/* Visitekaartje
+paars: #7C0441
+grijs: #2B292A
+licht paars: #D1A5B2
+*/
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    color: #2B292A;
+    background-color: #ebd8de;
+    display: flex; /* Sticky footer */
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.verberg, h1, h2 {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    background-color: #7C0441; /* kleur als header niet laadt */
+}
+
+header nav li a img { /* Logo afbeelding */
+    width: 265px; /* Dan is height 55px */
+    height: auto;
+}
+
+header #headerFoto {
+    background-color: #5d2546;
+    width: 100%;
+    height: 200px;
+    background-image: url(../img/headerMedium.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* verticaal centreren */ 
+    
+}
+
+nav ul li {
+    flex-grow: 1;
+    height: 100%;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 1px 2px #5d2546;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+nav li a:hover {
+    color: #c69bb4;
+    text-shadow: 0 0 5px black;
+}
+
+nav ul li .current {
+    font-weight: bold;
+    /*text-decoration: underline;*/
+    text-shadow: 0 0 5px black;
+}
+
+/* ---------- Hoofdingen ---------- */
+
+h2,h3 {
+    font-family: Palatino, serif;
+}
+
+h3 {
+    font-size: 2em;
+    border-bottom: 1px solid black;
+}
+
+h4 { 
+    font-size: 1.2em;
+    margin: 0.5em 0em 1em 0em;
+    font-weight: bold
+}
+
+h5 {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+main section.bottom h3 {
+    text-align: right;
+}
+
+/* ---------- Main ---------- */
+
+main {
+    padding: 2em;
+    background-color: #fbf7fa;
+    /*max-width: 1000px;*/
+    width: 1000px;
+    /*min-width: 510px;*/
+    margin: auto;
+    overflow: auto;
+    box-shadow: 0 0 70px #c38899;
+}
+
+main p {
+    margin: 1em;
+    line-height: 1.6em;
+    font-size: 0.84rem;
+}
+
+main em,b {
+    font-size: 1.12em;
+    text-shadow: 0 0 0;
+}
+
+main .floatRight {
+    float: right;
+    clear: both;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+main .floatLeft {
+    float: left;
+    margin-right: 1rem;
+    clear: both;
+}
+
+main .bottom {
+    margin-top: 2em;
+    clear: both;
+}
+
+/* ---------- Producten ------------- */
+
+section.product {
+    border: 1px solid black;
+    overflow: auto;
+    margin: 1em;
+    background-color: #ffffff;
+}
+
+main p.tagline {
+    font-style: italic;
+    margin-top: 0.2em;
+    color: #7C0441;
+}
+
+main section.product h4 ~ p:nth-of-type(2) {
+    margin-bottom: 2em;
+}
+
+/* ---------- Diensten ----------- */
+
+table {
+    border: 1px solid black; 
+    border-top: none;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+table td,th {
+    padding: 0.3em 2em;
+}
+
+table .bigTableHeader {
+    font-size: 1.1rem;
+    border-bottom: 1px solid black;
+    background-color: #ece5e7;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table .bottomBorder {
+    border-bottom: 1px solid black;
+}
+
+table .bgColor {
+    background-color: #ece5e7;
+}
+
+table .bgColor2 {
+    background: repeating-linear-gradient(45deg,  #f3eff2, #f3eff2 10px, rgba(0,0,0,0) 10px, rgba(0,0,0,0) 20px);
+}
+
+main.diensten img {
+    width: 249px;
+    height: auto;
+}
+
+img.toonOpKleinste {
+    display: none;
+}
+
+/* ---------- Contact ------------ */
+
+main article ul {
+    width: 100%;
+}
+
+main article ul li {
+    padding: 1em;
+    font-size: 0.84em;
+}
+
+main article.contact section ul{
+    text-align: center
+}
+
+
+/* ------------- Afspraak ---------- */
+
+/*main label {
+    box-sizing: border-box;
+    float: left;
+    margin-right: 1em;
+    width: 110px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+main .noLabel {
+    margin: 0 10em;
+}*/
+
+main label, input, select {
+    display: inline-block;
+    width: 200px;
+}
+
+main label {
+        
+        text-align: right;
+        margin-right: 10px;
+}
+
+main input[type="submit"] {
+        margin-left: 215px;
+}
+
+main input:active {
+    box-shadow: 0 0 5px blue;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    color: #9d6492;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 1em;
+    background-color: #7C0441;
+}
+
+/* -------------- Responsive ---------- */
+
+@media all and (max-width: 1100px) {
+    main {
+        /*width:auto;
+        max-width: 1000px;*/
+        width: 88% /* Hier 100% zetten laat main breder gaan dan scherm */
+    }    
+}
+
+@media all and (max-width: 900px) {
+    main img:nth-of-type(3) {
+        display: none;
+    }
+}
+
+@media all and (max-width: 840px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul li a{
+        padding: 1rem 0;
+        display: block;
+        text-align: center;
+        width: 100%;
+        border-top: 2px solid #fff;
+    }
+    
+    nav ul li:first-child a {
+        padding: 0.4rem 0;
+    }
+    
+    nav ul li a.current {
+        background-color: #9c215f;
+    }
+    
+    article.contact img, iframe {
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media all and (max-width: 600px) {
+    main {
+        padding: 1em;
+    }
+    
+    main p {
+        font-size: 1rem;
+        margin: 1.2em 0.4em;
+    }
+    
+    main ul {
+        font-size: 1.1rem;
+    }
+    
+    main .floatRight, main .floatLeft {
+        float: none;
+        margin: 1em auto;
+    }
+    
+    table#prijzen.floatLeft {
+        margin: 0 auto;
+    }
+    
+    main img, iframe {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+        float: none;
+        margin-bottom: 1em;
+    }
+    
+    main.diensten img {
+        width: 90%;
+    }
+    
+    main section {
+        padding: 0;
+        margin: 0;
+    }
+    
+    main section.product p, h4, h5 {
+        padding: 0 1em;
+    }
+    
+    section.product {
+        margin: 1em 0;
+    }
+    
+    main h5 {
+        font-size: 1.1em;
+    }
+    
+    main h4 {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    
+    main.diensten h3.bottom {
+        margin-bottom: 1em;
+    }
+    
+    main section.bottom h3 {
+        text-align: left;
+    }
+    
+    table td,th { /* kan stijl van td niet aanpassen */
+        padding: 0.3em 0.5em;
+    }
+    
+    main img.verbergOpKleinste {
+        display: none;
+    }
+    
+    img.toonOpKleinste {
+        display: block;
+    }
+    
+    /* Formulier */
+    label,input {
+        display: block;
+    }
+    
+    main label {
+        width: auto;
+    }
+    
+    input,select {
+        width: 100%;
+    }
+    
+    input, select {
+        height: 25px;
+    }
+    
+    main input[type="submit"] {
+        margin: auto;
+        width: 50%;
+        height: 25px;
+    }
+    
+}
