@@ -1,0 +1,98 @@
+--SET SEARCH_PATH TO cronos_15;
+
+------ Gecertificeerde & ervaren Franse werknemers: 
+-- Opvragen van volledige naam, behaalde certificaat, project, welke technologie, taal en beheersing van de taal 
+-- van alle werknemers die een certificaat hebben voor een bepaalde technologie (Java), 
+-- een bepaalde taal beheersen (Frans), en al aan projecten hebben gewerkt van dezelfde technologie.
+
+SELECT W.voornaam || ' ' || W.naam AS naam, C.naam AS certificaat, TL.naam AS technologie, P.naam AS project, T.taal, WBT.beheersing
+FROM werknemer W 
+	INNER JOIN werknemer_behaalde_certificaat WBC ON (W.werknemer_id = WBC. werknemer_id)
+	INNER JOIN certificaat C ON (WBC.certificaat_id = C.certificaat_id)
+	INNER JOIN werknemer_beheerst_taal WBT ON (WBT.werknemer_id = W.werknemer_id)
+	INNER JOIN taal T ON (WBT.taal_id = T.taal_id)
+	INNER JOIN werknemer_deed_project WDP ON (WDP.werknemer_id = W.werknemer_id)
+	INNER JOIN project P ON (WDP.project_id = P.project_id)
+	INNER JOIN project_met_technologie PMT ON (PMT.project_id = P.project_id)
+	INNER JOIN technologie TL ON (PMT.technologie_id = TL.technologie_id)
+				 AND (C.technologie_id = TL.technologie_id)
+WHERE T.taal = 'Frans'
+	AND WBT.beheersing >= 3
+    	AND TL.naam = 'Java'
+	
+
+------ Nieuwe werknemers: 
+-- Opvragen van alle werknemers die een opleiding volgde aan een specifiek instituut (Syntra of Cisco)
+-- maar aan nog geen enkel project deelnamen. Gesorteerd op naam en voornaam
+
+SELECT DISTINCT W.voornaam, W.naam, I.naam AS instituut, O.naam AS opleiding
+FROM werknemer W
+	INNER JOIN werknemer_deed_opleiding WDO ON (W.werknemer_id = WDO.werknemer_id)
+	INNER JOIN opleiding O ON (WDO.opleiding_id = O.opleiding_id) 
+	INNER JOIN instituut I ON (I.instituut_id = O.instituut_id)
+	LEFT OUTER JOIN werknemer_deed_project WDP ON (W.werknemer_id = WDP.werknemer_id)
+WHERE (I.naam = 'Syntra' OR I.naam = 'Cisco Systems')
+	AND WDP.project_id IS NULL
+ORDER BY W.naam, W.voornaam
+
+
+
+
+---- Overzicht opleidingen en certificaten
+-- Toon alle opleidingen en hun instituten die al dan niet een certificaat opleveren
+-- en de eventuele technologie waarin dit certificaat behaald wordt. Sorteer op instituut
+
+SELECT I.naam AS instituut, O.naam AS opleiding, C.naam AS certificaat, T.naam AS technologie
+FROM instituut I
+	INNER JOIN opleiding O ON (I.instituut_id = O.instituut_id)
+	LEFT OUTER JOIN certificaat C ON (O.opleiding_id = C.opleiding_id)
+	LEFT OUTER JOIN technologie T ON (C.technologie_id = T.technologie_id)
+ORDER BY I.naam
+
+
+------ Vrije werknemers in de buurt van dochterbedrijf: 
+-- Opvragen van alle werknemers die momenteel niet aan een project werken 
+-- en wonen in dezelfde gemeente als een bepaald dochterbedrijf.
+
+SELECT W.voornaam, W.naam, W.woonplaats AS gemeente, D.naam AS dochterbedrijf
+FROM werknemer W
+	INNER JOIN dochterbedrijf D ON (W.dochterbedrijf_id = W.dochterbedrijf_id)
+WHERE W.woonplaats = D.gemeente 
+
+
+------ Competente stagaires
+-- Opvragen van voormaan, naam, aantal vaardigheden, totale score op alle vaardigheden 
+-- en maximum behaalbare score per werknemer die aan een project meedeed als stagair
+
+SELECT 	W.voornaam, W.naam, COUNT(WBV.vaardigheid_id) AS aantal_vaardigheden, 
+	SUM(WBV.score) AS totale_score, COUNT(WBV.vaardigheid_id) * 5 AS max_score
+FROM werknemer W
+	INNER JOIN werknemer_bezit_vaardigheid WBV ON (W.werknemer_id = WBV.werknemer_id)
+	INNER JOIN vaardigheid V ON (WBV.vaardigheid_id = V.vaardigheid_id)
+	INNER JOIN werknemer_deed_project WDP ON (W.werknemer_id = WDP.werknemer_id)
+	INNER JOIN project P ON (WDP.project_id = P.project_id)
+WHERE WDP.taak = 'Stagair'
+GROUP BY W.werknemer_id
+
+
+
+----- Flexibele presentatoren
+-- Opvragen van voornaam, naam en aantal talen die werknemer spreekt
+-- voor werknemers die 3 of meer talen beheersen en kunnen presenteren
+
+SELECT W.voornaam, W.naam, COUNT (WBT.taal_id) AS aantal_talen
+FROM werknemer W
+	INNER JOIN werknemer_beheerst_taal WBT ON (W.werknemer_id = WBT.werknemer_id)
+	INNER JOIN taal T ON (WBT.taal_id = T.taal_id)
+	INNER JOIN werknemer_bezit_soft_skill WBS ON (W.werknemer_id = WBS.werknemer_id)
+	INNER JOIN soft_skill S ON (WBS.soft_skill_id = S.soft_skill_id)
+WHERE S.naam = 'Presentatie'
+GROUP BY W.werknemer_id
+HAVING COUNT(WBT.taal_id) >= 3
+
+
+
+
+	
+
+

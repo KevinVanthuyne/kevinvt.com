@@ -81,9 +81,23 @@ a:active {
     text-indent: -1.1em;
 }
 
+.title-small {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 .sub-title {
     font-size: 1.1em;
     margin-bottom: 2em;
+}
+
+.back {
+    display: inline-block;
+    border-top: 2px solid #337ab7;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 2em;
+    font-size: 1.1em;
 }
 
 .comp-list {
