@@ -24,6 +24,10 @@ q {
     quotes: none;
 }
 
+p {
+    margin-bottom: 30px;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -120,6 +124,10 @@ body {
 
 .footer-row {
     margin-bottom: 3em;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
 }
 
 
