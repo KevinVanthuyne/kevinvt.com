@@ -59,18 +59,17 @@ a:active {
     font-size: 17.5px;
     line-height: 20px;
     position: relative;
-    border-left: 5px solid RGBA(0, 0, 0, 0.18);
+    border-left: 5px solid #c4c4c4;
 }
 
 .skill p {
-    background: RGBA(0, 0, 0, 0.18);
+    background: #c4c4c4;
     padding: 15px;
     font-weight: bold;
     font-size: 1.2em;
 }
 
 .skill ul {
-    margin-top: 1em;
     padding-left: 1em;
     padding-bottom: 1em;
 }
@@ -83,7 +82,23 @@ a:active {
 .skill ul li {
     margin-bottom: 0.9em;
     margin-left: 1em;
-    text-indent: -1.1em;
+    text-indent: -1em;
+}
+
+.skill ul li ul {
+    margin: 0.5em 0 0;
+    padding-bottom: 0;
+    list-style: circle;
+}
+
+.skill ul li ul li:before {
+    content: none;
+}
+
+.skill ul li ul li {
+    text-indent: 0;
+    font-size: 0.85em;
+    color: gray;
 }
 
 .title-small {
