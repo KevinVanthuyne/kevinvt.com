@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kevin Vanthuyne Portfolio</title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto:300,400|Questrial|Satisfy">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style-old.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="myFunction()">
+    <div class="header">
+        <div class="bg-color">
+            <header id="main-header">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Kevin</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="lauraMenu">
+                            <ul class="nav navbar-nav navbar-right navbar-border">
+                                <li class="active"><a href="#main-header">Home</a></li>
+                                <li><a href="#about">Over mij</a></li>
+                                <li><a href="#skills">Vaardigheden</a></li>
+                                <li><a href="#projects">Projecten</a></li>
+                                <li><a href="#cv">CV</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="wow fadeIn">
+                    <div class="row banner">
+                            <div class="col-sm-6 banner-text">
+                                <h2>Hallo, ik ben <span>Kevin Vanthuyne</span></h2>
+                                <p>Software ontwikkelaar
+                                    <br/> &amp; Maker</p>
+                            </div>
+                            <div class="col-sm-6 banner-picture text-center">
+                                <img src="img/kevin.jpg" alt="Kevin Vanthuyne">
+                            </div>
+                            <div class="overlay-detail text-center">
+                                <a href="#about"><i class="fa fa-angle-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="about" class="section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <h2 class="title-text">
+                        Over <span class="deco">mij</span>
+                    </h2>
+                </div>
+                <div class="col-md-6 text-left">
+                    <div class="about-text">
+                        <p>Mijn naam is Kevin Vanthuyne, 23 jaar oud en ik woon in Peizegem, een gehucht van Merchtem. Momenteel ben ik net afgestudeerd in <strong>Toegepaste Informatica</strong> aan de UCLL in Leuven, met specialisatie <strong>Software Ontwikkeling</strong>.</p>
+                        <p>Ik hou dus van <strong>informatica en programmeren</strong> maar daarnaast ben ik ook graag bezig met <strong>grafische vormgeving</strong> en elektronische <strong>muziek</strong> producen en draaien als <a href="https://www.facebook.com/K22official">K22</a> en <a href="https://www.facebook.com/SalkonMusic">Salkon</a>.</p>
+                        <p>Ook ben ik veel bezig met ons lokale <strong>jeugdhuis</strong>, <a href="https://www.facebook.com/JhTronk/">Jeugdhuis Tronk</a>. Al 5 jaar maak ik deel uit van het bestuur en momenteel bekleed ik de functie van voorzitter.</p>
+                        <p>Als ik niet met muziek of het jeugdhuis bezig ben, werk ik waarschijnlijk aan een van mijn <a href="#projects">elektronica projecten</a> met een <strong>Raspberry Pi</strong> of <strong>Arduino</strong>, of een ander maker project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-center">Dit zijn mijn <span class="deco">Vaardigheden</span></h2>
+                <div class="test-sec">
+                    <div class="col-sm-4">
+                        <div class="skill">
+                            <p>Frontend</p>
+                            <ul>
+                                <li>HTML, CSS &amp; Bootstrap</li>
+                                <li>React (Native)
+                                    <ul><li>Redux, Immutable, Lodash, Jest, Enzyme, Cypress, ...</li></ul>
+                                </li>
+                                <li>Angular</li>
+                                <li>Responsive webdesign & mobile first</li>
+                                <li>WPF</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="skill">
+                            <p>Backend</p>
+                            <ul>
+                                <li>Java
+                                    <ul><li>Spring (Boot), Swagger</li></ul>
+                                </li>
+                                <li>Javascript
+                                    <ul><li>Typescript, NodeJS</li></ul>
+                                </li>
+                                <li>C#
+                                    <ul><li>.NET, ASP.NET MVC, Entity Framework, LINQ</li></ul>
+                                </li>
+                                <li>Python, PHP, C++</li>
+                                <li>Apache, Tomcat, Payara, ...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="skill">
+                            <p>Database</p>
+                            <ul>
+                                <li>SQL
+                                    <ul><li>PostgreSQL, MySQL, SQLite</li></ul>
+                                </li>
+                                <li>NoSQL
+                                    <ul><li>MongoDB</li></ul>
+                                </li>
+                                <li>Java DataBase Connectivity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+           <div class="row">
+    veranderen naar Devicons
+    <span class="fa fa-html5"></span>
+    <span class="fa fa-css3"></span>
+    <span class="fa fa-java"></span>
+    <span class="fa fa-python"></span>
+    <span class="fa fa-php"></span>
+    <span class="fa fa-js"></span>
+    <span class="fa fa-angular"></span>
+    <span class="fa fa-jenkins"></span>
+    <span class="fa fa-git"></span>
+    <span class="fa fa-github-square"></span>
+</div>
+-->
+
+            <div class="skill">
+                <p>Overige</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul>
+                            <li>Test Driven Development (&amp; BDD)
+                                <ul><li>JUnit, Jest, Cypress, Enzyme, Selenium, Cucumber</li></ul>
+                            </li>
+                            <li>Continuous Integration
+                                <ul><li>Cypress, Jenkins</li></ul>
+                            </li>
+                            <li>Version control
+                                <ul><li>Git, Github</li></ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul>
+                            <li>Feature flags
+                                <ul><li>Split.io</li></ul>
+                            </li>
+                            <li>Docker</li>
+                            <li>Big Data
+                                <ul><li>R, R-Studio</li></ul>
+                            </li>
+                            <li>Ontwerppatronen & -principes
+                                <ul><li>SOLID, MVC, MVVM, Observer, Factory, Adapter, Decorator, ...</li></ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul>
+                            <li>Ontwikkelingmethodes
+                                <ul><li>Agile, Scrum, Kanban</li></ul>
+                            </li>
+                            <li>IDE's 
+                                <ul><li>VSCode, IntelliJ, Atom, Visual Studio, Eclipse, ...</li></ul>
+                            </li>
+                            <li>Grafisch ontwerp
+                                <ul><li>Adobe Illustrator &amp; Photoshop, Sony Vegas</li></ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title text-center">Bekijk mijn <span class="deco">Projecten</span></h2>
+                </div>
+                <div class="col-md-12">
+                    <div id="myGrid" class="grid-padding">
+                        <div class="col-md-4 col-sm-4 padding-right-zero">
+                            <a href="projects/tronkade.html"><img src="img/arcade.jpg" class="img-responsive" alt="Tronkade arcadekast, speciaal gemaakt voor Jeugdhuis Tronk"></a>
+                            <a href="projects/powersupply.html"><img src="img/powersupply.jpg" class="img-responsive" alt="DIY regelbare voeding"></a>
+                            <a href="projects/handheld.html"><img src="img/gamepi.jpg" class="img-responsive" alt="DIY draagbare Raspberry Pi gameconsole"></a>
+                            <a href="projects/speaker.html"><img src="img/speaker.jpg" class="img-responsive" alt="DIY luidspreker op batterijen"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 padding-right-zero">
+                            <a href="projects/tronk-website.html"><img src="img/tronk.jpg" class="img-responsive" alt="Screenshot van de website van Jeugdhuis Tronk"></a>
+                            <a href="projects/weatherstation.html"><img src="img/weatherstation.jpg" class="img-responsive" alt="DIY weerstation, gemaakt met een Raspberry Pi"></a>
+                            <a href="https://www.facebook.com/K22official"><img src="img/k22.jpg" class="img-responsive" alt="Optreden van K22"></a>
+                            <a href="projects/18650.html"><img src="img/18650charger.jpg" class="img-responsive" alt="DIY 18650 batterij oplader"></a>
+                            <a href="projects/18650.html"><img src="img/18650tester.jpg" class="img-responsive" alt="DIY 18650 batterij capaciteit tester"></a>
+                            <a href="https://www.facebook.com/SalkonMusic"><img src="img/salkon.jpg" class="img-responsive" alt="Logo van Salkon"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 padding-right-zero">
+                            <a href="projects/alarmclock.html"><img src="img/alarmclock.jpg" class="img-responsive" alt="DIY wekker, met behulp van een Raspberry Pi"></a>
+                            <a href="projects/solderingstation.html"><img src="img/solderingstation1.jpg" class="img-responsive" alt="DIY soldeerstation"></a>
+                            <a href="projects/terrace.html"><img src="img/terrace.jpg" class="img-responsive" alt="Terras van Jeugdhuis Tronk"></a>
+                            <a href="http://elanti.be"><img src="img/elanti.jpg" class="img-responsive" alt="Screenshot van de website van bloemenwinkel Elanti"></a>
+                            <a href="projects/posters.html"><img src="img/posters.jpg" class="img-responsive" alt="Verzameling affiches, ontworpen door Kevin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cv" class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title text-center">
+                        <h2>Mijn <span class="deco">CV</span></h2>
+                        <p>Voor nog meer informatie over mezelf kan u <a href="resources/CV-Kevin-Vanthuyne.pdf">mijn CV downloaden</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contact-sec text-center">
+                        <h2><span class="deco">Contacteer</span> mij</h2>
+                        <p>Om contact met mij op te nemen kan u onderstaand formulier invullen om mij een email te sturen. Ik reageer zo snel als ik kan.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-md-push-2">
+                    <form action="https://formspree.io/kevin.vanthuyne2@gmail.com" method="post" role="form" class="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Naam" data-rule="minlen:4" data-msg="Naam moet minstens 4 tekens lang zijn" required />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Ongeldig email adres" required/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Onderwerp" data-rule="minlen:8" data-msg="Het onderwerp moet minstens 8 tekens lang zijn" required/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Schrijf hier uw bericht" placeholder="Bericht" required></textarea>
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Verzenden">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer-2 text-center-xs bg--white">
+        <div class="container">
+            <!--end row-->
+            <div class="row footer-row">
+                <div class="col-md-6">
+                    <div class="footer">
+                        <p>Kevin Vanthuyne</p>
+                        <p>1785 Merchtem België</p>
+                        <p>kevin.vanthuyne2@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/kevin-vanthuyne-840a2215a/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/KevinVanthuyne"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/Kevin.Vanthuyne1"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer">
+                        © Copyright Laura Theme. All Rights Reserved
+                        <div class="credits">
+                            <!--
+                                All the links in the footer should remain intact. 
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Laura
+                              
+                             =======================================================
+                    Theme Name: Laura
+                    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
+                    Author: BootstrapMade.com
+                    Author URL: https://bootstrapmade.com
+                  ======================================================= -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- <script src="contactform/contactform.js"></script> -->
+
+</body>
+
+</html>
