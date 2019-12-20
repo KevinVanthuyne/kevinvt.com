@@ -5,11 +5,11 @@ html {
 body {
   font-family: 'PT Mono', monospace;
   font-size: 2rem;
+  background-color: rgb(245, 241, 234);
 }
 
 h1 {
   font-family: 'Montserrat', sans-serif;
-  /* text-transform: uppercase; */
   font-weight: bold;
   font-size: 8rem;
   color: rgb(60, 60, 60);
@@ -21,11 +21,39 @@ h2 {
   font-weight: bold;
   font-size: 6rem;
   color: rgb(60, 60, 60);
-  margin-bottom: 5rem;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(60, 60, 60);
+  margin-bottom: 1em;
 }
 
 .secondary-color {
   color: rgb(231, 57, 57);
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.skills {
+  font-size: 1.5rem;
+}
+
+.skills ul {
+  font-size: 1.2rem;
+  margin-left: 1em;
+  opacity: 0.5;
 }
 
 /* Landing screen */
@@ -37,7 +65,7 @@ h2 {
 
 .subtitle {
   font-size: 15rem;
-  color: rgb(235, 235, 235);
+  color: rgb(223, 217, 208);
 }
 
 /* -------------- Helper classes ---------------- */
@@ -51,8 +79,21 @@ h2 {
   height: 100vh;
 }
 
+.mt-10 {
+  margin-top: 10rem;
+}
+
 .mt-20 {
   margin-top: 20rem;
+}
+
+.background-rellax {
+  overflow: hidden;
+  height: 60vh;
+}
+
+.background-rellax img {
+  margin-top: -10rem;
 }
 
 /* -------------- Decoration ---------------- */
