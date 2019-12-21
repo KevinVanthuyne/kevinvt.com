@@ -10,6 +10,26 @@ html {
   font-size: 15px;
 }
 
+.navbar {
+  position: fixed;
+  z-index: 1;
+  transform: rotate(-90deg);
+  transform-origin: right bottom;
+  right: 0;
+  top: -1em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 1em;
+}
+
+.navbar a {
+  color: gray;
+}
+
 body {
   font-family: 'PT Mono', monospace;
   font-size: 2rem;
