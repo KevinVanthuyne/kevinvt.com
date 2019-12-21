@@ -1,3 +1,11 @@
+/*
+  Colors
+  - Dark gray:
+  -Very light gray:
+  - Nearly white:
+  - Red:
+*/
+
 html {
   font-size: 15px;
 }
@@ -32,6 +40,14 @@ h3 {
   margin-bottom: 1em;
 }
 
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1em;
+}
+
 .secondary-color {
   color: rgb(231, 57, 57);
   font-weight: bold;
@@ -46,16 +62,6 @@ li {
   margin-bottom: 10px;
 }
 
-.skills {
-  font-size: 1.5rem;
-}
-
-.skills ul {
-  font-size: 1.2rem;
-  margin-left: 1em;
-  opacity: 0.5;
-}
-
 /* Landing screen */
 
 .name-align-right {
@@ -66,6 +72,105 @@ li {
 .subtitle {
   font-size: 15rem;
   color: rgb(223, 217, 208);
+}
+
+/* Skills */
+
+.skills {
+  font-size: 1.5rem;
+}
+
+.skills ul {
+  font-size: 1.2rem;
+  margin-left: 1em;
+  opacity: 0.5;
+}
+
+/* Projects */
+
+.project {
+  margin-bottom: 2rem;
+  background-color: black;
+}
+
+.project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.project-info {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.project-info p {
+  color: white;
+  font-size: 1rem;
+}
+
+.project:hover img {
+  opacity: 0.3;
+}
+
+.project:hover .project-info {
+  opacity: 1;
+}
+
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.3.2
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
+ */
+
+/* Reveal */
+.hvr-reveal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-reveal:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-color: rgb(231, 57, 57);
+  border-style: solid;
+  border-width: 0;
+  -webkit-transition-property: border-width;
+  transition-property: border-width;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-reveal:hover:before,
+.hvr-reveal:focus:before,
+.hvr-reveal:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border-width: 15px;
 }
 
 /* -------------- Helper classes ---------------- */
