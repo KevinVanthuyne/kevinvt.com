@@ -94,6 +94,12 @@ li {
   color: rgb(223, 217, 208);
 }
 
+/* About */
+
+.about-cv {
+  margin-top: 1em;
+}
+
 /* Skills */
 
 .skills {
@@ -143,6 +149,30 @@ li {
 
 .project:hover .project-info {
   opacity: 1;
+}
+
+/* Contact */
+
+.contact-info {
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+.contact-info ul {
+  margin-top: 1em;
+}
+
+.contact-info li {
+  display: inline;
+}
+
+.contact-info img {
+  opacity: 0.3;
+  margin-right: 2em;
+}
+
+.contact-info img:hover {
+  opacity: 0.5;
 }
 
 /*!
