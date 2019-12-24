@@ -1,136 +1,112 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wekker - Kevin Vanthuyne Portfolio</title>
+    <title>Alarm Clock - Kevin Vanthuyne</title>
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto:300,400|Questrial|Satisfy">
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/animate.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <div class="header-small">
-        <div class="bg-color-small">
-            <header>
-                <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="index.html">Kevin</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="lauraMenu">
-                            <ul class="nav navbar-nav navbar-right navbar-border">
-                                <li><a href="../index.html#main-header">Home</a></li>
-                                <li><a href="../index.html#about">Over mij</a></li>
-                                <li><a href="../index.html#skills">Vaardigheden</a></li>
-                                <li><a href="../index.html#projects">Projecten</a></li>
-                                <li><a href="../index.html#cv">CV</a></li>
-                                <li><a href="../index.html#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <nav class="big-nav">
+            <a href="../index.html">K</a>
+          </nav>
+          <p>/&nbsp;Projects /&nbsp;Alarm Clock</p>
         </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>Alarm Clock</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Aug 2017 - Jan 2018</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              This project is the one that sparked my passion for
+              <em>electronics</em>, Raspberry Pi and Arduino. It was the very
+              first project I made, thanks to a Raspberry I got as a gift. I
+              wanted to improve my life with this Raspberry and thought about
+              all kinds of different things. I concluded that waking up could be
+              a lot more pleasant.
+            </p>
+            <p>
+              The solution I came up with was an alarm clock that has a library
+              of <em>nature sounds</em> like birds, rain, flowing water and
+              wind. It picks random sounds and layers them one by one with
+              increasing volume.
+            </p>
+            <p>
+              The device is controlled through a <em>PHP-powered</em> web
+              interface that communicates with a <em>Python</em> script. Since
+              this was my first electronics project, the code isn't clean at
+              all. I'd like to make a second version of this project with an
+              Arduino or ESP8266 since a Raspberry is way to overpowered for
+              this.
+            </p>
+            <p>
+              All code can be found on the
+              <a
+                href="https://github.com/KevinVanthuyne/Python-Alarm-Clock"
+                class="red-link"
+                target="_blank"
+                >Python Alarm Clock GitHub repository</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-3"></div>
+
+          <div class="col-sm-12">
+            <img
+              src="../img/alarmclock.jpg"
+              class="img-responsive mb-2"
+              alt="Photo of the completed alarm clock"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
 
-    <section class="section-padding wow fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-push-6">
-                    <h2 class="title text-center">De rustigste <span class="deco">Wekker</span></h2>
-                    <p>Met dit project is mijn passie ontstaan voor <strong>elektronica</strong>, Raspberry Pi's en Arduino's.
-                    Het was het allereeste project dat ik maakte dankzij een Raspberry die ik cadeau kreeg.
-                    Hierdoor ging ik aan het denken over welk aspect van mijn leven ik kon verbeteren.
-                    Ik concludeerde vrij snel dat opstaan vaak erg bruusk was met een liedje of alarm. Dit wilde ik verbeteren.</p>
-                    <p>De oplossing die ik bedacht om zo rustig mogelijk op te staan was een wekkerradio die aanvankelijk af gaat met één willekeurig <strong>natuurgeluid</strong>.
-                    Dit ene geluid begint heel stil en wordt stilaan luider en luider. 
-                    Na verloop van tijd worden nieuwe willekeurige natuurgeluiden toegevoegd tot er uiteindelijk maximaal 5 geluiden tegelijk afspelen.
-                    De wekker bevat een bibliotheek met verschillende geluiden, ingedeeld in <strong>categorieën</strong> zoals water, dieren en wind. 
-                    Hierdoor speelt er telkens maar één geluid per categorie af.
-                    </p>
-                    <p>De wekker kan ingesteld worden via een webinterface die gebouwd werd met <strong>PHP</strong>. 
-                    Het afspelen van de geluiden en de andere logica is in <strong>Python</strong> geschreven. 
-                    Aangezien dit mijn eerste ervaring was met de Raspberry en Python vind ik de code wat warrig. 
-                    In de toekomst zou ik deze graag eens herwerken, liefst voor een Arduino of ESP8266 aangezien een Raspberry nogal overkill is voor een wekker.
-                    Alle code is te vinden in de <a href="https://github.com/KevinVanthuyne/Python-Alarm-Clock">Github repository van de "Python Alarm Clock"</a></p>
-                </div>
-                <div class="col-md-6 col-md-pull-6">
-                    <img src="../img/alarmclock.jpg" class="img-responsive img-thumbnail" alt="DIY wekkerradio">
-                </div>
-            </div>
-        </div>
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
 
-    </section>
-
-    <footer class="footer-2 text-center-xs bg--white">
-        <div class="container">
-            <!--end row-->
-            <div class="row footer-row">
-                <div class="col-md-6">
-                    <div class="footer">
-                        <p>Kevin Vanthuyne</p>
-                        <p>1785 Merchtem België</p>
-                        <p>kevin.vanthuyne2@gmail.com</p>
-                    </div>
-                </div>
-                <div class="col-md-6 text-right">
-                    <ul class="social-list">
-                        <li>
-                            <a href="https://www.linkedin.com/in/kevin-vanthuyne-840a2215a/"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/KevinVanthuyne"><i class="fa fa-github"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/Kevin.Vanthuyne1"><i class="fa fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--end row-->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer">
-                        © Copyright Laura Theme. All Rights Reserved
-                        <div class="credits">
-                            <!--
-                                All the links in the footer should remain intact.
-                                You can delete the links only if you purchased the pro version.
-                                Licensing information: https://bootstrapmade.com/license/
-                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Laura
-
-                             =======================================================
-                    Theme Name: Laura
-                    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-                    Author: BootstrapMade.com
-                    Author URL: https://bootstrapmade.com
-                  ======================================================= -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.bxslider.min.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/custom.js"></script>
-    <!-- <script src="contactform/contactform.js"></script> -->
-
-</body>
-
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
 </html>
