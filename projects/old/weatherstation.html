@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weerstation - Kevin Vanthuyne Portfolio</title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto:300,400|Questrial|Satisfy">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div class="header-small">
+        <div class="bg-color-small">
+            <header>
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">Kevin</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="lauraMenu">
+                            <ul class="nav navbar-nav navbar-right navbar-border">
+                                <li><a href="../index.html#main-header">Home</a></li>
+                                <li><a href="../index.html#about">Over mij</a></li>
+                                <li><a href="../index.html#skills">Vaardigheden</a></li>
+                                <li><a href="../index.html#projects">Projecten</a></li>
+                                <li><a href="../index.html#cv">CV</a></li>
+                                <li><a href="../index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <section class="section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-4">
+                    <h2 class="title text-center">Raspberry Pi <span class="deco">Weerstation</span></h2>
+                    <p>Vooraleer ik de deur uit ga zoek ik vaak even <strong>het weer</strong> op om te zien hoe warm het wordt of dat er regen verwacht wordt.
+                    Met deze info kan ik dan inschatten hoe ik best gekleed ga. Met dit weerstation wou ik een permanent scherm maken waar deze info altijd op getoond wordt.
+                    </p>
+                    <p>Met behulp van een <strong>temperatuursensor</strong> en de <strong>OpenWeatherMaps</strong> API weet het weerstation de binnen- en buitentemperatuur.
+                    Deze gegevens worden in een <strong>SQLite</strong> databank opgeslagen om achteraf te raadplegen. 
+                    Met een aaneenschakeling van 6 8x8 kleine LED matrices toont het station de nodige info. 
+                    Verder is er ook een ingebouwde <strong>lichtsensor</strong> die het scherm uitzet wanneer het donker is. 
+                    Zo blijft het scherm 's nachts niet aanstaan wanneer het licht van de kamer uit is.
+                    </p>
+                    <p>Als laatste beschikt het weerstation ook over een uitbreidbaar <strong>pagina systeem</strong>.
+                    Dit systeem functioneert als een soort menu waarmee genavigeerd kan worden door verschillende schermen met behulp van een draaiknop.
+                    Hierdoor kunnen oneindig veel schermen getoond worden in plaats van enkel de binnen- en buitentemperatuur.
+                    Zo is er een scherm met de minimum en maximum temperatuur en om welk uur deze bereikt worden. 
+                    Ook is er een scherm met instellingen om het station te herstarten of af te sluiten. 
+                    In de toekomst zou ik het graag uitbreiden met informatie over regenval en eventueel een eenvoudige klok.</p>
+                    <p>Alle code van dit project is te vinden in mijn <a href="https://github.com/KevinVanthuyne/Raspberry_Weather_Station">Raspberry Weather Station repo op Github</a>.</p>
+                    
+                </div>
+                <div class="col-md-4 col-md-pull-8">
+                    <img src="../img/weatherstation.jpg" class="img-responsive img-thumbnail margin-bottom" alt="Voorkant van DIY weerstation">
+                    <img src="../img/weatherstation2.jpg" class="img-responsive img-thumbnail" alt="Binnenkant van DIY weerstation">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer-2 text-center-xs bg--white">
+        <div class="container">
+            <!--end row-->
+            <div class="row footer-row">
+                <div class="col-md-6">
+                    <div class="footer">
+                        <p>Kevin Vanthuyne</p>
+                        <p>1785 Merchtem België</p>
+                        <p>kevin.vanthuyne2@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/kevin-vanthuyne-840a2215a/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/KevinVanthuyne"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/Kevin.Vanthuyne1"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer">
+                        © Copyright Laura Theme. All Rights Reserved
+                        <div class="credits">
+                            <!--
+                                All the links in the footer should remain intact.
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Laura
+
+                             =======================================================
+                    Theme Name: Laura
+                    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
+                    Author: BootstrapMade.com
+                    Author URL: https://bootstrapmade.com
+                  ======================================================= -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.bxslider.min.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/custom.js"></script>
+    <!-- <script src="contactform/contactform.js"></script> -->
+
+</body>
+
+</html>
