@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GamePi - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <nav class="big-nav">
+            <a href="../index.html">K</a>
+          </nav>
+          <p>/&nbsp;Projects /&nbsp;GamePi</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>GamePi</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Aug 2018 (Ongoing)</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              After the success of my first RetroPie project, the
+              <a href="tronkade.html" class="red-link">Tronkade</a>, I had the
+              idea to make a smaller portable version. The main ingredients of
+              this game console are a Raspberry Zero, a 5 inch HDMI screen, a
+              10.000 mah powerbank and a cheap USB SNES controller.
+            </p>
+            <p>
+              The project sadly isn't completed yet. The internals are basically
+              finished, only the case still needs to be designed and 3D printed.
+              This will be quite a challenge as there are a lot of parts that
+              need to be accounted for.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-3"></div>
+
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/gamepi.jpg"
+              class="img-responsive mb-2"
+              alt="Photo of the completed power supply"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-9">
+            <img
+              data-src="../img/gamepi2.jpg"
+              class="img-responsive lazy mb-2"
+              alt="Photo of the insides of the power supply, showing the buck-boost converter and the laptop power supply"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
+</html>
