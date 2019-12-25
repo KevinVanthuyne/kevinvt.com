@@ -10,13 +10,18 @@ html {
   font-size: 15px;
 }
 
+.container-fluid {
+  margin: 0 1rem;
+}
+
 .red-link {
   color: inherit;
   border-bottom: 0.1em solid rgb(231, 57, 57);
   padding-bottom: 2px;
 }
 
-.red-link:hover {
+.red-link:hover,
+.red-link:focus {
   text-decoration: none;
   color: rgb(231, 57, 57);
 }
@@ -53,6 +58,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 8rem;
+  z-index: 1;
 }
 
 h2 {
@@ -100,7 +106,7 @@ li {
 }
 
 .subtitle {
-  font-size: 15rem;
+  /* font-size: 15rem; */
   color: rgb(223, 217, 208);
 }
 
@@ -114,6 +120,7 @@ li {
 
 .skills {
   font-size: 1.5rem;
+  margin-bottom: 6rem;
 }
 
 .skills ul {
@@ -182,7 +189,7 @@ li {
 
 .contact-info img {
   opacity: 0.3;
-  margin-right: 2em;
+  /* margin-right: 2em; */
 }
 
 .contact-info img:hover {
@@ -322,10 +329,12 @@ li {
 .background-rellax {
   overflow: hidden;
   height: 60vh;
+  margin-bottom: 2rem;
 }
 
-.background-rellax img {
-  margin-top: -10rem;
+.fit-text {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* -------------- Decoration ---------------- */
@@ -339,6 +348,16 @@ li {
   top: 600px;
   left: 600px;
   z-index: -1;
+}
+
+.hor-stripe {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(231, 57, 57);
+  opacity: 0.5;
+  position: absolute;
+  right: -2rem;
+  top: 25rem;
 }
 
 /***********************************
@@ -356,8 +375,24 @@ li {
     font-size: 6rem;
   }
 
+  .skills {
+    margin-bottom: none;
+  }
+
   .project-page {
     margin: 0 10vw;
+  }
+
+  .background-rellax img {
+    margin-top: -10rem;
+  }
+
+  .mt-sm-11 {
+    margin-top: 5rem;
+  }
+
+  .mt-sm-20 {
+    margin-top: 20rem;
   }
 }
 
