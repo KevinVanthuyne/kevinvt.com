@@ -31,24 +31,44 @@ body {
   font-size: 2rem;
   background-color: rgb(245, 241, 234);
   color: rgb(60, 60, 60);
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-.navbar {
+.navbar-container {
   position: fixed;
-  z-index: 1;
-  transform: rotate(-90deg);
-  transform-origin: right bottom;
+  top: 0;
   right: 0;
-  top: -1em;
-  font-size: 1.2rem;
+  z-index: 2;
+  background-color: rgb(223, 217, 208);
+}
+
+.navbar-button {
+  padding: 0.3em 0.8em;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+.navbar-button:hover {
+  background-color: rgb(189, 184, 177);
+  cursor: pointer;
+}
+
+.navbar-mobile {
   text-transform: uppercase;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1.3rem;
+  width: 100vw;
+  text-align: center;
 }
 
-.navbar li {
-  display: inline;
-  margin-right: 1em;
+.navbar-mobile li {
+  margin: 1em 0;
 }
 
+.navbar-mobile a,
 .navbar a {
   color: gray;
   border: none;
@@ -373,6 +393,22 @@ li {
 @media (min-width: 768px) {
   h2 {
     font-size: 6rem;
+  }
+
+  .navbar {
+    position: fixed;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transform-origin: right bottom;
+    right: 0;
+    top: -1em;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .navbar li {
+    display: inline;
+    margin-right: 1em;
   }
 
   .skills {

@@ -18,15 +18,29 @@
 
   <body>
     <!-- Navbar -->
-    <nav>
-      <ul class="navbar">
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#home">Home</a></li>
-      </ul>
-    </nav>
+    <div class="navbar-container">
+      <div class="navbar-button visible-xs">Menu</div>
+
+      <nav class="navbar-mobile" style="transition: all 0.3s linear;">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="navbar hidden-xs">
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#home">Home</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <div class="container-fluid">
       <main>
@@ -61,7 +75,7 @@
         <!-- About -->
         <section>
           <div class="row mt-10">
-            <div class="col-sm-4 col-sm-offset-1  rellax" data-rellax-speed="3">
+            <div class="col-sm-4 col-sm-offset-1 rellax" data-rellax-speed="3">
               <div class="background-rellax">
                 <img
                   src="img/kevin.jpg"
@@ -71,7 +85,7 @@
                   id="about"
                 />
               </div>
-              <div class="hor-stripe"></div>
+              <div class="hor-stripe hidden-xs"></div>
             </div>
 
             <div class="col-xs-11 col-sm-5 col-sm-offset-1">
@@ -532,7 +546,7 @@
         <!-- Contact -->
         <section id="contact">
           <div class="row mt-10 mt-sm-20">
-            <div class="col-sm-6">
+            <div class="col-xs-11 col-sm-6">
               <p class="subtitle fit-text rellax" data-rellax-speed="1">
                 Want to <br />
                 know more&nbsp;<br />
@@ -558,7 +572,7 @@
                 <ul class="row">
                   <li
                     class="col-xs-3"
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-delay="0"
                     data-aos-duration="250"
                   >
@@ -572,7 +586,7 @@
                   </li>
                   <li
                     class="col-xs-3"
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-delay="250"
                     data-aos-duration="250"
                   >
@@ -589,7 +603,7 @@
                   </li>
                   <li
                     class="col-xs-3"
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-delay="500"
                     data-aos-duration="250"
                   >
@@ -606,7 +620,7 @@
                   </li>
                   <li
                     class="col-xs-3"
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-delay="750"
                     data-aos-duration="250"
                   >
@@ -635,18 +649,6 @@
     <script type="text/javascript">
       // responsively enable or disable rellax according to viewport width
       var rellax = new Rellax('.rellax');
-
-      function checkWidth(width) {
-        console.log(width);
-        if (width.matches) {
-          rellax = new Rellax('.rellax');
-        } else {
-          rellax.destroy();
-        }
-      }
-      var width = window.matchMedia('(min-width: 768px)');
-      checkWidth(width);
-      width.addListener(checkWidth);
     </script>
 
     <script src="js/vanilla-tilt.min.js"></script>
@@ -672,6 +674,50 @@
       var lazyLoadInstance = new LazyLoad({
         elements_selector: '.lazy',
       });
+    </script>
+
+    <script>
+      // navbar
+      var isMenuVisible = false;
+
+      function toggleMenu() {
+        if (isMenuVisible) {
+          document.querySelector('.navbar-mobile').style.maxHeight = '0';
+        } else {
+          document.querySelector('.navbar-mobile').style.maxHeight = '40vh';
+        }
+
+        isMenuVisible = !isMenuVisible;
+      }
+      document
+        .querySelector('.navbar-button')
+        .addEventListener('click', toggleMenu, true);
+
+      document.querySelector('main').addEventListener(
+        'click',
+        () => {
+          document.querySelector('.navbar-mobile').style.maxHeight = '0';
+          isMenuVisible = false;
+        },
+        true
+      );
+
+      //responsive javascript stuff
+
+      function checkWidth(width) {
+        console.log(width);
+        // bigger than mobile
+        if (width.matches) {
+          rellax = new Rellax('.rellax');
+          document.querySelector('.navbar-mobile').style.maxHeight = '0';
+          // mobile
+        } else {
+          rellax.destroy();
+        }
+      }
+      var width = window.matchMedia('(min-width: 768px)');
+      checkWidth(width);
+      width.addListener(checkWidth);
     </script>
   </body>
 </html>
