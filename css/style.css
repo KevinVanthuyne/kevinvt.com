@@ -7,7 +7,7 @@
 */
 
 html {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .container-fluid {
@@ -27,8 +27,8 @@ html {
 }
 
 body {
+  font-size: 1rem;
   font-family: 'PT Mono', monospace;
-  font-size: 2rem;
   background-color: rgb(245, 241, 234);
   color: rgb(60, 60, 60);
   width: 100vw;
@@ -46,7 +46,6 @@ body {
 .navbar-button {
   padding: 0.3em 0.8em;
   text-align: right;
-  font-size: 1.3rem;
 }
 
 .navbar-button:hover {
@@ -59,7 +58,6 @@ body {
   height: auto;
   max-height: 0;
   overflow: hidden;
-  font-size: 1.3rem;
   width: 100vw;
   text-align: center;
 }
@@ -74,32 +72,31 @@ body {
   border: none;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+}
+
+h1 {
   font-size: 8rem;
   z-index: 1;
 }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;
-  /* text-transform: uppercase; */
-  font-weight: bold;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1em;
 }
 
 h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1em;
 }
 
 h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   color: white;
   margin-bottom: 1em;
 }
@@ -132,6 +129,11 @@ li {
 
 /* About */
 
+.portret-picture {
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
 .about-cv {
   margin-top: 1em;
 }
@@ -139,12 +141,11 @@ li {
 /* Skills */
 
 .skills {
-  font-size: 1.5rem;
   margin-bottom: 6rem;
 }
 
 .skills ul {
-  font-size: 1.2rem;
+  font-size: 0.8em;
   margin-left: 1em;
   opacity: 0.5;
 }
@@ -177,7 +178,7 @@ li {
 
 .project-info p {
   color: white;
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 
 .project:hover img {
@@ -200,7 +201,7 @@ li {
 }
 
 .contact-info ul {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 .contact-info li {
@@ -346,12 +347,6 @@ li {
   margin-bottom: 2rem;
 }
 
-.background-rellax {
-  overflow: hidden;
-  height: 60vh;
-  margin-bottom: 2rem;
-}
-
 .fit-text {
   display: inline-block;
   white-space: nowrap;
@@ -386,13 +381,24 @@ li {
 ************************************
 ***********************************/
 
-/* Extra small devices (phones, less than 768px) */
+/* Extra extra small devices*/
 /* No media query since this is the default in Bootstrap */
+
+/* Extra small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+  html {
+    font-size: 20px;
+  }
+
+  .contact-info img {
+    width: 60%;
+  }
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  h2 {
-    font-size: 6rem;
+  html {
+    font-size: 21px;
   }
 
   .navbar {
@@ -402,7 +408,7 @@ li {
     transform-origin: right bottom;
     right: 0;
     top: -1em;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
   }
 
@@ -411,16 +417,25 @@ li {
     margin-right: 1em;
   }
 
+  .portret-picture {
+    height: 40vw;
+  }
+
+  .portret-picture img {
+    margin-top: -13vw;
+  }
+
   .skills {
     margin-bottom: none;
+    /* font-size: 0.9rem; */
+  }
+
+  .project-info p {
+    font-size: 0.7rem;
   }
 
   .project-page {
     margin: 0 10vw;
-  }
-
-  .background-rellax img {
-    margin-top: -10rem;
   }
 
   .mt-sm-11 {
@@ -434,8 +449,61 @@ li {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  html {
+    font-size: 22px;
+  }
+
+  /* .portret-picture {
+    height: 40vw;
+  } */
+
+  .portret-picture img {
+    margin-top: -8vh;
+  }
+
+  .skills {
+    font-size: 1rem;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  html {
+    font-size: 24px;
+  }
+
+  .portret-picture {
+    height: 35vw;
+  }
+
+  .portret-picture img {
+    margin-top: -7.5vw;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .project-info p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra large devices (very large desktops, 2000px and up) */
+@media (min-width: 2000px) {
+  html {
+    font-size: 30px;
+  }
+
+  .portret-picture {
+    height: 40vw;
+  }
+
+  .portret-picture img {
+    margin-top: -4.5vw;
+  }
+
+  .contact-info img {
+    width: 40%;
+  }
 }
