@@ -223,12 +223,14 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: absolute;
+  left: 0;
 }
 
 .big-nav {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 2rem;
   height: 2em;
   width: 2em;
   display: flex;
@@ -236,10 +238,6 @@ li {
   justify-content: center;
   background-color: rgb(223, 217, 208);
   margin-right: 0.5em;
-}
-
-.big-nav-container p {
-  font-size: 1.5rem;
 }
 
 .big-nav-container a {
@@ -255,17 +253,13 @@ li {
 }
 
 .project-page {
-  margin: 0 5vw;
+  margin-top: 8rem;
 }
 
 .project-date {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-bottom: 2em;
-}
-
-.project-page-description {
-  font-size: 1.3rem;
 }
 
 .project-page-description p {
@@ -393,6 +387,10 @@ li {
   .contact-info img {
     width: 60%;
   }
+
+  .project-page-description p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -435,7 +433,11 @@ li {
   }
 
   .project-page {
-    margin: 0 10vw;
+    margin: 8rem 10vw;
+  }
+
+  .project-page-description p {
+    font-size: 0.9rem;
   }
 
   .mt-sm-11 {
@@ -463,6 +465,16 @@ li {
 
   .skills {
     font-size: 1rem;
+  }
+
+  .project-page-description p {
+    font-size: 0.85rem;
+  }
+
+  .project-date {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 2em;
   }
 }
 
@@ -505,5 +517,9 @@ li {
 
   .contact-info img {
     width: 40%;
+  }
+
+  .project-page-description p {
+    font-size: 0.65rem;
   }
 }
