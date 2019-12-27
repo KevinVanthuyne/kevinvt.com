@@ -670,7 +670,10 @@
 
     <script src="js/smooth-scroll.polyfills.min.js"></script>
     <script type="text/javascript">
-      var scroll = new SmoothScroll('a[href*="#"]');
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: true,
+      });
     </script>
 
     <script src="js/lazyload.min.js"></script>
@@ -685,21 +688,26 @@
       var isMenuVisible = false;
 
       function toggleMenu() {
-        if (isMenuVisible) {
-          document.querySelector('.navbar-mobile').style.maxHeight = '0';
-        } else {
-          document.querySelector('.navbar-mobile').style.maxHeight = '40vh';
-        }
+        if (window.innerWidth < 768) {
+          if (isMenuVisible) {
+            document.querySelector('.navbar-mobile').style.maxHeight = '0';
+          } else {
+            document.querySelector('.navbar-mobile').style.maxHeight = '40vh';
+          }
 
-        isMenuVisible = !isMenuVisible;
+          isMenuVisible = !isMenuVisible;
+        }
       }
       document
         .querySelector('.navbar-button')
         .addEventListener('click', toggleMenu, true);
 
+      document.addEventListener('scrollStart', toggleMenu, false);
+
       document.querySelector('main').addEventListener(
         'click',
         () => {
+          console.log('clicked');
           document.querySelector('.navbar-mobile').style.maxHeight = '0';
           isMenuVisible = false;
         },
