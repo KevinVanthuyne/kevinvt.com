@@ -665,18 +665,9 @@
     </script>
 
     <script src="js/rellax.min.js"></script>
-    <script type="text/javascript">
-      // responsively enable or disable rellax according to viewport width
-      var rellax = new Rellax('.rellax');
-    </script>
 
     <script src="js/vanilla-tilt.min.js"></script>
-    <script type="text/javascript">
-      VanillaTilt.init(document.querySelectorAll('.project'), {
-        reverse: true,
-        speed: 5000,
-      });
-    </script>
+    <script type="text/javascript"></script>
 
     <script src="js/aos.js"></script>
     <script type="text/javascript">
@@ -731,16 +722,29 @@
 
       //responsive javascript stuff
 
+      var rellax = new Rellax('.rellax');
+      VanillaTilt.init(document.querySelectorAll('.project'), {
+        reverse: true,
+        speed: 5000,
+      });
+
       function checkWidth(width) {
         // bigger than mobile
         if (width.matches) {
           rellax = new Rellax('.rellax');
+          VanillaTilt.init(document.querySelectorAll('.project'), {
+            reverse: true,
+            speed: 5000,
+          });
           document.querySelector('.navbar-mobile').style.maxHeight = '0';
           // mobile
         } else {
           rellax.destroy();
+          var projectCards = document.querySelectorAll('.project');
+          projectCards.forEach(project => project.vanillaTilt.destroy());
         }
       }
+
       var width = window.matchMedia('(min-width: 768px)');
       checkWidth(width);
       width.addListener(checkWidth);
