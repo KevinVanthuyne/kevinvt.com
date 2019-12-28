@@ -1,139 +1,133 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weerstation - Kevin Vanthuyne Portfolio</title>
+    <title>Weatherstation - Kevin Vanthuyne</title>
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto:300,400|Questrial|Satisfy">
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/animate.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <div class="header-small">
-        <div class="bg-color-small">
-            <header>
-                <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="index.html">Kevin</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="lauraMenu">
-                            <ul class="nav navbar-nav navbar-right navbar-border">
-                                <li><a href="../index.html#main-header">Home</a></li>
-                                <li><a href="../index.html#about">Over mij</a></li>
-                                <li><a href="../index.html#skills">Vaardigheden</a></li>
-                                <li><a href="../index.html#projects">Projecten</a></li>
-                                <li><a href="../index.html#cv">CV</a></li>
-                                <li><a href="../index.html#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p>/&nbsp;Projects /&nbsp;Weatherstation</p>
         </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>Weatherstation</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">May- Aug 2018</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              Before heading out I like to know what the weather will be like
+              for the day. If any rain is forecasted I better bring my jacket,
+              or if it's going to be very hot I better leave my sweater at home.
+              With this weather station I wanted to have all info displayed on a
+              screen that's always on.
+            </p>
+            <p>
+              The brains of the station are a <em>Raspberry Pi 3</em>, with a
+              temperature sensor connected. Using this sensor and the
+              <em>OpenWeatherMaps API</em> the station always knows inside and
+              outside temperature, but also forecasts, rainfall, sunset time and
+              much more for the rest of the day and even the entire week. The
+              information is displayed on 6 <em>8x8 LED matrices</em> that are
+              daisy chained together. The station also has a
+              <em>light sensor</em> built in to disable the screen when the room
+              gets to dark, so the screen doesn't stay on during the night. All
+              data is also logged to an <em>SQLite databank</em>.
+            </p>
+            <p>
+              Furthermore the station has an expandable <em>page system</em>.
+              This system functions as a menu that can be navigated with the
+              rotary encoder ontop of the enclosure. This way an infinite amount
+              of pages can be shown, each with different information like the
+              min and max temperatures of the day and when they will be reached
+              or settings pages to shutdown or reboot the Pi. <br />
+              This project could be expanded a lot more, like info about
+              rainfall or a page with a clock, but of course I'd have to find
+              some more time for this.
+            </p>
+            <p>
+              All code for this project can be found on the
+              <a
+                href="https://github.com/KevinVanthuyne/Raspberry_Weather_Station"
+                class="red-link"
+                >Raspberry Pi Weatherstation GitHub repository</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-3"></div>
+
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/weatherstation.jpg"
+              class="img-responsive mb-2"
+              alt="Photo of the completed weatherstation"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-9">
+            <img
+              data-src="../img/weatherstation2.jpg"
+              class="img-responsive lazy mb-2"
+              alt="Photo of the insides of the weatherstation"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
 
-    <section class="section-padding wow fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-push-4">
-                    <h2 class="title text-center">Raspberry Pi <span class="deco">Weerstation</span></h2>
-                    <p>Vooraleer ik de deur uit ga zoek ik vaak even <strong>het weer</strong> op om te zien hoe warm het wordt of dat er regen verwacht wordt.
-                    Met deze info kan ik dan inschatten hoe ik best gekleed ga. Met dit weerstation wou ik een permanent scherm maken waar deze info altijd op getoond wordt.
-                    </p>
-                    <p>Met behulp van een <strong>temperatuursensor</strong> en de <strong>OpenWeatherMaps</strong> API weet het weerstation de binnen- en buitentemperatuur.
-                    Deze gegevens worden in een <strong>SQLite</strong> databank opgeslagen om achteraf te raadplegen. 
-                    Met een aaneenschakeling van 6 8x8 kleine LED matrices toont het station de nodige info. 
-                    Verder is er ook een ingebouwde <strong>lichtsensor</strong> die het scherm uitzet wanneer het donker is. 
-                    Zo blijft het scherm 's nachts niet aanstaan wanneer het licht van de kamer uit is.
-                    </p>
-                    <p>Als laatste beschikt het weerstation ook over een uitbreidbaar <strong>pagina systeem</strong>.
-                    Dit systeem functioneert als een soort menu waarmee genavigeerd kan worden door verschillende schermen met behulp van een draaiknop.
-                    Hierdoor kunnen oneindig veel schermen getoond worden in plaats van enkel de binnen- en buitentemperatuur.
-                    Zo is er een scherm met de minimum en maximum temperatuur en om welk uur deze bereikt worden. 
-                    Ook is er een scherm met instellingen om het station te herstarten of af te sluiten. 
-                    In de toekomst zou ik het graag uitbreiden met informatie over regenval en eventueel een eenvoudige klok.</p>
-                    <p>Alle code van dit project is te vinden in mijn <a href="https://github.com/KevinVanthuyne/Raspberry_Weather_Station">Raspberry Weather Station repo op Github</a>.</p>
-                    
-                </div>
-                <div class="col-md-4 col-md-pull-8">
-                    <img src="../img/weatherstation.jpg" class="img-responsive img-thumbnail margin-bottom" alt="Voorkant van DIY weerstation">
-                    <img src="../img/weatherstation2.jpg" class="img-responsive img-thumbnail" alt="Binnenkant van DIY weerstation">
-                </div>
-            </div>
-        </div>
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
 
-    </section>
-
-    <footer class="footer-2 text-center-xs bg--white">
-        <div class="container">
-            <!--end row-->
-            <div class="row footer-row">
-                <div class="col-md-6">
-                    <div class="footer">
-                        <p>Kevin Vanthuyne</p>
-                        <p>1785 Merchtem België</p>
-                        <p>kevin.vanthuyne2@gmail.com</p>
-                    </div>
-                </div>
-                <div class="col-md-6 text-right">
-                    <ul class="social-list">
-                        <li>
-                            <a href="https://www.linkedin.com/in/kevin-vanthuyne-840a2215a/"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/KevinVanthuyne"><i class="fa fa-github"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/Kevin.Vanthuyne1"><i class="fa fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--end row-->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer">
-                        © Copyright Laura Theme. All Rights Reserved
-                        <div class="credits">
-                            <!--
-                                All the links in the footer should remain intact.
-                                You can delete the links only if you purchased the pro version.
-                                Licensing information: https://bootstrapmade.com/license/
-                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Laura
-
-                             =======================================================
-                    Theme Name: Laura
-                    Theme URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-                    Author: BootstrapMade.com
-                    Author URL: https://bootstrapmade.com
-                  ======================================================= -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.bxslider.min.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/custom.js"></script>
-    <!-- <script src="contactform/contactform.js"></script> -->
-
-</body>
-
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
 </html>
