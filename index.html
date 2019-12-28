@@ -48,7 +48,7 @@
         <section id="home">
           <div class="row">
             <div
-              class="col-xs-11 col-sm-4 col-sm-push-6 vertical-center full-height"
+              class="col-xs-11 col-sm-4 col-sm-push-6 vertical-center big-name"
             >
               <h1 class="fit-text vivify pullLeft duration-1000">
                 Kevin<br />
@@ -78,7 +78,7 @@
 
         <!-- About -->
         <section>
-          <div class="row mt-10">
+          <div class="row mt-sm-10">
             <div class="col-sm-4 col-sm-offset-1 rellax" data-rellax-speed="3">
               <div class="portret-picture">
                 <img
@@ -129,7 +129,7 @@
 
         <!-- Skills -->
         <section id="skills">
-          <div class="row mt-10">
+          <div class="row mt-5 mt-sm-10">
             <div class="col-sm-11 col-sm-offset-1">
               <h2><span class="secondary-color">_</span>Skills</h2>
             </div>
@@ -278,7 +278,7 @@
             </div>
 
             <div
-              class="col-sm-3 hidden-xs mt-sm-11 rellax"
+              class="col-sm-3 hidden-xs mt-sm-5 rellax"
               data-rellax-speed="1"
             >
               <div data-aos="fade-up">
@@ -564,9 +564,9 @@
 
         <!-- Contact -->
         <section id="contact">
-          <div class="row mt-10 mt-sm-20">
+          <div class="row mt-5 mt-sm-20">
             <div class="col-xs-11 col-sm-6">
-              <p class="subtitle fit-text rellax" data-rellax-speed="1">
+              <p class="catchphrase fit-text rellax" data-rellax-speed="1">
                 Want to <br />
                 know more&nbsp;<br />
                 about me?&nbsp;
@@ -660,14 +660,8 @@
     </div>
 
     <script src="js/fitty.min.js"></script>
-    <script>
-      fitty('.fit-text');
-    </script>
-
     <script src="js/rellax.min.js"></script>
-
     <script src="js/vanilla-tilt.min.js"></script>
-    <script type="text/javascript"></script>
 
     <script src="js/aos.js"></script>
     <script type="text/javascript">
@@ -728,26 +722,30 @@
         speed: 5000,
       });
 
-      function checkWidth(width) {
+      function widthChanged(media) {
         // bigger than mobile
-        if (width.matches) {
+        if (media.matches) {
           rellax = new Rellax('.rellax');
           VanillaTilt.init(document.querySelectorAll('.project'), {
             reverse: true,
             speed: 5000,
           });
+          fitty('.fit-text');
           document.querySelector('.navbar-mobile').style.maxHeight = '0';
           // mobile
         } else {
           rellax.destroy();
+          fitty('.fit-text', {
+            maxSize: 105,
+          });
           var projectCards = document.querySelectorAll('.project');
           projectCards.forEach(project => project.vanillaTilt.destroy());
         }
       }
 
-      var width = window.matchMedia('(min-width: 768px)');
-      checkWidth(width);
-      width.addListener(checkWidth);
+      var media = window.matchMedia('(min-width: 768px)');
+      widthChanged(media);
+      media.addListener(widthChanged);
     </script>
   </body>
 </html>
