@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>RGB Led Tubes - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p>/&nbsp;Projects /&nbsp;RGB Led Tubes</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>RGB Led Tubes</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Oct - Nov 2019</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              Around 2017 when I was getting into electronics, I thought of this
+              project. It was approximately the second project I had on my mind
+              when I started the hobby, but I never got around to making it back
+              then. <br />
+              In December 2019 though, we were going to organise the fifth
+              edition of a party in
+              <a href="http://tronk.be" class="red-link" target="_blank"
+                >Jeugdhuis Tronk</a
+              >
+              and I wanted to make it special, which was a perfect excuse!
+            </p>
+            <p>
+              The idea was to make eye-catching
+              <em>stage lighting effects</em> to hang behind the DJ. I made six
+              one-meter tubes containing 60 leds each, a controller that drives
+              them all and about 30 built-in animations. The tubes were made
+              with WS2813 ledstrips and the controller uses a laptop charger as
+              power supply and an <em>Arduino Mega</em> as the brains. The
+              controller enclosure and end caps of the tubes were designed in
+              <em>Fusion 360</em>. The caps were then 3D printed and the
+              enclosure lasercut.
+            </p>
+            <p>
+              I had a lot of setbacks during this project, which caused it to
+              take a lot more time than expected. Originally the controller used
+              an <em>ESP32</em> with WiFi so the tubes could be wirelessly
+              controlled through <em>ArtNet</em> and a <em>VJ software</em>.
+              There was also a microphone for a
+              <em>sound-controlled mode</em> and instead of a laptop charger I
+              utilised a computer power supply. <br />
+              Due to frying the ESP, some faulty debugging and a deadline
+              closing in, I decided to scale it back to the simpler form it is
+              today without ArtNet and sound-controlled mode. The result however
+              is still pretty stunning.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-7">
+            <img
+              src="../img/rgb-tubes/tubes-mounted.jpg"
+              class="img-responsive mb-1"
+              alt="RGB led tubes mounted on a wall in two triangle shapes"
+            />
+            <img
+              src="../img/rgb-tubes/tubes-floor.jpg"
+              class="img-responsive mb-1"
+              alt="RGB led tubes lying on the floor"
+            />
+          </div>
+
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/rgb-tubes/enclosure-insides.jpg"
+              class="img-responsive mb-1"
+              alt="the insides of the controller enclosure"
+            />
+            <img
+              src="../img/rgb-tubes/tubes-insides.jpg"
+              class="img-responsive mb-1"
+              alt="the insides of the tubes, exposing the ledstrips and power converters"
+            />
+            <img
+              src="../img/rgb-tubes/enclosure-cad.jpg"
+              class="img-responsive mb-1"
+              alt="the cad drawing of the controller enclosure"
+            />
+            <img
+              src="../img/rgb-tubes/enclosure-lasercutter.jpg"
+              class="img-responsive mb-1"
+              alt="the lasercut enclosure parts in the lasercutter"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
+</html>
