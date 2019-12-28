@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lockdown - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p>/&nbsp;Projects /&nbsp;Lockdown</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>Lockdown</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Sept 2019</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              <a
+                href="https://www.lockdown-escape.be/"
+                class="red-link"
+                target="_blank"
+                >Lockdown</a
+              >
+              is a Belgian <em>escape room company</em> with several rooms in
+              Kortrijk and Ghent. For a new zombies-vs-scientists-themed room
+              they needed all kinds of new props to tell a story and provide
+              puzzels. I was hired to make five of these projects.
+            </p>
+            <p>
+              The most interesting project was the so-called
+              <em>brain wave generator</em>. The idea was that the scientists
+              needed to find three parameters and then turn the knobs on the
+              machine to set them correctly. All parameters manipulate the wave
+              on the screen and when everything is set a signal is given to the
+              central computer of the room. I repurposed an old oscilloscope for
+              this and used an <em>Arduino Mega</em> with an LCD screen to have
+              a modern screen.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/lockdown/oscilloscope.jpg"
+              class="img-responsive mb-1"
+              alt="Finished brain wave generator prop"
+            />
+          </div>
+
+          <div class="col-sm-12 col-md-7">
+            <img
+              src="../img/lockdown/oscilloscope-insides.jpg"
+              class="img-responsive mb-1"
+              alt="insides of the brain wave generator prop"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              The next projects were <em>liquid sensors</em> for a blending
+              machine and a blood injection. The scientists needed to make an
+              antidote by pooring different liquids in a machine and revive a
+              zombie by injecting it with fake blood. This needed to be detected
+              so I designed a 3D print that hold an IR led an receiver and fits
+              around a clear tube. When liquid passes through the tube, the IR
+              receiver detects a change in brightness and triggers. <br />
+              I soldered a circuitboard for these sensors to easily connect all
+              components. Both projects use an <em>Arduino Nano</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <img
+              src="../img/lockdown/liquid-sensors.jpg"
+              class="img-responsive mb-1"
+              alt="liquid sensors for the blendingmachine"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              The final projects were <em>scanner effects</em> for two places in
+              the escape room. One in some kind of x-ray chamber and one in the
+              entrance room, also called the sluice. The x-ray scanner scans up
+              and down several times in a white color, while the sluice scanner
+              moves from strip to strip and blinks in a red or green color
+              depending on whether the scan was successful.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <img
+              src="../img/lockdown/ledstrip-project-box.jpg"
+              class="img-responsive mb-1"
+              alt="enclosure with power supply and circuit board for the sluice ledstrips"
+            />
+            <img
+              src="../img/lockdown/ledstrip-circuitboard.jpg"
+              class="img-responsive mb-1"
+              alt="circuitboard of the sluice ledstrips"
+            />
+          </div>
+
+          <div class="col-sm-12 col-md-8">
+            <img
+              src="../img/lockdown/ledstrips-mounted.jpg"
+              class="img-responsive mb-1"
+              alt="ledstrips mounted in the sluice"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
+</html>

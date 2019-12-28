@@ -340,6 +340,10 @@ li {
   height: 100vh;
 }
 
+.mt-3 {
+  margin-top: 3rem;
+}
+
 .mt-5 {
   margin-top: 5rem;
 }
@@ -350,6 +354,10 @@ li {
 
 .mt-20 {
   margin-top: 20rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 .mb-2 {
