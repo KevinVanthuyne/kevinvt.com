@@ -21,7 +21,7 @@
     <div class="navbar-container">
       <div class="navbar-button visible-xs">Menu</div>
 
-      <nav class="navbar-mobile" style="transition: all 0.3s linear;">
+      <nav class="navbar-mobile" style="transition: all 0.3s linear">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -65,7 +65,7 @@
                 data-aos-delay="600"
                 data-aos-duration="2000"
               >
-                <p class="rellax subtitle fit-text " data-rellax-speed="-5">
+                <p class="rellax subtitle fit-text" data-rellax-speed="-5">
                   Software<br />
                   Engineer<br />
                   &&nbsp;Maker
@@ -97,13 +97,12 @@
               <div>
                 <ul>
                   <li data-aos="fade-up">
-                    Applied Information Technology graduate<span
-                      class="secondary-color"
+                    Full-stack Software Engineer<span class="secondary-color"
                       >.</span
                     >
                   </li>
                   <li data-aos="fade-up">
-                    Electronics enthousiast<span class="secondary-color"
+                    Maker & Electronics enthousiast<span class="secondary-color"
                       >.</span
                     >
                   </li>
@@ -120,6 +119,9 @@
                   </li>
                   <li data-aos="fade-up">
                     DJ & producer<span class="secondary-color">.</span>
+                  </li>
+                  <li data-aos="fade-up">
+                    Pinball<span class="secondary-color">.</span>
                   </li>
                 </ul>
               </div>
@@ -622,7 +624,10 @@
               <h2><span class="secondary-color">_</span>Contact</h2>
               <div class="contact-info">
                 <p data-aos="fade-up">
-                  <span class="secondary-color">>></span> Send me a message<span class="secondary-color">:</span>
+                  <span class="secondary-color">>></span> Send me a message<span
+                    class="secondary-color"
+                    >:</span
+                  >
                 </p>
                 <ul class="row">
                   <li
@@ -715,7 +720,7 @@
     <script src="js/lazyload.min.js"></script>
     <script type="text/javascript">
       var lazyLoadInstance = new LazyLoad({
-        elements_selector: '.lazy',
+        elements_selector: ".lazy",
       });
     </script>
 
@@ -726,25 +731,25 @@
       function toggleMenu() {
         if (window.innerWidth < 768) {
           if (isMenuVisible) {
-            document.querySelector('.navbar-mobile').style.maxHeight = '0';
+            document.querySelector(".navbar-mobile").style.maxHeight = "0";
           } else {
-            document.querySelector('.navbar-mobile').style.maxHeight = '15em';
+            document.querySelector(".navbar-mobile").style.maxHeight = "15em";
           }
 
           isMenuVisible = !isMenuVisible;
         }
       }
       document
-        .querySelector('.navbar-button')
-        .addEventListener('click', toggleMenu, true);
+        .querySelector(".navbar-button")
+        .addEventListener("click", toggleMenu, true);
 
-      document.addEventListener('scrollStart', toggleMenu, false);
+      document.addEventListener("scrollStart", toggleMenu, false);
 
-      document.querySelector('main').addEventListener(
-        'click',
+      document.querySelector("main").addEventListener(
+        "click",
         () => {
-          console.log('clicked');
-          document.querySelector('.navbar-mobile').style.maxHeight = '0';
+          console.log("clicked");
+          document.querySelector(".navbar-mobile").style.maxHeight = "0";
           isMenuVisible = false;
         },
         true
@@ -752,8 +757,8 @@
 
       //responsive javascript stuff
 
-      var rellax = new Rellax('.rellax');
-      VanillaTilt.init(document.querySelectorAll('.project'), {
+      var rellax = new Rellax(".rellax");
+      VanillaTilt.init(document.querySelectorAll(".project"), {
         reverse: true,
         speed: 5000,
       });
@@ -761,25 +766,25 @@
       function widthChanged(media) {
         // bigger than mobile
         if (media.matches) {
-          rellax = new Rellax('.rellax');
-          VanillaTilt.init(document.querySelectorAll('.project'), {
+          rellax = new Rellax(".rellax");
+          VanillaTilt.init(document.querySelectorAll(".project"), {
             reverse: true,
             speed: 5000,
           });
-          fitty('.fit-text');
-          document.querySelector('.navbar-mobile').style.maxHeight = '0';
+          fitty(".fit-text");
+          document.querySelector(".navbar-mobile").style.maxHeight = "0";
           // mobile
         } else {
           rellax.destroy();
-          fitty('.fit-text', {
+          fitty(".fit-text", {
             maxSize: 105,
           });
-          var projectCards = document.querySelectorAll('.project');
-          projectCards.forEach(project => project.vanillaTilt.destroy());
+          var projectCards = document.querySelectorAll(".project");
+          projectCards.forEach((project) => project.vanillaTilt.destroy());
         }
       }
 
-      var media = window.matchMedia('(min-width: 768px)');
+      var media = window.matchMedia("(min-width: 768px)");
       widthChanged(media);
       media.addListener(widthChanged);
     </script>
