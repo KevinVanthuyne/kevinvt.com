@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VPW Website - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p>/&nbsp;Projects /&nbsp;V-Pin Workshop Website</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2>
+              <span class="secondary-color">_</span>V-Pin Workshop Website
+            </h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">2022</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              Virtual Pinball Workshop is a group of creators that make and upgrade digital recreations of pinball machines.
+              Their work is considered the best in the world of Virtual Pinball.
+            </p>
+            <p>
+              I made their official website using <em>Gatsby</em> and <em>gsap</em>. I challenged myself to animate parts
+              of the website synchronized with scrolling to make it stand out.
+            </p>
+            <p>
+              The website is hosted at
+              <a href="https://www.vpinworkshop.com/" class="red-link" target="_blank" rel="noreferrer"
+                >vpinworkshop.com</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-3"></div>
+
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/projects/vpw/vpw-landing.png"
+              class="img-responsive mb-2"
+              alt="Screenshot of the V-Pin workshop website's homepage"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-9">
+            <img
+              data-src="../img/projects/vpw/vpw-work.png"
+              class="img-responsive lazy mb-2"
+              alt="Screenshot of the VPW website with a carousel with digital pinball recreations done by VPW"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+
+          <div class="col-sm-12 col-md-9">
+            <img
+              data-src="../img/projects/vpw/vpw-bm.png"
+              class="img-responsive lazy mb-2"
+              alt="Screenshot of the V-Pin workshop website's about section"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
+</html>
