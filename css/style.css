@@ -115,6 +115,10 @@ li {
   margin-bottom: 10px;
 }
 
+em {
+  font-style: normal;
+  font-weight: bold;
+}
 /* Landing screen */
 
 .big-name {
