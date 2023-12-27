@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agon - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p>/&nbsp;Projects /&nbsp;Agon</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <h2><span class="secondary-color">_</span>Agon</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Jan 2022 - May 2023</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              Agon is a web application for <em>automatically running competitions</em> for games with (high)scores.
+              The idea originated from running a monthly competition on the <a href="vortex.html" class="red-link">Virtual Pinball machine</a>.
+              An admin can add games to the database and set up timed game-by-game competitions or indefinite competitions
+              with multiple simultaneous games.
+            </p>
+            <p>
+              The system uses a <em>Discord</em> bot to notify players what game is played that month for example, and
+              players can also use the bot to see the leaderboards and post scores with an image for proof. A <em>website</em> is
+              also present for a nicer view of the leaderboards and a more intuitive admin interface. After each month,
+              the Discord bot also posts the winner of that month.
+            </p>
+            <p>
+              Agon consists of 4 major components:
+            </p>
+              <ol class="mb-2">
+                <li><a href="https://github.com/KevinVanthuyne/agon-ui" class="red-link" target="_blank">Angular frontend</a></li>
+                <li><a href="https://github.com/KevinVanthuyne/agon-backend" class="red-link" target="_blank">Spring Boot backend</a></li>
+                <li><a href="https://github.com/KevinVanthuyne/agon-discord-competition-bot" class="red-link" target="_blank">Discord bot using discordjs</a></li>
+                <li>PostgreSQL database</li>
+              </ol>
+            <p>
+              There's also a <a href="https://github.com/KevinVanthuyne/agon-docker-compose" class="red-link" target="_blank">Docker Compose</a>
+              to easily run all components on my server.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-7">
+            <img
+              src="../img/projects/agon/agon-leaderboard-thumb.jpg"
+              data-src="../img/projects/agon/agon-leaderboard.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the leaderboard page on the Agon website, showing several columns that each represent a game with scores of different players in each."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/agon/agon-admin-games-thumb.jpg"
+              data-src="../img/projects/agon/agon-admin-games.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the admin ui for configuring games on the Agon website"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/projects/agon/agon-game-announcement-thumb.jpg"
+              data-src="../img/projects/agon/agon-game-announcement.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the Discord bot posting the new game for that month"
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/agon/agon-admin-scores-thumb.jpg"
+              data-src="../img/projects/agon/agon-admin-scores.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Admin UI on the Agon website for managing scores posted by users"
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/agon/agon-score-posted-thumb.jpg"
+              data-src="../img/projects/agon/agon-score-posted.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Discord bot posting a user's score and image in a Discord channel"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+  </body>
+</html>
