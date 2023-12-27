@@ -263,6 +263,15 @@ em {
   color: rgb(60, 60, 60);
 }
 
+.big-nav-container .big-nav-breadcrumb a {
+  border-bottom: 2px solid rgb(60, 60, 60);
+}
+
+.big-nav-container .big-nav-breadcrumb a:hover {
+  background-color: rgb(223, 217, 208);
+  outline: 0.5em solid rgb(223, 217, 208);
+}
+
 .big-nav:hover {
   background-color: rgb(189, 184, 177);
 }
