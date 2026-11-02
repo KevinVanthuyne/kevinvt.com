@@ -5,6 +5,8 @@ on:
     branches: [master]
   workflow_dispatch:
 
+permissions: {}
+
 concurrency:
   group: deploy
   cancel-in-progress: false
@@ -13,6 +15,7 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Prepare SSH
         env:
@@ -24,8 +27,9 @@ jobs:
           chmod 600 ~/.ssh/id_deploy
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
 
-      # The key on the server is locked to a forced command that updates the
-      # site checkout and prints the commit it ended up on.
+      # The key on the server is locked to a forced command that checks out the
+      # commit sent as the SSH command (it must be on master) and prints the
+      # commit the site checkout ended up on.
       - name: Deploy
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
@@ -34,7 +38,8 @@ jobs:
         run: |
           deployed=$(ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" \
             -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
-            "$SSH_USER@$SSH_HOST" deploy)
+            -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            "$SSH_USER@$SSH_HOST" "$GITHUB_SHA" | tail -n 1 | tr -d '[:space:]')
           echo "Server is on: $deployed"
           if [ "$deployed" != "$GITHUB_SHA" ]; then
             echo "::error::Server is on $deployed, expected $GITHUB_SHA"
