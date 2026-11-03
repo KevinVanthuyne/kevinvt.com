@@ -433,6 +433,13 @@ em {
   opacity: 0.06;
 }
 
+/* On phones the logos stand still behind the single column of text, so only a few show, barely visible. */
+@media (max-width: 767px) {
+  .skill-logos img {
+    opacity: 0.035;
+  }
+}
+
 .skills {
   margin-bottom: 3rem;
 }
