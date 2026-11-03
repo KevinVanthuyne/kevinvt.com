@@ -753,17 +753,14 @@
             if (typedCount > 0) {
               chars[typedCount - 1].classList.remove("typing-cursor");
             }
-            if (typedCount === chars.length) {
-              return;
-            }
             var char = chars[typedCount];
             char.classList.add("typed");
-            // A heading's own trailing _ is the cursor, so it needs no extra one.
-            if (!char.closest(".cursor")) {
-              char.classList.add("typing-cursor");
-            }
             typedCount++;
-            setTimeout(typeNext, typedCount === chars.length ? 1200 : 60);
+            // The last character gets no caret: headings end on their own blinking _, the subtitle just stops.
+            if (typedCount < chars.length) {
+              char.classList.add("typing-cursor");
+              setTimeout(typeNext, 60);
+            }
           }
           setTimeout(typeNext, startDelay);
         }
