@@ -180,7 +180,7 @@ h4 {
 
 /* .spotlight and the section grids share it, so the cursor lands on the same dots. */
 :root {
-  --dot-grid-size: 24px;
+  --dot-grid-size: 32px;
 }
 
 .spotlight {
@@ -191,15 +191,15 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1px, transparent 1.5px);
+  background-image: radial-gradient(rgba(60, 60, 60, 0.4) 1.5px, transparent 2px);
   background-size: var(--dot-grid-size) var(--dot-grid-size);
   -webkit-mask-image: radial-gradient(
-    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    210px circle at var(--spot-x, -999px) var(--spot-y, -999px),
     black,
     transparent
   );
   mask-image: radial-gradient(
-    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    210px circle at var(--spot-x, -999px) var(--spot-y, -999px),
     black,
     transparent
   );
@@ -221,7 +221,7 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.18) 1px, transparent 1.5px);
+  background-image: radial-gradient(rgba(60, 60, 60, 0.26) 1.5px, transparent 2px);
   background-size: var(--dot-grid-size) var(--dot-grid-size);
   background-attachment: fixed;
 }
