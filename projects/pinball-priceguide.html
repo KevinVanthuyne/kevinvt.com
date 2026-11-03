@@ -45,13 +45,12 @@
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              I was simply curious: <em>what do pinball machines cost right now, what did they cost during COVID and before,
-              and how much data could I gather to answer that?</em>
+              I was curious what pinball machines cost right now, what they cost during COVID and before,
+              and how much data I could gather to answer that.
               There are several price guides for the US, but not really for Europe, and prices here can differ a lot.
-              The guide is built on <em>asking prices</em>, not on real sale prices, and the site says so on every machine page.
             </p>
             <p>
-              A pipeline reads ads in several languages and extracts the price, the currency, the location and the type of ad
+              A pipeline reads ads from several sources and in several languages and extracts the price, the currency, the location and the type of ad
               (machine, parts, wanted, virtual pinball). It then matches each ad to a specific machine and edition.
               Anything unsure goes to a review screen where I pick the right machine by hand. For the really difficult ads
               there is an optional LLM step.
@@ -64,10 +63,10 @@
             <p>
               The project has 2 major components:
             </p>
-              <ol class="mb-2">
-                <li>Backend: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, statistics) and SQLite or PostgreSQL</li>
-                <li>Frontend: Angular 22 with standalone components and signals, Bootstrap 5 and Chart.js for the charts</li>
-              </ol>
+              <ul class="mb-2">
+                <li><span class="secondary-color">&gt;</span> <em>backend</em>: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, statistics) and SQLite or PostgreSQL</li>
+                <li><span class="secondary-color">&gt;</span> <em>frontend</em>: Angular 22 with standalone components and signals, Bootstrap 5 and Chart.js for the charts</li>
+              </ul>
             <p>
               The backend is covered by pytest tests, and the matching rules are measured against the labels I gave in the review screen.
             </p>

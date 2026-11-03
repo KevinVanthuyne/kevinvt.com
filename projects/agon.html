@@ -54,16 +54,16 @@
               It started in 2022 as a Discord bot for a monthly competition on my
               <a href="vortex.html" class="red-link">Virtual Pinball machine</a>. Players submitted their scores to the
               bot, and at the end of each month it announced the winner. Since then it grew into software for my arcade
-              rental company, Overcade, and the Discord bot is gone.
+              rental company, <a href="https://overcade.be" class="red-link" target="_blank" rel="noopener noreferrer">Overcade</a>, and the Discord bot is gone.
             </p>
             <p>
               Agon has three parts:
             </p>
-            <ol class="mb-2">
-              <li>A <em>web app</em> in Angular with the leaderboards, the score form and an admin area.</li>
-              <li>A <em>Spring Boot</em> backend with a REST API and a PostgreSQL database.</li>
-              <li>The <em>scoreboard screens</em>: a Raspberry Pi behind a TV, running Chromium as a kiosk.</li>
-            </ol>
+            <ul class="mb-2">
+              <li><span class="secondary-color">&gt;</span> <em>web app</em>: Angular, with the leaderboards, the score form and an admin area</li>
+              <li><span class="secondary-color">&gt;</span> <em>backend</em>: Spring Boot with a REST API and a PostgreSQL database</li>
+              <li><span class="secondary-color">&gt;</span> <em>scoreboard screens</em>: a Raspberry Pi behind a TV, running Chromium as a kiosk</li>
+            </ul>
             <p>
               The screens run at events where nobody can fix them, so they look after themselves. Without a known
               network they open their own Wi-Fi hotspot, so I can set up the venue's Wi-Fi from a phone, and I can
@@ -71,7 +71,7 @@
             </p>
             <p>
               The whole stack runs with <em>Docker Compose</em> on my own server. A merge to the main branch is tested,
-              built and deployed automatically.
+              built and deployed automatically. Everything is backed up automatically every day.
             </p>
           </div>
         </div>

@@ -485,12 +485,6 @@ em {
 
 /* Projects */
 
-.project-filter {
-  margin-top: -1em;
-  margin-bottom: 2rem;
-  color: rgb(189, 184, 177);
-}
-
 .project-filter .btn-link {
   padding: 0 0.3em;
   font-size: inherit;

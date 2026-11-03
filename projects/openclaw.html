@@ -62,22 +62,49 @@
               checks on a schedule and messages me when something needs my attention.
             </p>
             <p>
-              The useful part is the <em>skills</em>. I write them myself, as small scripts that OpenClaw can run:
+              The real work happens in <em>skills</em>. The skills are written by AI, not by me. Each one solves a small
+              thing that used to bother me, and they now all run fully on their own.
             </p>
             <ul class="mb-2">
-              <li><span class="secondary-color">&gt;</span> <em>arcade price guide</em>: game values, plus the cabinet photo</li>
-              <li><span class="secondary-color">&gt;</span> <em>arcade scanner</em>: new machines on the marketplaces, hourly</li>
-              <li><span class="secondary-color">&gt;</span> <em>storage scanner</em>: new storage units to rent</li>
-              <li><span class="secondary-color">&gt;</span> <em>stock watcher</em>: pings me when a product is back in stock</li>
-              <li><span class="secondary-color">&gt;</span> <em>cinema watcher</em>: alerts me when new film sessions appear</li>
-              <li><span class="secondary-color">&gt;</span> <em>fuel prices</em>: the cheapest diesel nearby, on request</li>
-              <li><span class="secondary-color">&gt;</span> <em>travel time</em>: live traffic, with the traffic chart</li>
-              <li><span class="secondary-color">&gt;</span> <em>home reports</em>: weekly Home Assistant heating and climate reports</li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>arcade price guide</strong>. I type a game name and
+                get its guide price and the cabinet photo back in one message. The guide sits on the Pi, so the answer
+                is instant.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>arcade scanner</strong>. Every hour it checks the
+                local marketplaces for new machines. A photo and the guide price come with it when it knows the game.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>storage scanner</strong>. It looks for new storage
+                units to rent, for my arcades and pinball machines. One message per listing, with a photo and the
+                price.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>cinema watcher</strong>. It alerts me when new film
+                sessions appear for The Odyssey. It checks every ten minutes, so I can still get good seats.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>stock watcher</strong>. It checks a product at a local
+                hardware store every hour. I get one ping when it is back in stock.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>fuel prices</strong>. The cheapest diesel nearby, on
+                request. Cheapest first, with what a fill-up costs.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>travel time</strong>. On the days I go to the office
+                I get the travel time with live traffic data. The traffic chart from the Filebarometer, the Belgian
+                traffic jam barometer, comes with it.
+              </li>
+              <li>
+                <span class="secondary-color">&gt;</span> <strong>home reports</strong>. Every week Home Assistant
+                reports on how the heating did. A second report covers the climate where my machines are stored.
+              </li>
             </ul>
             <p>
-              A bot that can run commands on a computer at home needs some care. The Pi is locked down, the data is
-              backed up daily with encryption and a copy goes off-site, and a written runbook lets me rebuild the whole
-              thing from scratch.
+              The Pi is locked down, the data is backed up daily with encryption and a copy goes off-site, and a
+              written runbook lets me rebuild the whole thing from scratch.
             </p>
           </div>
         </div>
