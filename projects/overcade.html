@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Overcade - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Overcade</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-9">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/overcade</p>
+            <h2><span class="secondary-color">&gt;</span> Overcade<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Dec 2024 (Ongoing)</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              <em>Overcade</em> is my arcade and pinball <em>rental business</em> in Belgium. I collect and restore
+              original machines, and companies and private customers can rent them for the office, at home or for events.
+              This is the website I built for it:
+              <a href="https://overcade.be" class="red-link" target="_blank" rel="noopener noreferrer">overcade.be</a>.
+            </p>
+            <p>
+              The heart of the site is the <em>catalogue</em>. Every machine is a Markdown file with a few properties:
+              category, number of players, force feedback, controls and genre. Those properties drive the filter sidebar,
+              the specification list on each machine's page and a photo carousel. Filtering happens in the browser
+              and is kept in the URL, so a filtered list can be shared. Interested visitors get to a
+              <em>contact page</em> with my email, phone number and address. There's also a page about the online
+              scoreboard where players can compare high scores, which is built on
+              <a href="agon.html" class="red-link">Agon</a>.
+            </p>
+            <p>
+              The site is fully <em>bilingual</em>: Dutch at the root and English under <code>/en/</code>, built
+              by <em>Jekyll</em> with the <em>jekyll-polyglot</em> plugin. The templates exist only once and all text
+              lives in one data file per language, so the two versions can't drift apart in layout. A missing
+              translation falls back to Dutch, and every build lists what's still untranslated.
+            </p>
+            <p>
+              I chose <em>Jekyll</em> because the content hardly ever changes, so a static site is all I need.
+              Styling is <em>Tailwind CSS</em>, using markup patterns from <em>Hyper UI</em>. Photos of the machines are
+              resized to several widths at build time and lazy loaded, which keeps the pages light.
+              Pushing to <em>master</em> runs a GitHub Actions workflow that builds the site and deploys it over FTPS.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/overcade/home-desktop-thumb.jpg"
+              data-src="../img/projects/overcade/home-desktop.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The Overcade home page with a Pac-Man arcade machine in an office lounge"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/overcade/games-desktop-thumb.jpg"
+              data-src="../img/projects/overcade/games-desktop.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The catalogue page with a filter sidebar and cards for Pac-Man, Avengers: Infinity Quest and Terminator 2"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/overcade/game-detail-thumb.jpg"
+              data-src="../img/projects/overcade/game-detail.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The detail page of the Pac-Man arcade machine with its description and photo carousel"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <img
+              src="../img/projects/overcade/home-mobile.jpg"
+              class="img-responsive mb-2"
+              alt="The English home page on a phone"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <img
+              src="../img/projects/overcade/games-mobile.jpg"
+              class="img-responsive mb-2"
+              alt="The catalogue page on a phone, with a collapsed filter menu"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html#projects" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>
