@@ -178,6 +178,11 @@ h4 {
   transition: transform 0.4s ease;
 }
 
+/* .spotlight and the section grids share it, so the cursor lands on the same dots. */
+:root {
+  --dot-grid-size: 32px;
+}
+
 .spotlight {
   position: fixed;
   top: 0;
@@ -186,18 +191,103 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1px, transparent 1.5px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1.5px, transparent 2px);
+  background-size: var(--dot-grid-size) var(--dot-grid-size);
   -webkit-mask-image: radial-gradient(
-    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    210px circle at var(--spot-x, -999px) var(--spot-y, -999px),
     black,
     transparent
   );
   mask-image: radial-gradient(
-    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    210px circle at var(--spot-x, -999px) var(--spot-y, -999px),
     black,
     transparent
   );
+}
+
+/* Fixed to the window like .spotlight, so the cursor darkens these exact dots. */
+#home,
+#contact {
+  position: relative;
+}
+
+#home::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(60, 60, 60, 0.22) 1.5px, transparent 2px);
+  background-size: var(--dot-grid-size) var(--dot-grid-size);
+  background-attachment: fixed;
+}
+
+#home::before {
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
+}
+
+/* Centred on the links column, because parallax carries the catchphrase far above the section. */
+#contact::before {
+  -webkit-mask-image: radial-gradient(ellipse 50% 70% at 68% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 70% at 68% 50%, black 30%, transparent 100%);
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.crop-mark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(60, 60, 60, 0.4);
+}
+
+.crop-mark.top-left {
+  top: -10px;
+  left: -10px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.crop-mark.top-right {
+  top: -10px;
+  right: -10px;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.crop-mark.bottom-left {
+  bottom: -10px;
+  left: -10px;
+  border-right: 0;
+  border-top: 0;
+}
+
+.crop-mark.bottom-right {
+  bottom: -10px;
+  right: -10px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* Sits in the picture's bottom margin, which collapses through .photo-frame. */
+.photo-label {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 0.65rem;
+  line-height: 1;
+  color: rgba(60, 60, 60, 0.45);
 }
 
 .scroll-progress {
@@ -244,7 +334,9 @@ h4 {
   }
 
   .spotlight,
-  .skill-logos {
+  .skill-logos,
+  #home::before,
+  #contact::before {
     display: none;
   }
 }
@@ -289,6 +381,14 @@ em {
 .portret-picture {
   overflow: hidden;
   margin-bottom: 2rem;
+}
+
+/* The crop marks frame this box, so the photo has to fill it. */
+.portret-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .about-cv {
@@ -627,10 +727,6 @@ em {
     height: 40vw;
   }
 
-  .portret-picture img {
-    margin-top: -13vw;
-  }
-
   .skills {
     margin-bottom: none;
     /* font-size: 0.9rem; */
@@ -675,10 +771,6 @@ em {
     height: 40vw;
   } */
 
-  .portret-picture img {
-    margin-top: -8vh;
-  }
-
   .skills {
     font-size: 1rem;
   }
@@ -704,10 +796,6 @@ em {
     height: 35vw;
   }
 
-  .portret-picture img {
-    margin-top: -7.5vw;
-  }
-
   h4 {
     font-size: 1.2rem;
   }
@@ -725,10 +813,6 @@ em {
 
   .portret-picture {
     height: 40vw;
-  }
-
-  .portret-picture img {
-    margin-top: -4.5vw;
   }
 
   .contact-info img {
