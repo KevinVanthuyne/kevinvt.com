@@ -178,6 +178,11 @@ h4 {
   transition: transform 0.4s ease;
 }
 
+/* .spotlight and the section grids share it, so the cursor lands on the same dots. */
+:root {
+  --dot-grid-size: 24px;
+}
+
 .spotlight {
   position: fixed;
   top: 0;
@@ -187,7 +192,7 @@ h4 {
   z-index: -1;
   pointer-events: none;
   background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1px, transparent 1.5px);
-  background-size: 24px 24px;
+  background-size: var(--dot-grid-size) var(--dot-grid-size);
   -webkit-mask-image: radial-gradient(
     180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
     black,
@@ -200,7 +205,7 @@ h4 {
   );
 }
 
-/* Uses the same 24px grid fixed to the window as .spotlight, so the cursor darkens these exact dots. */
+/* Fixed to the window like .spotlight, so the cursor darkens these exact dots. */
 #home,
 #contact {
   position: relative;
@@ -217,8 +222,11 @@ h4 {
   z-index: -1;
   pointer-events: none;
   background-image: radial-gradient(rgba(60, 60, 60, 0.18) 1px, transparent 1.5px);
-  background-size: 24px 24px;
+  background-size: var(--dot-grid-size) var(--dot-grid-size);
   background-attachment: fixed;
+}
+
+#home::before {
   -webkit-mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
   mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
 }
@@ -237,35 +245,35 @@ h4 {
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 0 solid rgba(60, 60, 60, 0.4);
+  border: 1px solid rgba(60, 60, 60, 0.4);
 }
 
 .crop-mark.top-left {
   top: -10px;
   left: -10px;
-  border-top-width: 1px;
-  border-left-width: 1px;
+  border-right: 0;
+  border-bottom: 0;
 }
 
 .crop-mark.top-right {
   top: -10px;
   right: -10px;
-  border-top-width: 1px;
-  border-right-width: 1px;
+  border-left: 0;
+  border-bottom: 0;
 }
 
 .crop-mark.bottom-left {
   bottom: -10px;
   left: -10px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
+  border-right: 0;
+  border-top: 0;
 }
 
 .crop-mark.bottom-right {
   bottom: -10px;
   right: -10px;
-  border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-left: 0;
+  border-top: 0;
 }
 
 /* Sits in the picture's bottom margin, which collapses through .photo-frame. */
@@ -373,6 +381,14 @@ em {
 .portret-picture {
   overflow: hidden;
   margin-bottom: 2rem;
+}
+
+/* The crop marks frame this box, so the photo has to fill it. */
+.portret-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .about-cv {
@@ -711,10 +727,6 @@ em {
     height: 40vw;
   }
 
-  .portret-picture img {
-    margin-top: -13vw;
-  }
-
   .skills {
     margin-bottom: none;
     /* font-size: 0.9rem; */
@@ -759,10 +771,6 @@ em {
     height: 40vw;
   } */
 
-  .portret-picture img {
-    margin-top: -8vh;
-  }
-
   .skills {
     font-size: 1rem;
   }
@@ -788,10 +796,6 @@ em {
     height: 35vw;
   }
 
-  .portret-picture img {
-    margin-top: -7.5vw;
-  }
-
   h4 {
     font-size: 1.2rem;
   }
@@ -809,10 +813,6 @@ em {
 
   .portret-picture {
     height: 40vw;
-  }
-
-  .portret-picture img {
-    margin-top: -4.5vw;
   }
 
   .contact-info img {
