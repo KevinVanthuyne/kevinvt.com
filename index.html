@@ -617,6 +617,17 @@
           </div>
         </section>
       </main>
+
+      <footer class="row git-log" hidden>
+        <div class="col-sm-5 col-sm-offset-6">
+          <p class="command"><span class="secondary-color">$</span> git log -1 --no-merges --abbrev-commit</p>
+          <p>
+            commit <a class="git-log-hash red-link" target="_blank" rel="noopener noreferrer"></a><br />
+            Date:&nbsp;&nbsp;&nbsp;<span class="git-log-date"></span>
+          </p>
+          <p class="git-log-message"></p>
+        </div>
+      </footer>
     </div>
 
     <script src="js/fitty.min.js"></script>
@@ -708,82 +719,6 @@
       media.addListener(widthChanged);
     </script>
 
-    <script>
-      (function () {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          return;
-        }
-
-        // Letters are wrapped and hidden up front, so fitty and the layout size for the full text.
-        function wrapCharacters(element) {
-          var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-          var textNodes = [];
-          var chars = [];
-          while (walker.nextNode()) {
-            if (walker.currentNode.textContent.trim()) {
-              textNodes.push(walker.currentNode);
-            }
-          }
-          textNodes.forEach((node) => {
-            var fragment = document.createDocumentFragment();
-            node.textContent.split(/(\s+)/).forEach((part) => {
-              if (!part) {
-                return;
-              }
-              if (/^\s+$/.test(part)) {
-                fragment.appendChild(document.createTextNode(part));
-                return;
-              }
-              part.split("").forEach((char) => {
-                var span = document.createElement("span");
-                span.className = "typed-char";
-                span.textContent = char;
-                fragment.appendChild(span);
-                chars.push(span);
-              });
-            });
-            node.parentNode.replaceChild(fragment, node);
-          });
-          return chars;
-        }
-
-        function typeOut(chars, startDelay) {
-          var typedCount = 0;
-          function typeNext() {
-            if (typedCount > 0) {
-              chars[typedCount - 1].classList.remove("typing-cursor");
-            }
-            var char = chars[typedCount];
-            char.classList.add("typed");
-            typedCount++;
-            // The last character gets no caret: headings end on their own blinking _, the subtitle just stops.
-            if (typedCount < chars.length) {
-              char.classList.add("typing-cursor");
-              setTimeout(typeNext, 60);
-            }
-          }
-          setTimeout(typeNext, startDelay);
-        }
-
-        typeOut(wrapCharacters(document.querySelector(".subtitle")), 700);
-
-        var headingChars = new Map();
-        var observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                observer.unobserve(entry.target);
-                typeOut(headingChars.get(entry.target), 0);
-              }
-            });
-          },
-          { rootMargin: "0px 0px -15% 0px" }
-        );
-        document.querySelectorAll("main h2").forEach((heading) => {
-          headingChars.set(heading, wrapCharacters(heading));
-          observer.observe(heading);
-        });
-      })();
-    </script>
+    <script src="js/terminal.js"></script>
   </body>
 </html>

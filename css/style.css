@@ -154,9 +154,77 @@ h4 {
   background-color: rgb(231, 57, 57);
 }
 
+.navbar a,
+.navbar-mobile a {
+  transition: color 0.3s ease;
+}
+
+.navbar a.active,
+.navbar-mobile a.active {
+  color: rgb(60, 60, 60);
+}
+
+.navbar ul {
+  position: relative;
+}
+
+.nav-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-marker.ready {
+  transition: transform 0.4s ease;
+}
+
+.cd-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 10vw;
+  background-color: rgb(245, 241, 234);
+  animation: cd-fade-in 0.15s ease;
+}
+
+@keyframes cd-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.cd-command {
+  font-size: 1.5rem;
+}
+
+.git-log {
+  margin-bottom: 3rem;
+  font-size: 0.7rem;
+  color: rgb(189, 184, 177);
+}
+
+.git-log p {
+  margin-bottom: 0.5em;
+}
+
+.git-log-message {
+  padding-left: 2em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
+  }
+
+  .navbar a,
+  .navbar-mobile a,
+  .nav-marker.ready {
+    transition: none;
   }
 }
 
