@@ -709,7 +709,6 @@
     </script>
 
     <script>
-      // terminal touches: the subtitle and section headings type themselves out
       (function () {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           return;
@@ -721,12 +720,17 @@
           var textNodes = [];
           var chars = [];
           while (walker.nextNode()) {
-            textNodes.push(walker.currentNode);
+            if (walker.currentNode.textContent.trim()) {
+              textNodes.push(walker.currentNode);
+            }
           }
           textNodes.forEach((node) => {
             var fragment = document.createDocumentFragment();
             node.textContent.split(/(\s+)/).forEach((part) => {
-              if (/^\s*$/.test(part)) {
+              if (!part) {
+                return;
+              }
+              if (/^\s+$/.test(part)) {
                 fragment.appendChild(document.createTextNode(part));
                 return;
               }

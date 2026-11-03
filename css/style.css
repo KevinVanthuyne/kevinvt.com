@@ -160,6 +160,13 @@ h4 {
   }
 }
 
+/* Headings the reader never scrolled to have not typed out yet. */
+@media print {
+  .typed-char {
+    opacity: 1;
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
