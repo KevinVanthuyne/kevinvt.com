@@ -178,7 +178,6 @@ h4 {
   transition: transform 0.4s ease;
 }
 
-/* A dot grid that only shows in a soft circle around the mouse. */
 .spotlight {
   position: fixed;
   top: 0;
@@ -243,6 +242,11 @@ h4 {
   .typed-char {
     opacity: 1;
   }
+
+  .spotlight,
+  .skill-logos {
+    display: none;
+  }
 }
 
 ul {
@@ -304,6 +308,7 @@ em {
   bottom: 0;
   left: 0;
   z-index: -1;
+  overflow: hidden;
   pointer-events: none;
 }
 
