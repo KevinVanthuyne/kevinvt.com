@@ -191,6 +191,18 @@ h4 {
   color: rgb(189, 184, 177);
 }
 
+/* PT Mono has no bold, and a synthesised bold can be wider, which would grow the bar as it fills. */
+.scroll-progress .secondary-color {
+  font-weight: normal;
+}
+
+/* On short screens such as a phone in landscape, the bar would cover the end of the side nav. */
+@media (max-height: 500px) {
+  .scroll-progress {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;

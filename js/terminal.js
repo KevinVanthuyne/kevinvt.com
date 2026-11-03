@@ -174,7 +174,9 @@
     function update() {
       var scrollable = document.documentElement.scrollHeight - window.innerHeight;
       progress.hidden = scrollable <= 0;
-      var percent = scrollable > 0 ? Math.min(100, Math.round((window.scrollY / scrollable) * 100)) : 0;
+      // Elastic overscroll can push scrollY past either end.
+      var percent =
+        scrollable > 0 ? Math.max(0, Math.min(100, Math.round((window.scrollY / scrollable) * 100))) : 0;
       if (percent === shownPercent) {
         return;
       }
