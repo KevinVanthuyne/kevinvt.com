@@ -205,8 +205,30 @@
     window.addEventListener("load", scheduleUpdate);
   }
 
+  function followMouseWithSpotlight() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+    var spotlight = document.createElement("div");
+    spotlight.className = "spotlight";
+    document.body.prepend(spotlight);
+    document.addEventListener(
+      "mousemove",
+      (event) => {
+        spotlight.style.setProperty("--spot-x", event.clientX + "px");
+        spotlight.style.setProperty("--spot-y", event.clientY + "px");
+      },
+      { passive: true }
+    );
+    document.documentElement.addEventListener("mouseleave", () => {
+      spotlight.style.removeProperty("--spot-x");
+      spotlight.style.removeProperty("--spot-y");
+    });
+  }
+
   markActiveSection();
   showScrollProgress();
+  followMouseWithSpotlight();
 
   if (reduceMotion) {
     return;

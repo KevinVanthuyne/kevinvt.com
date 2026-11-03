@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-sm-6 col-sm-pull-4">
-              <p class="rellax subtitle fit-text" data-rellax-speed="-5">
+              <p class="rellax subtitle fit-text" data-rellax-speed="-4">
                 Software<br />
                 Engineer<br />
                 <span class="ampersand">&amp;</span>&nbsp;Maker
@@ -74,14 +74,20 @@
         <section>
           <div class="row mt-sm-10">
             <div class="col-sm-4 col-sm-offset-1 rellax" data-rellax-speed="3">
-              <div class="portret-picture">
-                <img
-                  src="img/kevin.jpg"
-                  alt="portet picture of Kevin Vanthuyne"
-                  class="img-responsive rellax"
-                  data-rellax-speed="-2"
-                  id="about"
-                />
+              <div class="photo-frame">
+                <div class="portret-picture">
+                  <img
+                    src="img/kevin.jpg"
+                    alt="portrait picture of Kevin Vanthuyne"
+                    class="img-responsive"
+                    id="about"
+                  />
+                </div>
+                <span class="crop-mark top-left"></span>
+                <span class="crop-mark top-right"></span>
+                <span class="crop-mark bottom-left"></span>
+                <span class="crop-mark bottom-right"></span>
+                <p class="photo-label"><span>kevin.jpg</span><span>907 &times; 1209</span></p>
               </div>
               <!-- <div class="hor-stripe hidden-xs"></div> -->
             </div>
@@ -120,6 +126,18 @@
 
         <!-- Skills -->
         <section id="skills">
+          <div class="skill-logos hidden-xs">
+            <img src="img/icons/skills/angular.svg" alt="" class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.5" loading="lazy" style="left: 1%; top: 12%; width: 3.5rem" />
+            <img src="img/icons/skills/python.svg" alt="" class="rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" loading="lazy" style="left: 11%; top: 88%; width: 3.5rem" />
+            <img src="img/icons/skills/docker.svg" alt="" class="rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" loading="lazy" style="left: 21%; top: -12%; width: 3.5rem" />
+            <img src="img/icons/skills/typescript.svg" alt="" class="rellax" data-rellax-speed="2" data-rellax-percentage="0.5" loading="lazy" style="left: 31%; top: 48%; width: 3.5rem" />
+            <img src="img/icons/skills/java.svg" alt="" class="rellax" data-rellax-speed="-2" data-rellax-percentage="0.5" loading="lazy" style="left: 41%; top: 104%; width: 3.5rem" />
+            <img src="img/icons/skills/django.svg" alt="" class="rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" loading="lazy" style="left: 51%; top: -5%; width: 3.5rem" />
+            <img src="img/icons/skills/postgresql.svg" alt="" class="rellax" data-rellax-speed="3" data-rellax-percentage="0.5" loading="lazy" style="left: 61%; top: 70%; width: 3.5rem" />
+            <img src="img/icons/skills/html5.svg" alt="" class="rellax" data-rellax-speed="-2" data-rellax-percentage="0.5" loading="lazy" style="left: 71%; top: 25%; width: 3.5rem" />
+            <img src="img/icons/skills/css.svg" alt="" class="rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" loading="lazy" style="left: 81%; top: 100%; width: 3.5rem" />
+            <img src="img/icons/skills/git.svg" alt="" class="rellax" data-rellax-speed="1" data-rellax-percentage="0.5" loading="lazy" style="left: 91%; top: 5%; width: 3.5rem" />
+          </div>
           <div class="row mt-5 mt-sm-10">
             <div class="col-sm-11 col-sm-offset-1">
               <p class="command"><span class="secondary-color">$</span> ls skills/</p>
@@ -141,14 +159,6 @@
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    React
-                    <ul>
-                      <li>
-                        Redux, Immutable, Lodash, ...
-                      </li>
-                    </ul>
-                  </li>
                   <li>Responsive webdesign & mobile first</li>
                 </ul>
               </div>
@@ -159,18 +169,23 @@
                 <h3>Backend<span class="secondary-color">:</span></h3>
                 <ul class="skills">
                   <li>
-                    Java
-                    <ul>
-                      <li>Spring (Boot), Micronaut</li>
-                    </ul>
-                  </li>
-                  <li>
                     Javascript
                     <ul>
                       <li>Typescript, NodeJS</li>
                     </ul>
                   </li>
-                  <li>Python, PHP, C++, C#</li>
+                  <li>
+                    Python
+                    <ul>
+                      <li>Django</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Java
+                    <ul>
+                      <li>Spring (Boot), Micronaut</li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -201,6 +216,14 @@
               <div data-aos="fade-up">
                 <h3>DevOps<span class="secondary-color">:</span></h3>
                 <ul class="skills">
+                  <li>
+                    Azure
+                    <ul>
+                      <li>
+                        App Service, Functions, Storage, Key Vault, VNets, ...
+                      </li>
+                    </ul>
+                  </li>
                   <li>
                     AWS
                     <ul>
@@ -676,7 +699,7 @@
 
       //responsive javascript stuff
 
-      var rellax = new Rellax(".rellax");
+      var rellax;
       VanillaTilt.init(document.querySelectorAll(".project"), {
         reverse: true,
         speed: 5000,
@@ -694,7 +717,9 @@
           document.querySelector(".navbar-mobile").style.maxHeight = "0";
           // mobile
         } else {
-          rellax.destroy();
+          if (rellax) {
+            rellax.destroy();
+          }
           fitty(".fit-text", {
             maxSize: 105,
           });
