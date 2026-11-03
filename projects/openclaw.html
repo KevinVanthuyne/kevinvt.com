@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>OpenClaw - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;OpenClaw</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/openclaw</p>
+            <h2><span class="secondary-color">&gt;</span> OpenClaw<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Oct 2026 - present</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              OpenClaw is an <em>AI assistant</em> that you talk to through a chat app. Mine runs on a
+              <em>Raspberry Pi 5</em> at home and I reach it through <em>Telegram</em>. It answers my questions, runs
+              checks on a schedule and messages me when something needs my attention. The bot only talks to my own
+              account and can't be added to groups.
+            </p>
+            <p>
+              The useful part is the <em>skills</em>. I write them myself, as small scripts that OpenClaw can run:
+            </p>
+            <ul class="mb-2">
+              <li>looking up the price of an arcade game in a price guide, and sending the cabinet photo along</li>
+              <li>watching marketplaces and web shops, and alerting me to new listings or restocks</li>
+              <li>checking fuel prices, travel time and traffic on request</li>
+              <li>weekly reports on my Home Assistant data</li>
+            </ul>
+            <p>
+              Two small plugins add Telegram buttons and a slash command that answers without calling the AI model at
+              all, so it's instant. Voice messages get transcribed too. An earlier skill messaged me to ask how to
+              categorise payments it didn't recognise. I've since retired it.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/projects/openclaw/openclaw-architecture-thumb.jpg"
+              data-src="../img/projects/openclaw/openclaw-architecture.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Diagram of the OpenClaw setup: Telegram sends messages to the OpenClaw gateway on a Raspberry Pi 5, which talks to a cloud AI model and runs skills, plugins and scheduled jobs. A daily encrypted backup and health pings leave the Pi."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              A bot that can run commands on a computer at home needs some care, so I locked the Pi down: key-only SSH,
+              automatic security updates and a Telegram bot that only answers me. A hardware watchdog restarts the Pi
+              when it freezes, and a memory limit stops OpenClaw from eating all of it. An external monitor emails me
+              when the Pi or its backup goes quiet.
+            </p>
+            <p>
+              In October the Pi started hanging. OpenClaw went silent on Telegram, and a power cycle fixed it a few
+              times, until it no longer did. I turned on persistent logs, then tested the SSD through two different
+              SATA-to-USB adapters on my PC. Neither adapter was ever detected, while a USB stick in the same port
+              worked at once. So the SSD was dead.
+            </p>
+            <p>
+              I rebuilt the Pi on an SD card and set up <em>daily encrypted backups</em> that are copied to cloud
+              storage as well. I also wrote the rebuild down as a step-by-step runbook, with one route that restores
+              from a backup and one that starts from scratch.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/projects/openclaw/openclaw-rebuild-thumb.jpg"
+              data-src="../img/projects/openclaw/openclaw-rebuild.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Flow of the rebuild runbook in seven steps: flash the OS, harden, install OpenClaw, restore the encrypted backup, re-create secrets, rebuild extras and check that everything works."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>
