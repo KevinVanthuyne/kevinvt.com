@@ -51,7 +51,7 @@
               site says so on every machine page.
             </p>
             <p>
-              The hard part is not the web page, it is the data. An ad says "TZ, VB 6500,-" or "Verkaufe Addams Family" and has to
+              The hard part is not the web page, it is the data. A listing says "TZ for 6500" or "selling my Addams Family" and has to
               become a specific machine, an edition and a price in euros. A pipeline reads ads in several languages and
               extracts the price, the currency, the location and the type of ad (machine, parts, wanted, virtual pinball).
               It then matches the machine against the public Open Pinball Database (OPDB) catalogue: known aliases and exact names first,
@@ -62,9 +62,8 @@
             <p>
               Per machine the guide shows a median, the P25-P75 range, the number of ads and a 12 month trend. Outliers are
               removed with the 1.5 x IQR rule, a repost of the same ad counts once, and below three observations the guide
-              shows "not enough data" instead of a price. Ads are followed over time (active, sold, closed, removed) and price
-              changes are stored as events, which gives the price history chart for every machine. Prices can also be split by
-              country and by condition, and where bids are known the guide shows the highest bid compared to the asking price.
+              shows "not enough data" instead of a price. Prices are followed over time and every change is stored, which gives the price history chart for every machine. Prices can also be split by
+              country and by condition.
               At the moment it holds around 15,000 ads and prices for more than 460 machines. The interface is in Dutch.
             </p>
             <p>
