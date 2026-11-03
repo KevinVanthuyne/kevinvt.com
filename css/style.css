@@ -181,6 +181,14 @@ h4 {
 /* .spotlight and the section grids share it, so the cursor lands on the same dots. */
 :root {
   --dot-grid-size: 32px;
+  --section-dot-alpha: 0.18;
+}
+
+/* Without a mouse there is no spotlight to bring the grid to life, so it is only a pattern and needs to stay quieter. */
+@media (hover: none), (pointer: coarse) {
+  :root {
+    --section-dot-alpha: 0.11;
+  }
 }
 
 .spotlight {
@@ -221,17 +229,9 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.18) 1.5px, transparent 2px);
+  background-image: radial-gradient(rgba(60, 60, 60, var(--section-dot-alpha)) 1.5px, transparent 2px);
   background-size: var(--dot-grid-size) var(--dot-grid-size);
   background-attachment: fixed;
-}
-
-/* Phones have no cursor to bring the grid to life, so it is only a pattern there and needs to stay quieter. */
-@media (max-width: 767px) {
-  #home::before,
-  #contact::before {
-    background-image: radial-gradient(rgba(60, 60, 60, 0.11) 1.5px, transparent 2px);
-  }
 }
 
 #home::before {
