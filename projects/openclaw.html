@@ -42,74 +42,43 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-9">
+            <img
+              src="../img/projects/openclaw/openclaw-logo-thumb.png"
+              data-src="../img/projects/openclaw/openclaw-logo.png"
+              class="img-responsive lazy mb-1"
+              alt="The OpenClaw logo: a round red lobster mascot next to the name OpenClaw"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-5">
           <div class="col-sm-12 project-page-description">
             <p>
-              OpenClaw is an <em>AI assistant</em> that you talk to through a chat app. Mine runs on a
+              OpenClaw is an open-source <em>AI assistant</em> that you talk to through a chat app. Mine runs on a
               <em>Raspberry Pi 5</em> at home and I reach it through <em>Telegram</em>. It answers my questions, runs
-              checks on a schedule and messages me when something needs my attention. The bot only talks to my own
-              account and can't be added to groups.
+              checks on a schedule and messages me when something needs my attention.
             </p>
             <p>
               The useful part is the <em>skills</em>. I write them myself, as small scripts that OpenClaw can run:
             </p>
             <ul class="mb-2">
-              <li>looking up the price of an arcade game in a price guide, and sending the cabinet photo along</li>
-              <li>watching marketplaces and web shops, and alerting me to new listings or restocks</li>
-              <li>checking fuel prices, travel time and traffic on request</li>
-              <li>weekly reports on my Home Assistant data</li>
+              <li><span class="secondary-color">&gt;</span> <em>arcade price guide</em>: game values, plus the cabinet photo</li>
+              <li><span class="secondary-color">&gt;</span> <em>arcade scanner</em>: new machines on the marketplaces, hourly</li>
+              <li><span class="secondary-color">&gt;</span> <em>storage scanner</em>: new storage units to rent</li>
+              <li><span class="secondary-color">&gt;</span> <em>stock watcher</em>: pings me when a product is back in stock</li>
+              <li><span class="secondary-color">&gt;</span> <em>cinema watcher</em>: alerts me when new film sessions appear</li>
+              <li><span class="secondary-color">&gt;</span> <em>fuel prices</em>: the cheapest diesel nearby, on request</li>
+              <li><span class="secondary-color">&gt;</span> <em>travel time</em>: live traffic, with the traffic chart</li>
+              <li><span class="secondary-color">&gt;</span> <em>home reports</em>: weekly Home Assistant heating and climate reports</li>
             </ul>
             <p>
-              Two small plugins add Telegram buttons and a slash command that answers without calling the AI model at
-              all, so it's instant. Voice messages get transcribed too. An earlier skill messaged me to ask how to
-              categorise payments it didn't recognise. I've since retired it.
+              A bot that can run commands on a computer at home needs some care. The Pi is locked down, the data is
+              backed up daily with encryption and a copy goes off-site, and a written runbook lets me rebuild the whole
+              thing from scratch.
             </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-sm-12 col-md-9">
-            <img
-              src="../img/projects/openclaw/openclaw-architecture-thumb.jpg"
-              data-src="../img/projects/openclaw/openclaw-architecture.jpg"
-              class="img-responsive lazy mb-1"
-              alt="Diagram of the OpenClaw setup: Telegram sends messages to the OpenClaw gateway on a Raspberry Pi 5, which talks to a cloud AI model and runs skills, plugins and scheduled jobs. A daily encrypted backup and health pings leave the Pi."
-              data-aos="fade-up"
-            />
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-sm-12 project-page-description">
-            <p>
-              A bot that can run commands on a computer at home needs some care, so I locked the Pi down: key-only SSH,
-              automatic security updates and a Telegram bot that only answers me. A hardware watchdog restarts the Pi
-              when it freezes, and a memory limit stops OpenClaw from eating all of it. An external monitor emails me
-              when the Pi or its backup goes quiet.
-            </p>
-            <p>
-              In October the Pi started hanging. OpenClaw went silent on Telegram, and a power cycle fixed it a few
-              times, until it no longer did. I turned on persistent logs, then tested the SSD through two different
-              SATA-to-USB adapters on my PC. Neither adapter was ever detected, while a USB stick in the same port
-              worked at once. So the SSD was dead.
-            </p>
-            <p>
-              I rebuilt the Pi on an SD card and set up <em>daily encrypted backups</em> that are copied to cloud
-              storage as well. I also wrote the rebuild down as a step-by-step runbook, with one route that restores
-              from a backup and one that starts from scratch.
-            </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-sm-12 col-md-9">
-            <img
-              src="../img/projects/openclaw/openclaw-rebuild-thumb.jpg"
-              data-src="../img/projects/openclaw/openclaw-rebuild.jpg"
-              class="img-responsive lazy mb-1"
-              alt="Flow of the rebuild runbook in seven steps: flash the OS, harden, install OpenClaw, restore the encrypted backup, re-create secrets, rebuild extras and check that everything works."
-              data-aos="fade-up"
-            />
           </div>
         </div>
 

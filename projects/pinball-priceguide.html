@@ -45,32 +45,27 @@
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              The Pinball Price Guide answers one question: <em>what does this pinball machine usually go for in Europe?</em>
-              I run a pinball and arcade machine rental business and a YouTube channel about pinball, so this is a question I care about.
-              The guide is built on <em>asking prices</em> gathered from European sources, not on real sale prices, and the
-              site says so on every machine page.
+              I was simply curious: <em>what do pinball machines cost right now, what did they cost during COVID and before,
+              and how much data could I gather to answer that?</em>
+              There are several price guides for the US, but not really for Europe, and prices here can differ a lot.
+              The guide is built on <em>asking prices</em>, not on real sale prices, and the site says so on every machine page.
             </p>
             <p>
-              The hard part is not the web page, it is the data. A listing says "TZ for 6500" or "selling my Addams Family" and has to
-              become a specific machine, an edition and a price in euros. A pipeline reads ads in several languages and
-              extracts the price, the currency, the location and the type of ad (machine, parts, wanted, virtual pinball).
-              It then matches the machine against the public Open Pinball Database (OPDB) catalogue: known aliases and exact names first,
-              then fuzzy matching. A confident match is accepted automatically, anything unsure goes to a review screen
-              where I pick the right machine by hand. For the really difficult ads there is an optional LLM step, and I also had
-              a language model check about 15,000 stored ads to find wrong matches and prices, and a command applies the corrections it found.
+              A pipeline reads ads in several languages and extracts the price, the currency, the location and the type of ad
+              (machine, parts, wanted, virtual pinball). It then matches each ad to a specific machine and edition.
+              Anything unsure goes to a review screen where I pick the right machine by hand. For the really difficult ads
+              there is an optional LLM step.
             </p>
             <p>
-              Per machine the guide shows a median, the P25-P75 range, the number of ads and a 12 month trend. Outliers are
-              removed with the 1.5 x IQR rule, a repost of the same ad counts once, and below three observations the guide
-              shows "not enough data" instead of a price. Prices are followed over time and every change is stored, which gives the price history chart for every machine. Prices can also be split by
-              country and by condition.
-              At the moment it holds around 15,000 ads and prices for more than 460 machines. The interface is in Dutch.
+              Per machine the guide shows a typical price, a price range and a 12 month trend. Prices are followed over time
+              and every change is stored, which gives a price history chart for every machine. Prices can also be split by
+              country and by condition. At the moment it holds around 15,000 ads and prices for more than 460 machines.
             </p>
             <p>
               The project has 2 major components:
             </p>
               <ol class="mb-2">
-                <li>Backend: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, lifecycle, statistics) and SQLite or PostgreSQL</li>
+                <li>Backend: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, statistics) and SQLite or PostgreSQL</li>
                 <li>Frontend: Angular 22 with standalone components and signals, Bootstrap 5 and Chart.js for the charts</li>
               </ol>
             <p>

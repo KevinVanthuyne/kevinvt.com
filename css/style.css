@@ -245,6 +245,37 @@ h4 {
   mask-image: radial-gradient(ellipse 50% 70% at 68% 50%, black 30%, transparent 100%);
 }
 
+/* Project pages get the same fields: one behind the heading at the top, one behind the Back link at the end. */
+.project-page {
+  position: relative;
+}
+
+.project-page::before,
+.project-page::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(60, 60, 60, var(--section-dot-alpha)) 1.5px, transparent 2px);
+  background-size: var(--dot-grid-size) var(--dot-grid-size);
+  background-attachment: fixed;
+}
+
+.project-page::before {
+  top: -8rem;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 30% 45%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 55% at 30% 45%, black 30%, transparent 100%);
+}
+
+.project-page::after {
+  bottom: -2rem;
+  -webkit-mask-image: radial-gradient(ellipse 50% 60% at 20% 60%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 60% at 20% 60%, black 30%, transparent 100%);
+}
+
 .photo-frame {
   position: relative;
 }
@@ -344,7 +375,9 @@ h4 {
   .spotlight,
   .skill-logos,
   #home::before,
-  #contact::before {
+  #contact::before,
+  .project-page::before,
+  .project-page::after {
     display: none;
   }
 }
@@ -451,6 +484,31 @@ em {
 }
 
 /* Projects */
+
+.project-filter {
+  margin-top: -1em;
+  margin-bottom: 2rem;
+  color: rgb(189, 184, 177);
+}
+
+.project-filter .btn-link {
+  padding: 0 0.3em;
+  font-size: inherit;
+  color: gray;
+}
+
+.project-filter .btn-link:hover,
+.project-filter .btn-link:focus {
+  color: rgb(60, 60, 60);
+  text-decoration: none;
+  outline: none;
+}
+
+.project-filter .btn-link.active {
+  color: rgb(231, 57, 57);
+  font-weight: bold;
+  box-shadow: none;
+}
 
 .project {
   margin-bottom: 1rem;

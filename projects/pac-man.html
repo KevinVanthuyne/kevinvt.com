@@ -53,24 +53,20 @@
         <div class="row mt-5">
           <div class="col-sm-12 project-page-description">
             <p>
-              I restored an original 1980 <em>Pac-Man</em> arcade cabinet from <em>two wrecked ones</em>. One cabinet had a decent
+              I restored an original 1980 <em>Pac-Man</em> arcade cabinet from <em>two wrecked ones</em>. One had a decent
               body with its marquee, bezel and control panel, but no screen, no game board and no coin door. The other was
-              falling apart, with a swollen top, a bottom plate that was mostly gone and ruined side art, but it still held a working CRT screen and
-              the game's circuit board. The plan was to put the good parts of both into the better cabinet and keep everything as original as possible.
+              falling apart, but it still held a working CRT screen and the game's circuit board. I moved the good parts of both
+              into the better cabinet and kept everything as original as possible.
               I made a <a href="https://www.youtube.com/watch?v=QKKdYOs6Pds" class="red-link" target="_blank" rel="noopener noreferrer">video about the whole restoration</a>
               on my YouTube channel Overtinker.
             </p>
             <p>
-              After a thorough clean, I checked the fuses and the power supply and powered everything up for the first time, through a
-              transformer, as the cabinet came from the US and runs on 110V. The game and the screen worked. Joystick and buttons needed small repairs:
-              a loose wire on a leaf switch and a broken start button. Then I found that the game ran far too fast. Operators used to modify Pac-Man this way
-              so players lost their quarters sooner. The culprit was a modified ROM chip on the game board. To put the original code back, I erased a 2532 ROM with UV light and programmed it with an open source ROM programmer and an Arduino. After that,
-              Pac-Man was back to its normal speed.
+              After a thorough clean, I checked the fuses and powered everything up. The game and the screen worked, but the game ran far too fast.
+              The cause was a speed chip (a modified ROM) that operators added. I replaced it with an original one that I burned myself with an open source ROM programmer.
             </p>
             <p>
-              The rest was careful restoration work. I combined the best parts of both control panels and painted the rusty joystick frame.
-              I cleaned the 40-year-old paint with a wet rag and, as a last step, a magic eraser. I took the coin door apart, sanded it to bare metal, sprayed it and riveted its plate back on.
-              The marquee brackets got the same treatment. The screen had lost its green, which turned out to be a cracked solder joint on the video header, fixed by reflowing the solder.
+              The rest was careful restoration work. I combined the best parts of both control panels, and I sanded, sprayed and riveted the coin door and marquee brackets.
+              The screen had lost its green, which turned out to be a cracked solder joint that I fixed by reflowing it.
               I kept the old T-molding and the control panel overlay on purpose, as they show the cabinet's age.
             </p>
           </div>
@@ -79,12 +75,14 @@
         <div class="row mt-5">
           <div class="col-sm-12 col-md-6">
             <img
-              src="../img/projects/pac-man/two-wrecked-cabinets-thumb.jpg"
-              data-src="../img/projects/pac-man/two-wrecked-cabinets.jpg"
+              src="../img/projects/pac-man/cabinets-before-thumb.jpg"
+              data-src="../img/projects/pac-man/cabinets-before.jpg"
               class="img-responsive lazy mb-1"
-              alt="The two Pac-Man cabinets before the restoration: a shell with marquee and a cabinet with badly damaged side art."
+              alt="The two Pac-Man cabinets before the restoration: one with marquee and control panel, one gutted."
               data-aos="fade-up"
             />
+          </div>
+          <div class="col-sm-12 col-md-6">
             <img
               src="../img/projects/pac-man/game-pcb-thumb.jpg"
               data-src="../img/projects/pac-man/game-pcb.jpg"
@@ -92,48 +90,25 @@
               alt="Close-up of the original Pac-Man game circuit board."
               data-aos="fade-up"
             />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
             <img
-              src="../img/projects/pac-man/speed-rom-socket-thumb.jpg"
-              data-src="../img/projects/pac-man/speed-rom-socket.jpg"
+              src="../img/projects/pac-man/screen-running-thumb.jpg"
+              data-src="../img/projects/pac-man/screen-running.jpg"
               class="img-responsive lazy mb-1"
-              alt="The game board with the modified ROM chip taken out of its socket."
-              data-aos="fade-up"
-            />
-            <img
-              src="../img/projects/pac-man/coin-door-restored-thumb.jpg"
-              data-src="../img/projects/pac-man/coin-door-restored.jpg"
-              class="img-responsive lazy mb-1"
-              alt="The restored coin door mounted in the cabinet."
+              alt="Pac-Man running on the original CRT screen."
               data-aos="fade-up"
             />
           </div>
           <div class="col-sm-12 col-md-6">
             <img
-              src="../img/projects/pac-man/good-cabinet-before-thumb.jpg"
-              data-src="../img/projects/pac-man/good-cabinet-before.jpg"
-              class="img-responsive lazy mb-1"
-              alt="The better cabinet before restoration, with its coin door missing, next to the damaged one."
-              data-aos="fade-up"
-            />
-            <img
-              src="../img/projects/pac-man/first-power-on-thumb.jpg"
-              data-src="../img/projects/pac-man/first-power-on.jpg"
-              class="img-responsive lazy mb-1"
-              alt="Pac-Man running on the original CRT screen after the first power on."
-              data-aos="fade-up"
-            />
-            <img
-              src="../img/projects/pac-man/crt-colors-fixed-thumb.jpg"
-              data-src="../img/projects/pac-man/crt-colors-fixed.jpg"
-              class="img-responsive lazy mb-1"
-              alt="The CRT screen showing Pac-Man with correct colors again after the solder repair."
-              data-aos="fade-up"
-            />
-            <img
               src="../img/projects/pac-man/finished-cabinet-thumb.jpg"
               data-src="../img/projects/pac-man/finished-cabinet.jpg"
               class="img-responsive lazy mb-1"
-              alt="The finished Pac-Man cabinet with restored marquee, coin door and control panel."
+              alt="The restored Pac-Man cabinet with marquee, coin door and control panel."
               data-aos="fade-up"
             />
           </div>

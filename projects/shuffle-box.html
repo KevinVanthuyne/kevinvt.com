@@ -58,15 +58,14 @@
             <p>
                 Each hole has a 3D printed chute with two infrared beam break sensors, so a coin dropping through is detected.
                 I soldered all 10 sets by hand, and wired them to a perfboard that combines each pair of beams into one signal for the Pi.
-                The solenoid pulls back a plastic divider on the playfield to release the coins when a game starts.
-                Doing all of this without PCBs cost me a lot of time, so next time I'll design them.
+                The solenoid pulls back a plastic divider underneath the playfield, inside the cabinet, to release the coins when a game starts.
+                Doing all of this without PCBs cost me a lot of time, so next time I might challenge myself to design PCBs.
             </p>
             <p>
                 The game itself is written in Python with <em>Pygame</em>, with a background I redrew from the advert.
                 Up to 5 players can play, and there are 4 game modes: <em>Classic</em>, <em>Plus Minus</em> (some holes deduct points),
                 <em>Collect All</em> and <em>Roving</em> (the scoring holes change every round).
-                When nobody plays, an attract mode cycles through animations. The code is on
-                <a href="https://github.com/KevinVanthuyne/shuffle-box" class="red-link" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                When nobody plays, an attract mode cycles through animations.
             </p>
             <p>
                 I documented the whole build in a <em>video</em> on
@@ -90,7 +89,7 @@
               src="../img/projects/shuffle-box/finished-front-thumb.jpg"
               data-src="../img/projects/shuffle-box/finished-front.jpg"
               class="img-responsive lazy mb-2"
-              alt="The finished Shuffle Box seen from the front, with its screen and lit up holes"
+              alt="The finished Shuffle Box with its screen and playfield, standing in the workshop"
             data-aos="fade-up"
             />
           </div>

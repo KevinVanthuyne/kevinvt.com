@@ -45,34 +45,32 @@
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              Garden App is a <em>progressive web app</em> I made to plan and maintain a garden. It has four parts:
-              a <em>plant database</em>, a <em>collection</em> of the plants in my own garden, an
-              <em>automatically generated task list</em> and a set of <em>how-to guides</em>. It is meant for total
-              beginners as well as people who already know their way around a garden, and it installs on a phone like
-              a native app. It's a personal project and not a public app, so this page only shows what I built.
+              I found a new interest outside the digital world: gardening and taking care of plants. I had no idea how
+              to do it, so I took the overkill software-engineering approach. I built a fully automated app with all
+              the information I need, so I don't kill any plants.
             </p>
             <p>
-              The plant database is <em>curated content</em>, not scraped data. It holds 133 plants, written for a
-              temperate Belgian climate, and every fact is backed by a source (the RHS and Wikipedia).
-              Each plant has a flowering and a non-flowering photo under an open license, with the author credited.
-              Cultivars are recorded as part of their species, so a variety that needs different care gets its own care
-              rules instead of a near-duplicate entry. I wrote the plant data and the interface in Dutch.
+              Garden App is a <em>progressive web app</em> with four parts: a <em>plant database</em>, a
+              <em>collection</em> of the plants in my own garden, an <em>auto-generated task list</em> and a set of
+              <em>how-to guides</em>. It installs on a phone like a native app.
             </p>
             <p>
-              The task list is the core idea: it is <em>computed, never stored</em>. For every plant in my garden, the
-              app combines its care rules (prune after flowering, deadhead, protect from frost) with the current
-              month, and that gives the tasks I should do now. Only the tasks I tick off are saved. Each task links to
-              a how-to guide, and a progress bar keeps it a little playful. The app can also use a weather forecast to
-              show frost-protection tasks only when frost is actually coming.
-              Around that core there are favorites to shortlist plants and a pot planner that works out which plant fits
-              in which pot.
+              The database holds 133 plants for a temperate Belgian climate, and every fact is backed by a source (the
+              RHS and Wikipedia). Within a single species, multiple cultivars are supported.
+            </p>
+            <p>
+              The task list is the core idea. For every plant in my garden, the app combines its care rules (prune
+              after flowering, deadhead, protect from frost) with the current month, and that gives the tasks I should
+              do now. Each task links to a how-to guide, and a progress bar keeps it a little playful. With a weather
+              forecast, frost-protection tasks only show up when frost is actually coming. Favorites and a pot planner
+              that works out which plant fits in which pot round it off.
             </p>
             <p>
               Garden App consists of 2 components:
             </p>
               <ol class="mb-2">
-                <li>Angular 20 frontend, built as an installable PWA with a service worker</li>
-                <li>Django REST Framework backend with JWT authentication, which stores the garden, settings and completed tasks</li>
+                <li>Angular PWA frontend</li>
+                <li>Django REST backend with JWT authentication</li>
               </ol>
             <p>
               The screenshots below show demo data.

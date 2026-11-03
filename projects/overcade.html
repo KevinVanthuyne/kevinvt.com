@@ -45,46 +45,33 @@
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              <em>Overcade</em> is my arcade and pinball <em>rental business</em> in Belgium. I collect and restore
-              original machines, and companies and private customers can rent them for the office, at home or for events.
-              This is the website I built for it:
+              <em>Overcade</em> is my arcade and pinball rental. I collect and restore original machines, and companies
+              and private customers can rent them for the office, at home or for events. This is the website I built
+              for it:
               <a href="https://overcade.be" class="red-link" target="_blank" rel="noopener noreferrer">overcade.be</a>.
             </p>
             <p>
-              The heart of the site is the <em>catalogue</em>. Every machine is a Markdown file with a few properties:
-              category, number of players, force feedback, controls and genre. Those properties drive the filter sidebar,
-              the specification list on each machine's page and a photo carousel. Filtering happens in the browser
-              and is kept in the URL, so a filtered list can be shared. Interested visitors get to a
-              <em>contact page</em> with my email, phone number and address. There's also a page about the online
-              scoreboard where players can compare high scores, which is built on
-              <a href="agon.html" class="red-link">Agon</a>.
+              The heart of the site is the <em>catalogue</em>. Every machine has its own page with a specification list
+              and a photo carousel, and a filter sidebar helps visitors find the right one. The scoreboard that runs on
+              the machines is <a href="agon.html" class="red-link">Agon</a>.
             </p>
             <p>
-              The site is fully <em>bilingual</em>: Dutch at the root and English under <em>/en/</em>, built
-              by <em>Jekyll</em> with the <em>jekyll-polyglot</em> plugin. The templates exist only once and all text
-              lives in one data file per language, so the two versions can't drift apart in layout. A missing
-              translation falls back to Dutch, and every build lists what's still untranslated.
-            </p>
-            <p>
-              I chose <em>Jekyll</em> because the content hardly ever changes, so a static site is all I need.
-              Styling is <em>Tailwind CSS</em>, using markup patterns from <em>Hyper UI</em>. Photos of the machines are
-              resized to several widths at build time and lazy loaded, which keeps the pages light.
-              Pushing to <em>master</em> runs a GitHub Actions workflow that builds the site and deploys it over FTPS.
+              The site is built with <em>Jekyll</em> and <em>Tailwind CSS</em>, in Dutch and English, and deployment is
+              automated through GitHub Actions. I chose Jekyll as a challenge for myself. I'm used to full-stack
+              development, but this is a static site, so I wanted to learn one of the popular static site generators.
             </p>
           </div>
         </div>
 
         <div class="row mt-5">
-          <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="col-sm-12 col-md-6">
             <img
               src="../img/projects/overcade/home-desktop-thumb.jpg"
               data-src="../img/projects/overcade/home-desktop.jpg"
               class="img-responsive lazy mb-2"
               alt="The Overcade home page with a Pac-Man arcade machine in an office lounge"
-            data-aos="fade-up"
+              data-aos="fade-up"
             />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
             <img
               src="../img/projects/overcade/games-desktop-thumb.jpg"
               data-src="../img/projects/overcade/games-desktop.jpg"
@@ -93,29 +80,51 @@
               data-aos="fade-up"
             />
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="col-xs-6 col-md-3">
             <img
-              src="../img/projects/overcade/game-detail-thumb.jpg"
-              data-src="../img/projects/overcade/game-detail.jpg"
+              src="../img/projects/overcade/detail-mobile-thumb.jpg"
+              data-src="../img/projects/overcade/detail-mobile.jpg"
               class="img-responsive lazy mb-2"
-              alt="The detail page of the Pac-Man arcade machine with its description and photo carousel"
+              alt="The Pac-Man detail page on a phone, with a photo carousel of the arcade machine"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <img
+              src="../img/projects/overcade/scoreboard-mobile-thumb.jpg"
+              data-src="../img/projects/overcade/scoreboard-mobile.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The online scoreboard section of the home page on a phone, with a Pac-Man arcade next to a scoreboard screen"
               data-aos="fade-up"
             />
           </div>
         </div>
 
+        <div class="row mt-5">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              Overcade is more than a website for me. I designed the whole house style myself: the <em>logo</em>, the
+              <em>colours</em> and the look of the brand. This flyer is in the same style.
+            </p>
+          </div>
+        </div>
+
         <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="col-xs-12 col-sm-7 col-md-8">
             <img
-              src="../img/projects/overcade/home-mobile-thumb.jpg" data-src="../img/projects/overcade/home-mobile.jpg" class="img-responsive lazy mb-2"
-              alt="The English home page on a phone"
+              src="../img/projects/overcade/logo-thumb.jpg"
+              data-src="../img/projects/overcade/logo.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The Overcade logo: a blue arcade cabinet with two eyes, next to the word Overcade"
               data-aos="fade-up"
             />
           </div>
-          <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="col-xs-8 col-sm-5 col-md-4">
             <img
-              src="../img/projects/overcade/games-mobile-thumb.jpg" data-src="../img/projects/overcade/games-mobile.jpg" class="img-responsive lazy mb-2"
-              alt="The catalogue page on a phone, with a collapsed filter menu"
+              src="../img/projects/overcade/flyer-thumb.jpg"
+              data-src="../img/projects/overcade/flyer.jpg"
+              class="img-responsive lazy mb-2"
+              alt="An Overcade flyer in Dutch, with a Pac-Man arcade, an Avengers pinball machine and a Space Invaders arcade on a blue background"
               data-aos="fade-up"
             />
           </div>

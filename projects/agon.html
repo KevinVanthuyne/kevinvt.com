@@ -45,51 +45,33 @@
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              Agon runs <em>high-score competitions</em> on real arcade and pinball machines. An organiser sets up a
-              competition with one leaderboard per game. Players play, scan the QR code on the machine with their phone
-              and submit their score with a photo of the screen as proof. No account or app is needed. Next to the
-              machines, a <em>scoreboard screen</em> shows the leaderboards, so everyone can see who is on top.
+              Agon runs <em>high-score competitions</em> on real arcade and pinball machines. Players play, scan the QR
+              code on the machine and submit their score with a photo as proof. No account or app is needed. A
+              <em>scoreboard screen</em> next to the machines shows the leaderboards, so everyone can see who has the
+              best score.
             </p>
             <p>
               It started in 2022 as a Discord bot for a monthly competition on my
-              <a href="vortex.html" class="red-link">Virtual Pinball machine</a>: the bot announced the game of the
-              month, took scores and posted the winner. Since then it grew into my most complete product. The Discord
-              bot is gone; everything now happens in the web app and on the screens.
+              <a href="vortex.html" class="red-link">Virtual Pinball machine</a>. Players submitted their scores to the
+              bot, and at the end of each month it announced the winner. Since then it grew into software for my arcade
+              rental company, Overcade, and the Discord bot is gone.
             </p>
             <p>
-              Agon consists of three parts:
+              Agon has three parts:
             </p>
             <ol class="mb-2">
-              <li>
-                A <em>web app</em> in Angular with the public leaderboards, the score form, a page to report a broken
-                machine, and an admin area. There an organiser manages organisations, competitions and games (each with
-                its own colours and artwork), corrects scores, follows up on reported issues and prints the QR stickers
-                for the machines. A competition can optionally ask players for their contact details, with consent, and
-                export them to Excel.
-              </li>
-              <li>
-                A <em>Spring Boot</em> backend with a REST API and a PostgreSQL database, whose schema is managed with
-                Flyway migrations.
-              </li>
-              <li>
-                The <em>scoreboard screens</em>: a Raspberry Pi behind a TV in portrait mode, running Chromium as a
-                kiosk. Each screen has its own URL, and in the admin area I pick which organisation it shows. The TV
-                follows within 30 seconds and the admin page shows whether it is online. The screen cycles through the
-                leaderboards and a page that invites people to join by scanning the code.
-              </li>
+              <li>A <em>web app</em> in Angular with the leaderboards, the score form and an admin area.</li>
+              <li>A <em>Spring Boot</em> backend with a REST API and a PostgreSQL database.</li>
+              <li>The <em>scoreboard screens</em>: a Raspberry Pi behind a TV, running Chromium as a kiosk.</li>
             </ol>
             <p>
-              The screens stand at events, where nobody is around to fix them, so they have to take care of
-              themselves. A loading page waits until the internet is reachable. Without a known Wi-Fi network the Pi
-              opens a hotspot, so the venue's Wi-Fi can be set up from a phone. A watchdog restarts the browser when the
-              screen stays white, the SD card is barely written so pulling the plug is safe, and updates install
-              themselves at night. A single script turns a stock Raspberry Pi OS into a scoreboard, and a drift check
-              tells me when a Pi no longer matches its configuration in git.
+              The screens run at events where nobody can fix them, so they look after themselves. Without a known
+              network they open their own Wi-Fi hotspot, so I can set up the venue's Wi-Fi from a phone, and I can
+              manage them remotely. A nice solution.
             </p>
             <p>
-              The whole stack runs with <em>Docker Compose</em> on my own server. Every pull request runs the linter,
-              the tests and a build. A merge to the main branch builds new Docker images and deploys them automatically,
-              with a health check after each deploy, and the database and score photos are backed up offsite every night.
+              The whole stack runs with <em>Docker Compose</em> on my own server. A merge to the main branch is tested,
+              built and deployed automatically.
             </p>
           </div>
         </div>
