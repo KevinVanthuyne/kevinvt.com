@@ -255,9 +255,15 @@ em {
 .subtitle {
   color: rgb(223, 217, 208);
   height: 50vh;
-  /* The typing caret sits right of the last letter. fitty makes the longest line exactly as wide as
-     the column, so the caret would stick out and make the page wider than the screen on a phone. */
-  overflow-x: clip;
+}
+
+/* fitty makes the longest subtitle line exactly as wide as the column. A caret drawn after its letter
+   would stick out and make the page wider than the screen, so on a phone it sits under the letter. */
+@media (max-width: 767px) {
+  .subtitle .typing-cursor::after {
+    left: auto;
+    right: 0;
+  }
 }
 
 /* About */
