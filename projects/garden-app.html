@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Garden App - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html#projects">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Garden App</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/garden-app</p>
+            <h2><span class="secondary-color">&gt;</span> Garden App<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Jul 2026 - Aug 2026</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              I found a new interest outside the digital world: gardening and taking care of plants. I had no idea how
+              to do it, so I took the overkill software-engineering approach. I built a fully automated app with all
+              the information I need, so I don't kill any plants.
+            </p>
+            <p>
+              Garden App is a <em>progressive web app</em> with four parts: a <em>plant database</em>, a
+              <em>collection</em> of the plants in my own garden, an <em>auto-generated task list</em> and a set of
+              <em>how-to guides</em>. It installs on a phone like a native app.
+            </p>
+            <p>
+              The database holds 133 plants for a temperate Belgian climate, and every fact is backed by a source (the
+              RHS and Wikipedia). Within a single species, multiple cultivars are supported.
+            </p>
+            <p>
+              The task list is the core idea. For every plant in my garden, the app combines its care rules (prune
+              after flowering, deadhead, protect from frost) with the current month, and that gives the tasks I should
+              do now. Each task links to a how-to guide, and a progress bar keeps it a little playful. With a weather
+              forecast, frost-protection tasks only show up when frost is actually coming. Favorites and a pot planner
+              that works out which plant fits in which pot round it off.
+            </p>
+            <p>
+              Garden App consists of 2 components:
+            </p>
+              <ul class="mb-2">
+                <li><span class="secondary-color">&gt;</span> <em>frontend</em>: Angular PWA</li>
+                <li><span class="secondary-color">&gt;</span> <em>backend</em>: Django REST with JWT authentication</li>
+              </ul>
+            <p>
+              The screenshots below show demo data.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-8">
+            <img
+              src="../img/projects/garden-app/garden-app-plants-thumb.jpg"
+              data-src="../img/projects/garden-app/garden-app-plants.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the plant database in the Garden App, showing a searchable grid of plant photos with filters for plant type."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/garden-app/garden-app-pots-thumb.jpg"
+              data-src="../img/projects/garden-app/garden-app-pots.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the pot planner in the Garden App, with flower pots on a terrace that each have a plant assigned to them."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/garden-app/garden-app-guides-thumb.jpg"
+              data-src="../img/projects/garden-app/garden-app-guides.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Screenshot of the how-to guides overview in the Garden App, a grid of articles about pruning, sowing, feeding and more."
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <img
+              src="../img/projects/garden-app/garden-app-tasks-thumb.jpg"
+              data-src="../img/projects/garden-app/garden-app-tasks.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Phone screenshot of the generated task list for May in the Garden App, with a progress bar and tasks grouped by type."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/garden-app/garden-app-plant-detail-thumb.jpg"
+              data-src="../img/projects/garden-app/garden-app-plant-detail.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Phone screenshot of the detail page of lavender in the Garden App, with a flowering photo, a description and buttons to add it to the garden or to favorites."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html#projects" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>

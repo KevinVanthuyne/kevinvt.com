@@ -8,10 +8,10 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 
 ## Structure
 
-- `index.html` — single-page home: hero, about/skills, the projects grid (`#projects`) and contact. Holds the page's inline JS (mobile navbar toggle, Rellax parallax, VanillaTilt, fitty, and a media query that disables parallax/tilt below 768px).
+- `index.html` — single-page home: hero, about/skills, the projects grid (`#projects`) and contact. Holds the page's inline JS (mobile navbar toggle, Rellax parallax, VanillaTilt, fitty, a media query that disables parallax/tilt below 768px, and the project filter).
 - `projects/<name>.html` — one standalone page per project. Each repeats the full `<head>`, the "K" nav with a `/ Projects / <Name>` breadcrumb, and a "<< Back" link. They load AOS, LazyLoad and `terminal.js` from `../js/`.
 - `css/style.css` — all custom styling. `css/bootstrap4.min.css` and `css/style-old.css` are not referenced by any page.
-- `js/` — vendored, minified third-party libraries (AOS, Rellax, VanillaTilt, fitty, LazyLoad, SmoothScroll). Do not edit them. The exception is `js/terminal.js`, our own script for the terminal effects. On every page: typed headings and the `[####----]  40%` scroll progress bar. On the homepage only: the typed subtitle and the `>` marker on the active nav item. On project pages the `$ cd ~/projects/<name>` line types first, then the heading. On pages with a mouse, a dot grid shows in a soft circle around the cursor (`.spotlight`).
+- `js/` — vendored, minified third-party libraries (AOS, Rellax, VanillaTilt, fitty, LazyLoad, SmoothScroll). Do not edit them. The exception is `js/terminal.js`, our own script for the terminal effects. On every page: typed headings and the `[####----]  40%` scroll progress bar. On the homepage only: the typed subtitle and the `>` marker on the active nav item. On project pages the `$ cd ~/projects/<name>` line types first, then the heading. On pages with a mouse, a dot grid shows in a soft circle around the cursor (`.spotlight`). Behind it sit faint static dot fields on the same grid, pure CSS: `#home` and `#contact` on the homepage, the top and bottom of `main.project-page` on project pages (fainter on touch screens via `--section-dot-alpha`).
 - `projects/template.html` is gitignored: a local-only starting point that may not exist in a given checkout. Copy an existing project page such as `projects/agon.html` instead.
 
 ## Conventions
@@ -27,6 +27,11 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 A project needs two edits:
 
 1. Create `projects/<name>.html` (title `<Name> - Kevin Vanthuyne`, breadcrumb, the `cd ~/projects/<name>` command line and heading, `project-date`, description, lazy images, and `<script src="../js/terminal.js">`).
-2. Add a card to the grid in `index.html#projects`: `<a href="projects/<name>.html">` wrapping `div.project.hvr-reveal` with the thumbnail and a `div.project-info` (`<h4>` name, `<p>` one-line tagline). The grid is split into columns of cards; keep them roughly balanced.
+2. Add a card to the grid in `index.html#projects`: `<a href="projects/<name>.html" data-category="...">` wrapping `div.project.hvr-reveal` with the thumbnail and a `div.project-info` (`<h4>` name, `<p>` one-line tagline).
+
+Grid rules:
+
+- **Order**: curated, not purely chronological: Kevin's strongest and most impressive projects first, then the rest roughly newest first. Cards are read row by row (top-left, across the three columns, then the next row): card 1 is the first card of column 1, card 2 the first of column 2, card 3 the first of column 3, card 4 the second of column 1, and so on. Inserting a card shifts every later card one column to the right. The inline script reads the cards back in that order and deals them out again on load and on every filter change (into one column on phones), so a card in the wrong slot shows up in the wrong place.
+- **Categories** (`data-category`, exactly one): `software` (purely software), `websites` (purely websites), `electronics` (physical builds with electronics, mixed hardware and software included), `various` (anything else). They match the filter buttons in `.project-filter`; a new category needs a new button there.
 
 Removing a card from `index.html` hides a project without deleting its page (`game-pi.html` and `speaker.html` are unlinked this way).

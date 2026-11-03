@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shuffle Box - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Shuffle Box</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-9">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/shuffle-box</p>
+            <h2><span class="secondary-color">&gt;</span> Shuffle Box<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Aug 2023 - Jul 2024</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+                The <em>Shuffle Box</em> is a rare Belgian arcade game. It grew out of an old folk game called
+                <em>bakschieten</em>, where you throw metal coins into a wooden box. Around 2010 the Flemish company Erron
+                turned it into a coin-op machine, with a screen, LEDs next to the holes and different game modes.
+                It was not popular enough, so production stopped. The factory was left with several cabinets that never got any electronics.
+            </p>
+            <p>
+                I tracked one of those down, and gave it <em>electronics and software from scratch</em>. There were no manuals
+                or schematics, only a few photos from an advert. A <em>Raspberry Pi 3B+</em> runs everything:
+                the 19" screen, the buttons, 10 hole sensors, addressable RGB LEDs, a speaker and a solenoid that releases the coins.
+            </p>
+            <p>
+                Each hole has a 3D printed chute with two infrared beam break sensors, so a coin dropping through is detected.
+                I soldered all 10 sets by hand, and wired them to a perfboard that combines each pair of beams into one signal for the Pi.
+                The solenoid pulls back a plastic divider inside the cabinet, to release the coins when a game starts.
+                Doing all of this without PCBs cost me a lot of time, so next time I might challenge myself to design PCBs.
+            </p>
+            <p>
+                The game itself is written in Python with <em>Pygame</em>, with a background I redrew from the advert.
+                Up to 5 players can play, and there are 4 game modes: <em>Classic</em>, <em>Plus Minus</em> (some holes deduct points),
+                <em>Collect All</em> and <em>Roving</em> (the scoring holes change every round).
+                When nobody plays, an attract mode cycles through animations.
+            </p>
+            <p>
+                I documented the whole build in a <em>video</em> on
+                <a href="https://www.youtube.com/watch?v=ALqeD-Nmht4" class="red-link" target="_blank" rel="noopener noreferrer">my Overtinker YouTube channel</a>,
+                and I was lucky enough to bring the finished game to my local Maker Faire.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-8 col-lg-6" data-aos="fade-up">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube-nocookie.com/embed/ALqeD-Nmht4" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/finished-front-thumb.jpg"
+              data-src="../img/projects/shuffle-box/finished-front.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The whole finished Shuffle Box cabinet seen from the front left, with its lit screen, the wooden playfield with glowing holes and the coin return at the bottom"
+            data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/hole-leds-thumb.jpg"
+              data-src="../img/projects/shuffle-box/hole-leds.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The playfield with the holes lit up in blue by the addressable LEDs"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/start-screen-thumb.jpg"
+              data-src="../img/projects/shuffle-box/start-screen.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The custom game screen asking to press start to play"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/coin-sensors-thumb.jpg"
+              data-src="../img/projects/shuffle-box/coin-sensors.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The 10 3D printed sensor chutes mounted under the playfield and wired together"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/electronics-thumb.jpg"
+              data-src="../img/projects/shuffle-box/electronics.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The Raspberry Pi and two perfboard circuits mounted inside the cabinet"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/buttons-thumb.jpg"
+              data-src="../img/projects/shuffle-box/buttons.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The add player and mode buttons on the side of the cabinet, with custom labels"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <img
+              src="../img/projects/shuffle-box/side-view-thumb.jpg"
+              data-src="../img/projects/shuffle-box/side-view.jpg"
+              class="img-responsive lazy mb-2"
+              alt="The Shuffle Box from the side, showing the metal sheets and the opening where the released coins come out"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html#projects" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>

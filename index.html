@@ -292,15 +292,37 @@
         <section id="projects" class="mt-5">
           <div class="row">
             <div class="col-sm-11 col-sm-offset-1">
-              <p class="command"><span class="secondary-color">$</span> ls -la projects/</p>
+              <p class="command">
+                <span class="secondary-color">$</span> ls -la projects/<!-- Without JavaScript the buttons would do nothing, so the script shows them. --><span class="project-filter hidden">
+                  --type=
+                  <button type="button" class="btn btn-link active" data-filter="all">all</button>
+                  <button type="button" class="btn btn-link" data-filter="software">software</button>
+                  <button type="button" class="btn btn-link" data-filter="websites">websites</button>
+                  <button type="button" class="btn btn-link" data-filter="electronics">electronics</button>
+                  <button type="button" class="btn btn-link" data-filter="various">various</button>
+                </span>
+              </p>
               <h2><span class="secondary-color">&gt;</span> Projects<span class="secondary-color cursor">_</span></h2>
             </div>
           </div>
 
           <div class="row projects">
-            <!-- Row 1 -->
             <div class="col-md-3 col-sm-3 col-sm-offset-1">
-              <a href="projects/tronkade.html">
+              <a href="projects/agon.html" data-category="software">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/projects/agon/agon-leaderboard-thumb.jpg"
+                    data-src="img/projects/agon/agon-leaderboard.jpg"
+                    class="img-responsive lazy"
+                    alt="Screenshot of the leaderboard page on the Agon website, showing several columns that each represent a game with scores of different players in each."
+                  />
+                  <div class="project-info">
+                    <h4>Agon</h4>
+                    <p>High-score competitions on screens</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/tronkade.html" data-category="electronics">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/thumbnails/arcade-thumbnail.jpg"
@@ -314,21 +336,63 @@
                   </div>
                 </div>
               </a>
-              <a href="projects/agon.html">
+              <a href="projects/pinball-priceguide.html" data-category="software">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
-                    src="img/projects/agon/agon-leaderboard-thumb.jpg"
-                    data-src="img/projects/agon/agon-leaderboard.jpg"
+                    src="img/projects/pinball-priceguide/machine-detail-thumb.jpg"
+                    data-src="img/projects/pinball-priceguide/machine-detail.jpg"
                     class="img-responsive lazy"
-                    alt="Screenshot of the leaderboard page on the Agon website, showing several columns that each represent a game with scores of different players in each."
+                    alt="Pinball Price Guide machine page with a price history chart"
                   />
                   <div class="project-info">
-                    <h4>Agon</h4>
-                    <p>Automated competition software</p>
+                    <h4>Pinball Price Guide</h4>
+                    <p>Asking-price guide for pinball</p>
                   </div>
                 </div>
               </a>
-              <a href="projects/weatherstation.html">
+              <a href="projects/vpw-website.html" data-category="websites">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/tronk-site1-thumbnail.jpg"
+                    data-src="img/projects/vpw/vpw-landing-small.jpg"
+                    class="img-responsive lazy"
+                    alt="Screenshot of the Jeugdhuis Tronk website"
+                  />
+                  <div class="project-info">
+                    <h4>V-Pin Workshop</h4>
+                    <p>Website for a collective of vpin creators</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/zentrex.html" data-category="websites">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/tronk-site1-thumbnail.jpg"
+                    data-src="img/projects/zentrex/zentrex-landing.png"
+                    class="img-responsive lazy"
+                    alt="Screenshot of the Zentrex website landing page"
+                  />
+                  <div class="project-info">
+                    <h4>Zentrex</h4>
+                    <p>Website & corporate identity for a small business</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/solderingstation.html" data-category="electronics">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/solderingstation1-thumbnail.jpg"
+                    data-src="img/solderingstation1.jpg"
+                    class="img-responsive lazy"
+                    alt="DIY soldering station"
+                  />
+                  <div class="project-info">
+                    <h4>Soldering Station</h4>
+                    <p>All soldering needs in one</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/weatherstation.html" data-category="electronics">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/thumbnails/weatherstation-thumbnail.jpg"
@@ -342,81 +406,7 @@
                   </div>
                 </div>
               </a>
-              <a href="projects/powersupply.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/thumbnails/powersupply-thumbnail.jpg"
-                    data-src="img/powersupply.jpg"
-                    class="img-responsive lazy"
-                    alt="DIY lab bench power supply"
-                  />
-                  <div class="project-info">
-                    <h4>Power Supply</h4>
-                    <p>Variable voltage</p>
-                  </div>
-                </div>
-              </a>
-              <a href="projects/posters.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/thumbnails/posters-thumbnail.jpg"
-                    data-src="img/posters.jpg"
-                    class="img-responsive lazy"
-                    alt="Collection of posters"
-                  />
-                  <div class="project-info">
-                    <h4>Poster Design</h4>
-                    <p>Various posters for Jeugdhuis Tronk</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="col-md-3 col-sm-3">
-              <a href="projects/vortex.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/projects/vortex/vortex-thumb.jpg"
-                    data-src="img/projects/vortex/vortex.jpg"
-                    class="img-responsive lazy"
-                    alt="Frontal view of Vortex Virtual Pinball machine"
-                  />
-                  <div class="project-info">
-                    <h4>Vortex</h4>
-                    <p>Virtual pinball machine</p>
-                  </div>
-                </div>
-              </a>
-              <a href="projects/invoice-manager.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/thumbnails/invoice-thumbnail.jpg"
-                    data-src="img/projects/invoice-manager/invoice.jpg"
-                    class="img-responsive lazy"
-                    alt="Invoice pdf generated by the invoice manager"
-                  />
-                  <div class="project-info">
-                    <h4>Invoice Manager</h4>
-                    <p>Easily generate pdf invoices</p>
-                  </div>
-                </div>
-              </a>
-              <a href="projects/lockdown.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/thumbnails/oscilloscope-thumbnail.jpg"
-                    data-src="img/lockdown/oscilloscope.jpg"
-                    class="img-responsive lazy"
-                    alt="Brainwave generator escape room prop"
-                  />
-                  <div class="project-info">
-                    <h4>Lockdown</h4>
-                    <p>Props for an escape room</p>
-                  </div>
-                </div>
-              </a>
-              <a href="projects/no-fear.html">
+              <a href="projects/no-fear.html" data-category="various">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/projects/no-fear/no-fear-new-thumb.jpg"
@@ -432,37 +422,78 @@
               </a>
             </div>
 
-            <!-- Row 3 -->
-            <div class="col-md-4 col-sm-4">
-              <a href="projects/vpw-website.html">
+            <div class="col-md-3 col-sm-3">
+              <a href="projects/pac-man.html" data-category="electronics">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
-                    src="img/thumbnails/tronk-site1-thumbnail.jpg"
-                    data-src="img/projects/vpw/vpw-landing-small.jpg"
+                    src="img/projects/pac-man/finished-cabinet-thumb.jpg"
+                    data-src="img/projects/pac-man/finished-cabinet.jpg"
                     class="img-responsive lazy"
-                    alt="Screenshot of the Jeugdhuis Tronk website"
+                    alt="The restored Pac-Man arcade cabinet."
                   />
                   <div class="project-info">
-                    <h4>V-Pin Workshop</h4>
-                    <p>Website for a collective of vpin creators</p>
+                    <h4>Pac-Man Restoration</h4>
+                    <p>Restoring a 1980 arcade cabinet</p>
                   </div>
                 </div>
               </a>
-              <a href="projects/zentrex.html">
+              <a href="projects/overcade.html" data-category="websites">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
-                    src="img/thumbnails/tronk-site1-thumbnail.jpg"
-                    data-src="img/projects/zentrex/zentrex-landing.png"
+                    src="img/projects/overcade/home-desktop-thumb.jpg"
+                    data-src="img/projects/overcade/home-desktop.jpg"
                     class="img-responsive lazy"
-                    alt="Screenshot of the Zentrex website landing page"
+                    alt="Screenshot of the Overcade home page with a Pac-Man arcade machine in an office lounge"
                   />
                   <div class="project-info">
-                    <h4>Zentrex</h4>
-                    <p>Website & corporate identity for a small business</p>
+                    <h4>Overcade</h4>
+                    <p>Arcade &amp; pinball rental website</p>
                   </div>
                 </div>
               </a>
-              <a href="projects/tronk-website.html">
+              <a href="projects/openclaw.html" data-category="software">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/projects/openclaw/openclaw-card.jpg"
+                    loading="lazy"
+                    class="img-responsive"
+                    alt="The OpenClaw logo: a round red lobster mascot next to the name OpenClaw"
+                  />
+                  <div class="project-info">
+                    <h4>OpenClaw</h4>
+                    <p>AI assistant on a Raspberry Pi</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/lockdown.html" data-category="electronics">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/oscilloscope-thumbnail.jpg"
+                    data-src="img/lockdown/oscilloscope.jpg"
+                    class="img-responsive lazy"
+                    alt="Brainwave generator escape room prop"
+                  />
+                  <div class="project-info">
+                    <h4>Lockdown</h4>
+                    <p>Props for an escape room</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/invoice-manager.html" data-category="software">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/invoice-thumbnail.jpg"
+                    data-src="img/projects/invoice-manager/invoice.jpg"
+                    class="img-responsive lazy"
+                    alt="Invoice pdf generated by the invoice manager"
+                  />
+                  <div class="project-info">
+                    <h4>Invoice Manager</h4>
+                    <p>Easily generate pdf invoices</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/tronk-website.html" data-category="websites">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/thumbnails/tronk-site1-thumbnail.jpg"
@@ -476,21 +507,7 @@
                   </div>
                 </div>
               </a>
-              <a href="projects/rgb-tubes.html">
-                <div class="project hvr-reveal" data-aos="fade-up">
-                  <img
-                    src="img/thumbnails/tubes-mounted-thumbnail.jpg"
-                    data-src="img/rgb-tubes/tubes-mounted.jpg"
-                    class="img-responsive lazy"
-                    alt="RGB led tubes mounted on a wall in two triangle shapes"
-                  />
-                  <div class="project-info">
-                    <h4>RGB Led Tubes</h4>
-                    <p>Professional stage lighting effects</p>
-                  </div>
-                </div>
-              </a>
-              <a href="projects/alarmclock.html">
+              <a href="projects/alarmclock.html" data-category="electronics">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/thumbnails/alarmclock-thumbnail.jpg"
@@ -504,21 +521,80 @@
                   </div>
                 </div>
               </a>
-              <a href="projects/solderingstation.html">
+              <a href="./projects/elanti.html" data-category="websites">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
-                    src="img/thumbnails/solderingstation1-thumbnail.jpg"
-                    data-src="img/solderingstation1.jpg"
+                    src="img/thumbnails/elanti-thumbnail.jpg"
+                    data-src="img/elanti.jpg"
                     class="img-responsive lazy"
-                    alt="DIY soldering station"
+                    alt="Screenshot of the Elanti website"
                   />
                   <div class="project-info">
-                    <h4>Soldering Station</h4>
-                    <p>All soldering needs in one</p>
+                    <h4>Elanti</h4>
+                    <p>Website for a flower shop</p>
                   </div>
                 </div>
               </a>
-              <a href="projects/terrace.html">
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <a href="projects/shuffle-box.html" data-category="electronics">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/projects/shuffle-box/finished-front-thumb.jpg"
+                    data-src="img/projects/shuffle-box/finished-front.jpg"
+                    class="img-responsive lazy"
+                    alt="The finished Shuffle Box arcade game seen from the front, with its screen and lit up holes."
+                  />
+                  <div class="project-info">
+                    <h4>Shuffle Box</h4>
+                    <p>Reviving a rare Belgian arcade game</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/garden-app.html" data-category="software">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/projects/garden-app/garden-app-plants-thumb.jpg"
+                    data-src="img/projects/garden-app/garden-app-plants.jpg"
+                    class="img-responsive lazy"
+                    alt="Screenshot of the plant database in the Garden App, showing a searchable grid of plant photos."
+                  />
+                  <div class="project-info">
+                    <h4>Garden App</h4>
+                    <p>Garden planner PWA with auto tasks</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/vortex.html" data-category="electronics">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/projects/vortex/vortex-thumb.jpg"
+                    data-src="img/projects/vortex/vortex.jpg"
+                    class="img-responsive lazy"
+                    alt="Frontal view of Vortex Virtual Pinball machine"
+                  />
+                  <div class="project-info">
+                    <h4>Vortex</h4>
+                    <p>Virtual pinball machine</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/rgb-tubes.html" data-category="electronics">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/tubes-mounted-thumbnail.jpg"
+                    data-src="img/rgb-tubes/tubes-mounted.jpg"
+                    class="img-responsive lazy"
+                    alt="RGB led tubes mounted on a wall in two triangle shapes"
+                  />
+                  <div class="project-info">
+                    <h4>RGB Led Tubes</h4>
+                    <p>Professional stage lighting effects</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/terrace.html" data-category="various">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/thumbnails/terrace-thumbnail.jpg"
@@ -532,17 +608,31 @@
                   </div>
                 </div>
               </a>
-              <a href="./projects/elanti.html">
+              <a href="projects/powersupply.html" data-category="electronics">
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
-                    src="img/thumbnails/elanti-thumbnail.jpg"
-                    data-src="img/elanti.jpg"
+                    src="img/thumbnails/powersupply-thumbnail.jpg"
+                    data-src="img/powersupply.jpg"
                     class="img-responsive lazy"
-                    alt="Screenshot of the Elanti website"
+                    alt="DIY lab bench power supply"
                   />
                   <div class="project-info">
-                    <h4>Elanti</h4>
-                    <p>Website for a flower shop</p>
+                    <h4>Power Supply</h4>
+                    <p>Variable voltage</p>
+                  </div>
+                </div>
+              </a>
+              <a href="projects/posters.html" data-category="various">
+                <div class="project hvr-reveal" data-aos="fade-up">
+                  <img
+                    src="img/thumbnails/posters-thumbnail.jpg"
+                    data-src="img/posters.jpg"
+                    class="img-responsive lazy"
+                    alt="Collection of posters"
+                  />
+                  <div class="project-info">
+                    <h4>Poster Design</h4>
+                    <p>Various posters for Jeugdhuis Tronk</p>
                   </div>
                 </div>
               </a>
@@ -648,7 +738,7 @@
 
     <script src="js/aos.js"></script>
     <script type="text/javascript">
-      AOS.init({ once: true, duration: 1500 });
+      AOS.init({ once: true, duration: 1500, disableMutationObserver: true });
     </script>
 
     <script src="js/smooth-scroll.polyfills.min.js"></script>
@@ -700,7 +790,8 @@
       //responsive javascript stuff
 
       var rellax;
-      VanillaTilt.init(document.querySelectorAll(".project"), {
+      var projectCards = document.querySelectorAll(".project");
+      VanillaTilt.init(projectCards, {
         reverse: true,
         speed: 5000,
       });
@@ -709,7 +800,7 @@
         // bigger than mobile
         if (media.matches) {
           rellax = new Rellax(".rellax");
-          VanillaTilt.init(document.querySelectorAll(".project"), {
+          VanillaTilt.init(projectCards, {
             reverse: true,
             speed: 5000,
           });
@@ -723,14 +814,70 @@
           fitty(".fit-text", {
             maxSize: 105,
           });
-          var projectCards = document.querySelectorAll(".project");
-          projectCards.forEach((project) => project.vanillaTilt.destroy());
+          projectCards.forEach((project) => {
+            if (project.vanillaTilt) {
+              project.vanillaTilt.destroy();
+            }
+          });
         }
       }
 
       var media = window.matchMedia("(min-width: 768px)");
       widthChanged(media);
       media.addListener(widthChanged);
+    </script>
+
+    <script>
+      (function () {
+        var columns = Array.from(document.querySelectorAll(".projects > div"));
+        // The markup deals the cards out over the columns row by row, so reading them back that way gives the newest-first order.
+        var cards = [];
+        var rowCount = Math.max.apply(null, columns.map((column) => column.children.length));
+        for (var row = 0; row < rowCount; row++) {
+          columns.forEach((column) => {
+            if (column.children[row]) {
+              cards.push(column.children[row]);
+            }
+          });
+        }
+
+        var filterBar = document.querySelector(".project-filter");
+        var buttons = filterBar.querySelectorAll("button");
+        var activeFilter = "all";
+
+        function layOut() {
+          // On phones the columns stack, so dealing over them would break the order.
+          var usedColumns = media.matches ? columns : columns.slice(0, 1);
+          var visible = cards.filter(
+            (card) => activeFilter === "all" || card.dataset.category.split(" ").includes(activeFilter)
+          );
+          cards.forEach((card) => card.remove());
+          visible.forEach((card, index) => usedColumns[index % usedColumns.length].appendChild(card));
+
+          lazyLoadInstance.update();
+          AOS.refresh();
+          // Parallax positions below the grid were measured for the old height.
+          if (rellax && media.matches) {
+            rellax.refresh();
+          }
+          // The scroll progress bar and the nav marker depend on the page height.
+          window.dispatchEvent(new Event("resize"));
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            activeFilter = button.dataset.filter;
+            buttons.forEach((other) => other.classList.toggle("active", other === button));
+            layOut();
+          });
+        });
+
+        filterBar.classList.remove("hidden");
+        if (!media.matches) {
+          layOut();
+        }
+        media.addListener(layOut);
+      })();
     </script>
 
     <script src="js/terminal.js"></script>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pinball Price Guide - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html#projects">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Pinball Price Guide</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/pinball-priceguide</p>
+            <h2><span class="secondary-color">&gt;</span> Pinball Price Guide<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Oct 2026 (Ongoing)</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              I was <em>curious what pinball machines cost right now</em>, what they cost during COVID and before,
+              and how much data I could gather to answer that.
+              There are several price guides for the US, but not really for Europe, and prices here can differ a lot.
+            </p>
+            <p>
+              A pipeline reads ads from several sources and in several languages and extracts the price, the currency, the location and the type of ad
+              (machine, parts, wanted, virtual pinball). It then matches each ad to a specific machine and edition.
+              Anything unsure goes to a review screen where I pick the right machine by hand. For the really difficult ads
+              there is an optional LLM step.
+            </p>
+            <p>
+              Per machine the guide shows a typical price, a price range and a 12 month trend. Prices are followed over time
+              and every change is stored, which gives a price history chart for every machine. Prices can also be split by
+              country and by condition. At the moment it holds around 15,000 ads and prices for more than 460 machines.
+            </p>
+            <p>
+              The project has 2 major components:
+            </p>
+              <ul class="mb-2">
+                <li><span class="secondary-color">&gt;</span> <em>backend</em>: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, statistics) and SQLite or PostgreSQL</li>
+                <li><span class="secondary-color">&gt;</span> <em>frontend</em>: Angular 22 with standalone components and signals, Bootstrap 5 and Chart.js for the charts</li>
+              </ul>
+            <p>
+              The backend is covered by pytest tests, and the matching rules are measured against the labels I gave in the review screen.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-7">
+            <img
+              src="../img/projects/pinball-priceguide/overview-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/overview.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Overview page of the Pinball Price Guide with counters at the top and a table of machines with median price, price range, number of ads and trend."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pinball-priceguide/machine-detail-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/machine-detail.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Detail page of a pinball machine with median price, price range, trend and a chart of asking prices over time with a monthly median line, plus tables per country and per condition."
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/projects/pinball-priceguide/machine-detail-phone-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/machine-detail-phone.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The machine detail page with the price history chart on a phone screen."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html#projects" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>
