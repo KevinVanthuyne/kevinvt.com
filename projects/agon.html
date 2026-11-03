@@ -38,41 +38,84 @@
 
         <div class="row">
           <div class="col-sm-12">
-            <p class="project-date">Jan 2022 - May 2023</p>
+            <p class="project-date">Jan 2022 - present</p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-12 project-page-description">
             <p>
-              Agon is a web application for <em>automatically running competitions</em> for games with (high)scores.
-              The idea originated from running a monthly competition on the <a href="vortex.html" class="red-link">Virtual Pinball machine</a>.
-              An admin can add games to the database and set up timed game-by-game competitions or indefinite competitions
-              with multiple simultaneous games.
+              Agon runs <em>high-score competitions</em> on real arcade and pinball machines. An organiser sets up a
+              competition with one leaderboard per game. Players play, scan the QR code on the machine with their phone
+              and submit their score with a photo of the screen as proof. No account or app is needed. Next to the
+              machines, a <em>scoreboard screen</em> shows the leaderboards, so everyone can see who is on top.
             </p>
             <p>
-              The system uses a <em>Discord</em> bot to notify players what game is played that month for example, and
-              players can also use the bot to see the leaderboards and post scores with an image for proof. A <em>website</em> is
-              also present for a nicer view of the leaderboards and a more intuitive admin interface. After each month,
-              the Discord bot also posts the winner of that month.
+              It started in 2022 as a Discord bot for a monthly competition on my
+              <a href="vortex.html" class="red-link">Virtual Pinball machine</a>: the bot announced the game of the
+              month, took scores and posted the winner. Since then it grew into my most complete product. The Discord
+              bot is gone; everything now happens in the web app and on the screens.
             </p>
             <p>
-              Agon consists of 4 major components:
+              Agon consists of three parts:
             </p>
-              <ol class="mb-2">
-                <li><a href="https://github.com/KevinVanthuyne/agon-ui" class="red-link" target="_blank" rel="noopener noreferrer">Angular frontend</a></li>
-                <li><a href="https://github.com/KevinVanthuyne/agon-backend" class="red-link" target="_blank" rel="noopener noreferrer">Spring Boot backend</a></li>
-                <li><a href="https://github.com/KevinVanthuyne/agon-discord-competition-bot" class="red-link" target="_blank" rel="noopener noreferrer">Discord bot using discordjs</a></li>
-                <li>PostgreSQL database</li>
-              </ol>
+            <ol class="mb-2">
+              <li>
+                A <em>web app</em> in Angular with the public leaderboards, the score form, a page to report a broken
+                machine, and an admin area. There an organiser manages organisations, competitions and games (each with
+                its own colours and artwork), corrects scores, follows up on reported issues and prints the QR stickers
+                for the machines. A competition can optionally ask players for their contact details, with consent, and
+                export them to Excel.
+              </li>
+              <li>
+                A <em>Spring Boot</em> backend with a REST API and a PostgreSQL database, whose schema is managed with
+                Flyway migrations.
+              </li>
+              <li>
+                The <em>scoreboard screens</em>: a Raspberry Pi behind a TV in portrait mode, running Chromium as a
+                kiosk. Each screen has its own URL, and in the admin area I pick which organisation it shows. The TV
+                follows within 30 seconds and the admin page shows whether it is online. The screen cycles through the
+                leaderboards and a page that invites people to join by scanning the code.
+              </li>
+            </ol>
             <p>
-              There's also a <a href="https://github.com/KevinVanthuyne/agon-docker-compose" class="red-link" target="_blank" rel="noopener noreferrer">Docker Compose</a>
-              to easily run all components on my server.
+              The screens stand at events, where nobody is around to fix them, so they have to take care of
+              themselves. A loading page waits until the internet is reachable. Without a known Wi-Fi network the Pi
+              opens a hotspot, so the venue's Wi-Fi can be set up from a phone. A watchdog restarts the browser when the
+              screen stays white, the SD card is barely written so pulling the plug is safe, and updates install
+              themselves at night. A single script turns a stock Raspberry Pi OS into a scoreboard, and a drift check
+              tells me when a Pi no longer matches its configuration in git.
+            </p>
+            <p>
+              The whole stack runs with <em>Docker Compose</em> on my own server. Every pull request runs the linter,
+              the tests and a build. A merge to the main branch builds new Docker images and deploys them automatically,
+              with a health check after each deploy, and the database and score photos are backed up offsite every night.
             </p>
           </div>
         </div>
 
         <div class="row mt-5">
+          <div class="col-sm-12">
+            <img
+              src="../img/projects/agon/agon-play-scan-submit-thumb.jpg"
+              data-src="../img/projects/agon/agon-play-scan-submit.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Topper artwork for an arcade cabinet explaining Agon in three steps: play the game, scan the code, submit your score"
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/projects/agon/agon-scoreboard-thumb.jpg"
+              data-src="../img/projects/agon/agon-scoreboard.jpg"
+              class="img-responsive lazy mb-1"
+              alt="A Pac-Man arcade cabinet at an event, next to a portrait TV on a stand showing the Agon screen that invites players to join the leaderboard"
+              data-aos="fade-up"
+            />
+          </div>
           <div class="col-sm-12 col-md-7">
             <img
               src="../img/projects/agon/agon-leaderboard-thumb.jpg"
@@ -88,27 +131,11 @@
               alt="Screenshot of the admin ui for configuring games on the Agon website"
               data-aos="fade-up"
             />
-          </div>
-          <div class="col-sm-12 col-md-5">
-            <img
-              src="../img/projects/agon/agon-game-announcement-thumb.jpg"
-              data-src="../img/projects/agon/agon-game-announcement.jpg"
-              class="img-responsive lazy mb-1"
-              alt="Screenshot of the Discord bot posting the new game for that month"
-              data-aos="fade-up"
-            />
             <img
               src="../img/projects/agon/agon-admin-scores-thumb.jpg"
               data-src="../img/projects/agon/agon-admin-scores.jpg"
               class="img-responsive lazy mb-1"
               alt="Admin UI on the Agon website for managing scores posted by users"
-              data-aos="fade-up"
-            />
-            <img
-              src="../img/projects/agon/agon-score-posted-thumb.jpg"
-              data-src="../img/projects/agon/agon-score-posted.jpg"
-              class="img-responsive lazy mb-1"
-              alt="Discord bot posting a user's score and image in a Discord channel"
               data-aos="fade-up"
             />
           </div>
