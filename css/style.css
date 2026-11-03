@@ -178,6 +178,29 @@ h4 {
   transition: transform 0.4s ease;
 }
 
+/* A dot grid that only shows in a soft circle around the mouse. */
+.spotlight {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(
+    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    black,
+    transparent
+  );
+  mask-image: radial-gradient(
+    180px circle at var(--spot-x, -999px) var(--spot-y, -999px),
+    black,
+    transparent
+  );
+}
+
 .scroll-progress {
   position: fixed;
   right: 1rem;
@@ -269,6 +292,25 @@ em {
 }
 
 /* Skills */
+
+#skills {
+  position: relative;
+}
+
+.skill-logos {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.skill-logos img {
+  position: absolute;
+  opacity: 0.06;
+}
 
 .skills {
   margin-bottom: 3rem;
