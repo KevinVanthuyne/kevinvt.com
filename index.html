@@ -60,17 +60,11 @@
             </div>
 
             <div class="col-sm-6 col-sm-pull-4">
-              <div
-                data-aos="fade-up"
-                data-aos-delay="400"
-                data-aos-duration="2000"
-              >
-                <p class="rellax subtitle fit-text" data-rellax-speed="-5">
-                  Software<br />
-                  Engineer<br />
-                  &&nbsp;Maker
-                </p>
-              </div>
+              <p class="rellax subtitle fit-text" data-rellax-speed="-5">
+                Software<br />
+                Engineer<br />
+                <span class="ampersand">&amp;</span>&nbsp;Maker
+              </p>
               <!-- <div class="square1"></div> -->
             </div>
           </div>
@@ -93,7 +87,8 @@
             </div>
 
             <div class="col-xs-11 col-sm-5 col-sm-offset-1">
-              <h2><span class="secondary-color">_</span>About</h2>
+              <p class="command"><span class="secondary-color">$</span> cat about.txt</p>
+              <h2><span class="secondary-color">&gt;</span> About<span class="secondary-color cursor">_</span></h2>
               <div>
                 <ul>
                   <li data-aos="fade-up">
@@ -127,7 +122,8 @@
         <section id="skills">
           <div class="row mt-5 mt-sm-10">
             <div class="col-sm-11 col-sm-offset-1">
-              <h2><span class="secondary-color">_</span>Skills</h2>
+              <p class="command"><span class="secondary-color">$</span> ls skills/</p>
+              <h2><span class="secondary-color">&gt;</span> Skills<span class="secondary-color cursor">_</span></h2>
             </div>
           </div>
 
@@ -273,7 +269,8 @@
         <section id="projects" class="mt-5">
           <div class="row">
             <div class="col-sm-11 col-sm-offset-1">
-              <h2><span class="secondary-color">_</span>Projects</h2>
+              <p class="command"><span class="secondary-color">$</span> ls -la projects/</p>
+              <h2><span class="secondary-color">&gt;</span> Projects<span class="secondary-color cursor">_</span></h2>
             </div>
           </div>
 
@@ -542,7 +539,8 @@
             </div>
 
             <div class="col-sm-5">
-              <h2><span class="secondary-color">_</span>Contact</h2>
+              <p class="command"><span class="secondary-color">$</span> contact --list</p>
+              <h2><span class="secondary-color">&gt;</span> Contact<span class="secondary-color cursor">_</span></h2>
               <div class="contact-info">
                 <p data-aos="fade-up">
                   <span class="secondary-color">>></span> Send me a message<span
@@ -708,6 +706,83 @@
       var media = window.matchMedia("(min-width: 768px)");
       widthChanged(media);
       media.addListener(widthChanged);
+    </script>
+
+    <script>
+      // terminal touches: the subtitle and section headings type themselves out
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+
+        // Letters are wrapped and hidden up front, so fitty and the layout size for the full text.
+        function wrapCharacters(element) {
+          var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+          var textNodes = [];
+          var chars = [];
+          while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+          }
+          textNodes.forEach((node) => {
+            var fragment = document.createDocumentFragment();
+            node.textContent.split(/(\s+)/).forEach((part) => {
+              if (/^\s*$/.test(part)) {
+                fragment.appendChild(document.createTextNode(part));
+                return;
+              }
+              part.split("").forEach((char) => {
+                var span = document.createElement("span");
+                span.className = "typed-char";
+                span.textContent = char;
+                fragment.appendChild(span);
+                chars.push(span);
+              });
+            });
+            node.parentNode.replaceChild(fragment, node);
+          });
+          return chars;
+        }
+
+        function typeOut(chars, startDelay) {
+          var typedCount = 0;
+          function typeNext() {
+            if (typedCount > 0) {
+              chars[typedCount - 1].classList.remove("typing-cursor");
+            }
+            if (typedCount === chars.length) {
+              return;
+            }
+            var char = chars[typedCount];
+            char.classList.add("typed");
+            // A heading's own trailing _ is the cursor, so it needs no extra one.
+            if (!char.closest(".cursor")) {
+              char.classList.add("typing-cursor");
+            }
+            typedCount++;
+            setTimeout(typeNext, typedCount === chars.length ? 1200 : 60);
+          }
+          setTimeout(typeNext, startDelay);
+        }
+
+        typeOut(wrapCharacters(document.querySelector(".subtitle")), 700);
+
+        var headingChars = new Map();
+        var observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                observer.unobserve(entry.target);
+                typeOut(headingChars.get(entry.target), 0);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -15% 0px" }
+        );
+        document.querySelectorAll("main h2").forEach((heading) => {
+          headingChars.set(heading, wrapCharacters(heading));
+          observer.observe(heading);
+        });
+      })();
     </script>
   </body>
 </html>
