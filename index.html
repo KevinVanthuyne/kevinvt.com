@@ -651,7 +651,7 @@
               </p>
             </div>
 
-            <div class="col-sm-5">
+            <div class="col-xs-12 col-sm-5">
               <p class="command"><span class="secondary-color">$</span> contact --list</p>
               <h2><span class="secondary-color">&gt;</span> Contact<span class="secondary-color cursor">_</span></h2>
               <div class="contact-info">
@@ -797,6 +797,9 @@
       });
 
       function widthChanged(media) {
+        if (rellax) {
+          rellax.destroy();
+        }
         // bigger than mobile
         if (media.matches) {
           rellax = new Rellax(".rellax");
@@ -808,9 +811,8 @@
           document.querySelector(".navbar-mobile").style.maxHeight = "0";
           // mobile
         } else {
-          if (rellax) {
-            rellax.destroy();
-          }
+          // Only the skill logos move on a phone; the headings stay put.
+          rellax = new Rellax(".skill-logos .rellax");
           fitty(".fit-text", {
             maxSize: 105,
           });
@@ -825,6 +827,9 @@
       var media = window.matchMedia("(min-width: 768px)");
       widthChanged(media);
       media.addListener(widthChanged);
+
+      // Fitty measured the text in a fallback font. Once the web fonts arrive the letters are wider, so fit again.
+      document.fonts.ready.then(() => fitty.fitAll());
     </script>
 
     <script>
@@ -857,7 +862,7 @@
           lazyLoadInstance.update();
           AOS.refresh();
           // Parallax positions below the grid were measured for the old height.
-          if (rellax && media.matches) {
+          if (rellax) {
             rellax.refresh();
           }
           // The scroll progress bar and the nav marker depend on the page height.
