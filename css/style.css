@@ -191,7 +191,7 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.4) 1.5px, transparent 2px);
+  background-image: radial-gradient(rgba(60, 60, 60, 0.35) 1.5px, transparent 2px);
   background-size: var(--dot-grid-size) var(--dot-grid-size);
   -webkit-mask-image: radial-gradient(
     210px circle at var(--spot-x, -999px) var(--spot-y, -999px),
@@ -221,7 +221,7 @@ h4 {
   left: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.26) 1.5px, transparent 2px);
+  background-image: radial-gradient(rgba(60, 60, 60, 0.22) 1.5px, transparent 2px);
   background-size: var(--dot-grid-size) var(--dot-grid-size);
   background-attachment: fixed;
 }
