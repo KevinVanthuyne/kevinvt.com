@@ -154,9 +154,64 @@ h4 {
   background-color: rgb(231, 57, 57);
 }
 
+.navbar a,
+.navbar-mobile a {
+  transition: color 0.3s ease;
+}
+
+.navbar a.active,
+.navbar-mobile a.active {
+  color: rgb(60, 60, 60);
+}
+
+.navbar ul {
+  position: relative;
+}
+
+.nav-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-marker.ready {
+  transition: transform 0.4s ease;
+}
+
+.scroll-progress {
+  position: fixed;
+  right: 1rem;
+  bottom: 0.5rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.2em 0.5em;
+  background-color: rgb(245, 241, 234);
+  font-size: 0.6rem;
+  white-space: pre;
+  color: rgb(189, 184, 177);
+}
+
+/* PT Mono has no bold, and a synthesised bold can be wider, which would grow the bar as it fills. */
+.scroll-progress .secondary-color {
+  font-weight: normal;
+}
+
+/* On short screens such as a phone in landscape, the bar would cover the end of the side nav. */
+@media (max-height: 500px) {
+  .scroll-progress {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
+  }
+
+  .navbar a,
+  .navbar-mobile a,
+  .nav-marker.ready {
+    transition: none;
   }
 }
 
