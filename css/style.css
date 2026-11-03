@@ -200,6 +200,88 @@ h4 {
   );
 }
 
+/* Uses the same 24px grid fixed to the window as .spotlight, so the cursor darkens these exact dots. */
+#home,
+#contact {
+  position: relative;
+}
+
+#home::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(60, 60, 60, 0.18) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 55% at 60% 50%, black 30%, transparent 100%);
+}
+
+/* Centred on the links column, because parallax carries the catchphrase far above the section. */
+#contact::before {
+  -webkit-mask-image: radial-gradient(ellipse 50% 70% at 68% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 70% at 68% 50%, black 30%, transparent 100%);
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.crop-mark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 0 solid rgba(60, 60, 60, 0.4);
+}
+
+.crop-mark.top-left {
+  top: -10px;
+  left: -10px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.crop-mark.top-right {
+  top: -10px;
+  right: -10px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.crop-mark.bottom-left {
+  bottom: -10px;
+  left: -10px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.crop-mark.bottom-right {
+  bottom: -10px;
+  right: -10px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Sits in the picture's bottom margin, which collapses through .photo-frame. */
+.photo-label {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 0.65rem;
+  line-height: 1;
+  color: rgba(60, 60, 60, 0.45);
+}
+
 .scroll-progress {
   position: fixed;
   right: 1rem;
@@ -244,7 +326,9 @@ h4 {
   }
 
   .spotlight,
-  .skill-logos {
+  .skill-logos,
+  #home::before,
+  #contact::before {
     display: none;
   }
 }
