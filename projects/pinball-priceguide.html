@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pinball Price Guide - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Pinball Price Guide</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/pinball-priceguide</p>
+            <h2><span class="secondary-color">&gt;</span> Pinball Price Guide<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Oct 2026 (Ongoing)</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              The Pinball Price Guide answers one question: <em>what does this pinball machine usually go for in Europe?</em>
+              I run a pinball and arcade machine rental business and a YouTube channel about pinball, so this is a question I care about.
+              The guide is built on <em>asking prices</em> gathered from European sources, not on real sale prices, and the
+              site says so on every machine page.
+            </p>
+            <p>
+              The hard part is not the web page, it is the data. An ad says "TZ, VB 6500,-" or "Verkaufe Addams Family" and has to
+              become a specific machine, an edition and a price in euros. A pipeline reads ads in several languages and
+              extracts the price, the currency, the location and the type of ad (machine, parts, wanted, virtual pinball).
+              It then matches the machine against the public Open Pinball Database (OPDB) catalogue: known aliases and exact names first,
+              then fuzzy matching. A confident match is accepted automatically, anything unsure goes to a review screen
+              where I pick the right machine by hand. For the really difficult ads there is an optional LLM step, and I also had
+              a language model check about 15,000 stored ads to find wrong matches and prices, and a command applies the corrections it found.
+            </p>
+            <p>
+              Per machine the guide shows a median, the P25-P75 range, the number of ads and a 12 month trend. Outliers are
+              removed with the 1.5 x IQR rule, a repost of the same ad counts once, and below three observations the guide
+              shows "not enough data" instead of a price. Ads are followed over time (active, sold, closed, removed) and price
+              changes are stored as events, which gives the price history chart for every machine. Prices can also be split by
+              country and by condition, and where bids are known the guide shows the highest bid compared to the asking price.
+              At the moment it holds around 15,000 ads and prices for more than 460 machines. The interface is in Dutch.
+            </p>
+            <p>
+              The project has 2 major components:
+            </p>
+              <ol class="mb-2">
+                <li>Backend: Django 5.2 with Django REST Framework, a pipeline of management commands (extraction, matching, lifecycle, statistics) and SQLite or PostgreSQL</li>
+                <li>Frontend: Angular 22 with standalone components and signals, Bootstrap 5 and Chart.js for the charts</li>
+              </ol>
+            <p>
+              The backend is covered by pytest tests, and the matching rules are measured against the labels I gave in the review screen.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-7">
+            <img
+              src="../img/projects/pinball-priceguide/overview-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/overview.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Overview page of the Pinball Price Guide with counters at the top and a table of machines with median price, price range, number of ads and trend."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pinball-priceguide/machine-detail-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/machine-detail.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Detail page of a pinball machine with median price, price range, trend and a chart of asking prices over time with a monthly median line, plus tables per country and per condition."
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-5">
+            <img
+              src="../img/projects/pinball-priceguide/machine-detail-phone-thumb.jpg"
+              data-src="../img/projects/pinball-priceguide/machine-detail-phone.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The machine detail page with the price history chart on a phone screen."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>
