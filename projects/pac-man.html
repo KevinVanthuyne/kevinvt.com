@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pac-Man Restoration - Kevin Vanthuyne</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="big-nav-container">
+          <a href="../index.html">
+            <nav class="big-nav">
+              K
+            </nav>
+          </a>
+          <p class="big-nav-breadcrumb">/&nbsp;<a href="../index.html#projects">Projects</a> /&nbsp;Pac-Man Restoration</p>
+        </div>
+      </div>
+
+      <main class="project-page">
+        <div class="row mt-5">
+          <div class="col-sm-12">
+            <p class="command"><span class="secondary-color">$</span> cd ~/projects/pac-man</p>
+            <h2><span class="secondary-color">&gt;</span> Pac-Man Restoration<span class="secondary-color cursor">_</span></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="project-date">Aug 2024 - Nov 2024</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-8" data-aos="fade-up">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube-nocookie.com/embed/QKKdYOs6Pds" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 project-page-description">
+            <p>
+              I restored an original 1980 <em>Pac-Man</em> arcade cabinet from <em>two wrecked ones</em>. One cabinet had a decent
+              body with its marquee, bezel and control panel, but no screen, no game board and no coin door. The other was
+              falling apart, with a swollen top, a bottom plate that was mostly gone and ruined side art, but it still held a working CRT screen and
+              the game's circuit board. The plan was to put the good parts of both into the better cabinet and keep everything as original as possible.
+              I made a <a href="https://www.youtube.com/watch?v=QKKdYOs6Pds" class="red-link" target="_blank" rel="noopener noreferrer">video about the whole restoration</a>
+              on my YouTube channel Overtinker.
+            </p>
+            <p>
+              After a thorough clean, I checked the fuses and the power supply and powered everything up for the first time, through a
+              transformer, as the cabinet came from the US and runs on 110V. The game and the screen worked. Joystick and buttons needed small repairs:
+              a loose wire on a leaf switch and a broken start button. Then I found that the game ran far too fast. Operators used to modify Pac-Man this way
+              so players lost their quarters sooner. The culprit was a modified ROM chip on the game board. To put the original code back, I programmed a
+              new 2532 ROM with an open source ROM programmer and an Arduino, erasing the old chip with UV light first. After that,
+              Pac-Man was back to its normal speed.
+            </p>
+            <p>
+              The rest was careful restoration work. I combined the best parts of both control panels and painted the rusty joystick frame.
+              I cleaned the 40-year-old paint with a wet rag and, as a last step, a magic eraser. I took the coin door apart, sanded it to bare metal, sprayed it and riveted its plate back on.
+              The marquee brackets got the same treatment. The screen had lost its green, which turned out to be a cracked solder joint on the video header, fixed by reflowing the solder.
+              I kept the old T-molding and the control panel overlay on purpose, as they show the cabinet's age.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-6">
+            <img
+              src="../img/projects/pac-man/two-wrecked-cabinets-thumb.jpg"
+              data-src="../img/projects/pac-man/two-wrecked-cabinets.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The two Pac-Man cabinets before the restoration: a shell with marquee and a cabinet with badly damaged side art."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/game-pcb-thumb.jpg"
+              data-src="../img/projects/pac-man/game-pcb.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Close-up of the original Pac-Man game circuit board."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/speed-rom-socket-thumb.jpg"
+              data-src="../img/projects/pac-man/speed-rom-socket.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The game board with the modified ROM chip taken out of its socket."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/coin-door-restored-thumb.jpg"
+              data-src="../img/projects/pac-man/coin-door-restored.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The restored coin door mounted in the cabinet."
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <img
+              src="../img/projects/pac-man/good-cabinet-before-thumb.jpg"
+              data-src="../img/projects/pac-man/good-cabinet-before.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The better cabinet before restoration, with its coin door missing, next to the damaged one."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/first-power-on-thumb.jpg"
+              data-src="../img/projects/pac-man/first-power-on.jpg"
+              class="img-responsive lazy mb-1"
+              alt="Pac-Man running on the original CRT screen after the first power on."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/crt-colors-fixed-thumb.jpg"
+              data-src="../img/projects/pac-man/crt-colors-fixed.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The CRT screen showing Pac-Man with correct colors again after the solder repair."
+              data-aos="fade-up"
+            />
+            <img
+              src="../img/projects/pac-man/finished-cabinet-thumb.jpg"
+              data-src="../img/projects/pac-man/finished-cabinet.jpg"
+              class="img-responsive lazy mb-1"
+              alt="The finished Pac-Man cabinet with restored marquee, coin door and control panel."
+              data-aos="fade-up"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-sm-12" data-aos="fade-up">
+            <a href="../index.html" class="red-link">
+              <span class="secondary-color"><<</span> Back
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/aos.js"></script>
+    <script type="text/javascript">
+      AOS.init({ once: true, duration: 1500 });
+    </script>
+
+    <script src="../js/lazyload.min.js"></script>
+    <script type="text/javascript">
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
+      });
+    </script>
+    <script src="../js/terminal.js"></script>
+  </body>
+</html>
