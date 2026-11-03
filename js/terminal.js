@@ -74,85 +74,25 @@
       },
       { rootMargin: "0px 0px -15% 0px" }
     );
-    document.querySelectorAll("main h2").forEach((heading) => {
+    document.querySelectorAll("main:not(.project-page) h2").forEach((heading) => {
       headingChars.set(heading, wrapCharacters(heading));
       observer.observe(heading);
     });
   }
 
-  function cdCommandFor(url) {
-    var project = url.pathname.match(/\/projects\/([^/]+)\.html$/);
-    if (project) {
-      return "cd ~/projects/" + project[1];
+  // On a project page the cd line types first, as the command that opened the page, and the heading follows as its output.
+  function typeProjectCommand() {
+    var command = document.querySelector(".project-page .command");
+    if (!command) {
+      return;
     }
-    return url.hash === "#projects" ? "cd ~/projects" : "cd ~";
-  }
-
-  function typeCdBeforeLeaving() {
-    var leaving = false;
-    document.addEventListener("click", (event) => {
-      var link = event.target.closest("a");
-      if (
-        leaving ||
-        !link ||
-        link.target ||
-        event.defaultPrevented ||
-        event.button !== 0 ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.shiftKey ||
-        event.altKey
-      ) {
-        return;
-      }
-      var url = new URL(link.href, window.location.href);
-      var isOtherPage =
-        url.protocol === window.location.protocol &&
-        url.host === window.location.host &&
-        url.pathname !== window.location.pathname &&
-        /(\.html|\/)$/.test(url.pathname);
-      if (!isOtherPage) {
-        return;
-      }
-
-      event.preventDefault();
-      leaving = true;
-      var overlay = document.createElement("div");
-      overlay.className = "cd-overlay";
-      overlay.innerHTML =
-        '<p class="cd-command"><span class="secondary-color">$</span> <span class="cd-text"></span></p>';
-      var text = overlay.querySelector(".cd-text");
-      text.textContent = cdCommandFor(url);
-      document.body.appendChild(overlay);
-
-      // Fetch the next page while the command is typed, so it opens without a second wait.
-      var prefetch = document.createElement("link");
-      prefetch.rel = "prefetch";
-      prefetch.href = url.href;
-      document.head.appendChild(prefetch);
-
-      typeOut(wrapCharacters(text), {
-        delay: 150,
-        interval: 30,
-        onDone: () =>
-          setTimeout(() => {
-            window.location.assign(url.href);
-            // A stopped or failed navigation would otherwise leave the overlay blocking the page.
-            setTimeout(removeOverlay, 3000);
-          }, 250),
-      });
-    });
-
-    function removeOverlay() {
-      leaving = false;
-      document.querySelectorAll(".cd-overlay").forEach((overlay) => overlay.remove());
-    }
-
-    // The back button can restore this page from the browser cache with the overlay still on top.
-    window.addEventListener("pageshow", (event) => {
-      if (event.persisted) {
-        removeOverlay();
-      }
+    var commandChars = wrapCharacters(command);
+    commandChars.shift().classList.add("typed");
+    var headingChars = wrapCharacters(command.nextElementSibling);
+    typeOut(commandChars, {
+      delay: 300,
+      interval: 40,
+      onDone: () => typeOut(headingChars, { delay: 300 }),
     });
   }
 
@@ -193,7 +133,8 @@
 
       var activeLink = navList.querySelector("a.active");
       var x = activeLink.offsetLeft - marker.offsetWidth * 1.5;
-      marker.style.transform = "translate(" + x + "px, " + activeLink.offsetTop + "px)";
+      var y = activeLink.offsetTop + (activeLink.offsetHeight - marker.offsetHeight) / 2;
+      marker.style.transform = "translate(" + x + "px, " + y + "px)";
     }
 
     var scheduled = false;
@@ -218,42 +159,57 @@
     window.addEventListener("resize", () => scheduleUpdate(true));
   }
 
-  function showLastCommit() {
-    var log = document.querySelector(".git-log");
-    if (!log) {
-      return;
+  function showScrollProgress() {
+    var cells = 20;
+    var progress = document.createElement("p");
+    progress.className = "scroll-progress hidden-xs";
+    progress.innerHTML =
+      '[<span class="secondary-color"></span><span class="scroll-progress-rest"></span>] <span class="scroll-progress-percent"></span>';
+    var filled = progress.children[0];
+    var rest = progress.children[1];
+    var percentText = progress.children[2];
+    document.body.appendChild(progress);
+
+    var shownPercent = null;
+    function update() {
+      var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      progress.hidden = scrollable <= 0;
+      var percent = scrollable > 0 ? Math.min(100, Math.round((window.scrollY / scrollable) * 100)) : 0;
+      if (percent === shownPercent) {
+        return;
+      }
+      shownPercent = percent;
+      var filledCells = Math.round((percent / 100) * cells);
+      filled.textContent = "#".repeat(filledCells);
+      rest.textContent = "-".repeat(cells - filledCells);
+      percentText.textContent = String(percent).padStart(3) + "%";
     }
-    fetch("https://api.github.com/repos/KevinVanthuyne/kevinvt.com/commits?sha=master&per_page=10")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        return response.json();
-      })
-      .then((commits) => {
-        var commit = commits.find((candidate) => candidate.parents.length === 1);
-        if (!commit) {
-          return;
-        }
-        var hash = log.querySelector(".git-log-hash");
-        hash.textContent = commit.sha.slice(0, 7);
-        hash.href = commit.html_url;
-        log.querySelector(".git-log-date").textContent = new Date(
-          commit.commit.author.date
-        ).toDateString();
-        log.querySelector(".git-log-message").textContent = commit.commit.message.split("\n")[0];
-        log.hidden = false;
-      })
-      .catch(() => {});
+
+    var scheduled = false;
+    function scheduleUpdate() {
+      if (!scheduled) {
+        scheduled = true;
+        window.requestAnimationFrame(() => {
+          scheduled = false;
+          update();
+        });
+      }
+    }
+
+    update();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    // Lazy-loaded images change the page height after load.
+    window.addEventListener("load", scheduleUpdate);
   }
 
   markActiveSection();
-  showLastCommit();
+  showScrollProgress();
 
   if (reduceMotion) {
     return;
   }
   typeSubtitle();
   typeHeadingsOnScroll();
-  typeCdBeforeLeaving();
+  typeProjectCommand();
 })();

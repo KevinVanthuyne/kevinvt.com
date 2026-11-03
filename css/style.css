@@ -178,42 +178,17 @@ h4 {
   transition: transform 0.4s ease;
 }
 
-.cd-overlay {
+.scroll-progress {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  padding: 0 10vw;
+  right: 1rem;
+  bottom: 0.5rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.2em 0.5em;
   background-color: rgb(245, 241, 234);
-  animation: cd-fade-in 0.15s ease;
-}
-
-@keyframes cd-fade-in {
-  from {
-    opacity: 0;
-  }
-}
-
-.cd-command {
-  font-size: 1.5rem;
-}
-
-.git-log {
-  margin-bottom: 3rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
+  white-space: pre;
   color: rgb(189, 184, 177);
-}
-
-.git-log p {
-  margin-bottom: 0.5em;
-}
-
-.git-log-message {
-  padding-left: 2em;
 }
 
 @media (prefers-reduced-motion: reduce) {
