@@ -257,6 +257,15 @@ em {
   height: 50vh;
 }
 
+/* fitty makes the longest subtitle line exactly as wide as the column. A caret drawn after its letter
+   would stick out and make the page wider than the screen, so on a phone it sits under the letter. */
+@media (max-width: 767px) {
+  .subtitle .typing-cursor::after {
+    left: auto;
+    right: 0;
+  }
+}
+
 /* About */
 
 .portret-picture {
