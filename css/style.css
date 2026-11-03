@@ -200,20 +200,6 @@ h4 {
   );
 }
 
-main > section {
-  position: relative;
-}
-
-.dot-patch {
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(60, 60, 60, 0.3) 1px, transparent 1.5px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(closest-side, black 35%, transparent);
-  mask-image: radial-gradient(closest-side, black 35%, transparent);
-}
-
 .scroll-progress {
   position: fixed;
   right: 1rem;
@@ -258,7 +244,6 @@ main > section {
   }
 
   .spotlight,
-  .dot-patch,
   .skill-logos {
     display: none;
   }

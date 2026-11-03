@@ -17,7 +17,6 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 ## Conventions
 
 - **Bootstrap 3.3.7** (`css/bootstrap.min.css`), so use BS3 grid classes: `col-xs-*`, `col-sm-offset-*`, `img-responsive`. BS4 names like `mt-5`, `mb-2`, `mt-sm-20` are not Bootstrap here; they are custom utilities defined in `css/style.css`. Add any new utility there.
-- Faint dot-grid texture also sits in a few fixed spots: `<div class="dot-patch hidden-xs" style="top; left|right; width; height">` as the first child of a section. Add one where the layout looks empty.
 - **Images are lazy-loaded**: `src` points to a small thumbnail, `data-src` to the full image, plus class `lazy`. Newer projects keep both in `img/projects/<name>/` (`foo-thumb.jpg` + `foo.jpg`); older ones use `img/thumbnails/<name>-thumbnail.jpg` + `img/<name>.jpg`.
 - Content blocks fade in with `data-aos="fade-up"`.
 - The skills section has faint tech logos behind it (`.skill-logos`), only the main skills, each a `rellax` image. Speeds are mixed (-4 to 3) and some logos sit above (negative `top`) or below (over 100%) the section, so they show up in About and Projects too. Keep negative speeds at -4 or slower: a faster one outruns the scroll on short viewports and the page grows without end. Each has its own horizontal lane (`left` in steps of 10%) so none overlap; use a free lane. They are from Simple Icons (CC0), saved in `img/icons/skills/<slug>.svg`. Simple Icons has no AWS, Azure or C# logo.
