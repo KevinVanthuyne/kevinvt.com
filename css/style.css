@@ -632,6 +632,10 @@ em {
   margin-bottom: 2em;
 }
 
+.project-page-description li {
+  font-size: 1.15em;
+}
+
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)
  * Version: 2.3.2
@@ -762,10 +766,12 @@ em {
     width: 60%;
   }
 
-  .project-page-description p,
+  .project-page-description p {
+    font-size: 0.9rem;
+  }
 
   .project-page-description li {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -822,10 +828,12 @@ em {
     margin: 8rem 10vw;
   }
 
-  .project-page-description p,
+  .project-page-description p {
+    font-size: 0.9rem;
+  }
 
   .project-page-description li {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 
   .mt-sm-5 {
@@ -855,10 +863,12 @@ em {
     font-size: 1rem;
   }
 
-  .project-page-description p,
+  .project-page-description p {
+    font-size: 0.85rem;
+  }
 
   .project-page-description li {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .project-date {
@@ -901,9 +911,11 @@ em {
     width: 40%;
   }
 
-  .project-page-description p,
+  .project-page-description p {
+    font-size: 0.65rem;
+  }
 
   .project-page-description li {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 }
