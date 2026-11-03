@@ -19,7 +19,7 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 - **Bootstrap 3.3.7** (`css/bootstrap.min.css`), so use BS3 grid classes: `col-xs-*`, `col-sm-offset-*`, `img-responsive`. BS4 names like `mt-5`, `mb-2`, `mt-sm-20` are not Bootstrap here; they are custom utilities defined in `css/style.css`. Add any new utility there.
 - **Images are lazy-loaded**: `src` points to a small thumbnail, `data-src` to the full image, plus class `lazy`. Newer projects keep both in `img/projects/<name>/` (`foo-thumb.jpg` + `foo.jpg`); older ones use `img/thumbnails/<name>-thumbnail.jpg` + `img/<name>.jpg`.
 - Content blocks fade in with `data-aos="fade-up"`.
-- Headings start with an accent underscore: `<h2><span class="secondary-color">_</span>Title</h2>`. In-text links use `class="red-link"`; external links add `target="_blank" rel="noopener noreferrer"`.
+- Homepage section headings look like a terminal prompt: a command line above them (`<p class="command"><span class="secondary-color">$</span> cat about.txt</p>`), then `<h2><span class="secondary-color">&gt;</span> Title<span class="secondary-color cursor">_</span></h2>`, which a script in `index.html` types out on scroll. Project pages keep the older accent underscore prefix: `<h2><span class="secondary-color">_</span>Title</h2>`. In-text links use `class="red-link"`; external links add `target="_blank" rel="noopener noreferrer"`.
 
 ## Adding or removing a project
 
