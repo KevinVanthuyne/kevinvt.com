@@ -11,7 +11,7 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 - `index.html` — single-page home: hero, about/skills, the projects grid (`#projects`) and contact. Holds the page's inline JS (mobile navbar toggle, Rellax parallax, VanillaTilt, fitty, and a media query that disables parallax/tilt below 768px).
 - `projects/<name>.html` — one standalone page per project. Each repeats the full `<head>`, the "K" nav with a `/ Projects / <Name>` breadcrumb, and a "<< Back" link. They load AOS, LazyLoad and `terminal.js` from `../js/`.
 - `css/style.css` — all custom styling. `css/bootstrap4.min.css` and `css/style-old.css` are not referenced by any page.
-- `js/` — vendored, minified third-party libraries (AOS, Rellax, VanillaTilt, fitty, LazyLoad, SmoothScroll). Do not edit them. The exception is `js/terminal.js`, our own script for the terminal effects on every page: typed subtitle and headings, the `$ cd ...` screen when moving between pages, the `>` marker on the active nav item, and the `git log` footer, which reads the last non-merge commit on master from the public GitHub API.
+- `js/` — vendored, minified third-party libraries (AOS, Rellax, VanillaTilt, fitty, LazyLoad, SmoothScroll). Do not edit them. The exception is `js/terminal.js`, our own script for the terminal effects. On every page: typed headings and the `$ cd ...` screen when moving between pages. On the homepage only: the typed subtitle, the `>` marker on the active nav item, and the `git log` footer, which reads the last non-merge commit on master from the public GitHub API.
 - `projects/template.html` is gitignored: a local-only starting point that may not exist in a given checkout. Copy an existing project page such as `projects/agon.html` instead.
 
 ## Conventions

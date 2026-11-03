@@ -124,18 +124,34 @@
       var text = overlay.querySelector(".cd-text");
       text.textContent = cdCommandFor(url);
       document.body.appendChild(overlay);
+
+      // Fetch the next page while the command is typed, so it opens without a second wait.
+      var prefetch = document.createElement("link");
+      prefetch.rel = "prefetch";
+      prefetch.href = url.href;
+      document.head.appendChild(prefetch);
+
       typeOut(wrapCharacters(text), {
         delay: 150,
         interval: 30,
-        onDone: () => setTimeout(() => window.location.assign(url.href), 250),
+        onDone: () =>
+          setTimeout(() => {
+            window.location.assign(url.href);
+            // A stopped or failed navigation would otherwise leave the overlay blocking the page.
+            setTimeout(removeOverlay, 3000);
+          }, 250),
       });
     });
+
+    function removeOverlay() {
+      leaving = false;
+      document.querySelectorAll(".cd-overlay").forEach((overlay) => overlay.remove());
+    }
 
     // The back button can restore this page from the browser cache with the overlay still on top.
     window.addEventListener("pageshow", (event) => {
       if (event.persisted) {
-        leaving = false;
-        document.querySelectorAll(".cd-overlay").forEach((overlay) => overlay.remove());
+        removeOverlay();
       }
     });
   }
@@ -154,7 +170,9 @@
     marker.textContent = ">";
     navList.appendChild(marker);
 
-    function update() {
+    var shownActive = null;
+
+    function update(force) {
       var readingLine = window.innerHeight * 0.4;
       var atBottom =
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
@@ -167,6 +185,10 @@
       if (atBottom) {
         active = hashes[hashes.length - 1];
       }
+      if (active === shownActive && !force) {
+        return;
+      }
+      shownActive = active;
       links.forEach((link) => link.classList.toggle("active", link.hash === active));
 
       var activeLink = navList.querySelector("a.active");
@@ -175,22 +197,25 @@
     }
 
     var scheduled = false;
-    function scheduleUpdate() {
+    function scheduleUpdate(force) {
       if (!scheduled) {
         scheduled = true;
         window.requestAnimationFrame(() => {
           scheduled = false;
-          update();
+          update(force);
         });
       }
     }
 
     update();
-    // Only animate moves between sections, not the first placement.
-    window.requestAnimationFrame(() => marker.classList.add("ready"));
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
-    document.fonts.ready.then(update);
+    // Web fonts change the link widths, so the marker is placed again once they have loaded.
+    // Only moves after that are animated, not the first placement.
+    document.fonts.ready.then(() => {
+      update(true);
+      window.requestAnimationFrame(() => marker.classList.add("ready"));
+    });
+    window.addEventListener("scroll", () => scheduleUpdate(false), { passive: true });
+    window.addEventListener("resize", () => scheduleUpdate(true));
   }
 
   function showLastCommit() {
@@ -214,7 +239,7 @@
         hash.textContent = commit.sha.slice(0, 7);
         hash.href = commit.html_url;
         log.querySelector(".git-log-date").textContent = new Date(
-          commit.commit.committer.date
+          commit.commit.author.date
         ).toDateString();
         log.querySelector(".git-log-message").textContent = commit.commit.message.split("\n")[0];
         log.hidden = false;
