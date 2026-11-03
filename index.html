@@ -428,8 +428,8 @@
                 <div class="project hvr-reveal" data-aos="fade-up">
                   <img
                     src="img/projects/openclaw/openclaw-logo-thumb.png"
-                    data-src="img/projects/openclaw/openclaw-logo.png"
-                    class="img-responsive lazy"
+                    loading="lazy"
+                    class="img-responsive"
                     alt="The OpenClaw logo: a round red lobster mascot next to the name OpenClaw"
                   />
                   <div class="project-info">
@@ -739,7 +739,7 @@
 
     <script src="js/aos.js"></script>
     <script type="text/javascript">
-      AOS.init({ once: true, duration: 1500 });
+      AOS.init({ once: true, duration: 1500, disableMutationObserver: true });
     </script>
 
     <script src="js/smooth-scroll.polyfills.min.js"></script>
@@ -791,7 +791,8 @@
       //responsive javascript stuff
 
       var rellax;
-      VanillaTilt.init(document.querySelectorAll(".project"), {
+      var projectCards = document.querySelectorAll(".project");
+      VanillaTilt.init(projectCards, {
         reverse: true,
         speed: 5000,
       });
@@ -800,7 +801,7 @@
         // bigger than mobile
         if (media.matches) {
           rellax = new Rellax(".rellax");
-          VanillaTilt.init(document.querySelectorAll(".project"), {
+          VanillaTilt.init(projectCards, {
             reverse: true,
             speed: 5000,
           });
@@ -814,8 +815,11 @@
           fitty(".fit-text", {
             maxSize: 105,
           });
-          var projectCards = document.querySelectorAll(".project");
-          projectCards.forEach((project) => project.vanillaTilt.destroy());
+          projectCards.forEach((project) => {
+            if (project.vanillaTilt) {
+              project.vanillaTilt.destroy();
+            }
+          });
         }
       }
 
@@ -825,7 +829,6 @@
     </script>
 
     <script>
-      // project filter
       (function () {
         var columns = Array.from(document.querySelectorAll(".projects > div"));
         // The markup deals the cards out over the columns row by row, so reading them back that way gives the newest-first order.
@@ -858,6 +861,8 @@
           if (rellax && media.matches) {
             rellax.refresh();
           }
+          // The scroll progress bar and the nav marker depend on the page height.
+          window.dispatchEvent(new Event("resize"));
         }
 
         buttons.forEach((button) => {
@@ -869,7 +874,9 @@
         });
 
         filterBar.classList.remove("hidden");
-        layOut();
+        if (!media.matches) {
+          layOut();
+        }
         media.addListener(layOut);
       })();
     </script>
