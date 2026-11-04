@@ -49,6 +49,10 @@ body {
 }
 
 /* A tmux-style status bar along the bottom of a phone, within reach of the thumb. */
+.has-tmux {
+  --tmux-height: 2.6rem;
+}
+
 .navbar-tmux {
   position: fixed;
   right: 0;
@@ -58,13 +62,15 @@ body {
   display: flex;
   background-color: rgb(223, 217, 208);
   font-size: 0.58rem;
-  line-height: 2.6rem;
+  line-height: var(--tmux-height);
   white-space: nowrap;
   text-align: center;
 }
 
 .navbar-tmux a {
   flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
   padding: 0 0.3rem;
   color: gray;
   border: none;
@@ -74,6 +80,7 @@ body {
 .navbar-tmux a:hover,
 .navbar-tmux a:focus {
   text-decoration: none;
+  outline: none;
 }
 
 .navbar-tmux a.active {
@@ -90,8 +97,8 @@ body {
 
 /* Keeps the end of the page clear of the bar. */
 @media (max-width: 767px) {
-  body {
-    padding-bottom: 2.6rem;
+  .has-tmux {
+    padding-bottom: var(--tmux-height);
   }
 }
 
@@ -396,6 +403,7 @@ h4 {
 
   .spotlight,
   .skill-logos,
+  .navbar-tmux,
   #home::before,
   #contact::before,
   .project-page::before,
@@ -838,10 +846,6 @@ em {
 @media (min-width: 768px) {
   html {
     font-size: 21px;
-  }
-
-  .navbar-tmux {
-    display: none;
   }
 
   .navbar {
