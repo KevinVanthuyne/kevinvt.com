@@ -97,7 +97,7 @@
   }
 
   function markActiveSection() {
-    var links = document.querySelectorAll(".navbar a, .navbar-mobile a");
+    var links = document.querySelectorAll(".navbar a, .navbar-tmux a");
     var navList = document.querySelector(".navbar ul");
     if (!navList) {
       return;

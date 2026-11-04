@@ -43,33 +43,69 @@ body {
   background-color: rgb(223, 217, 208);
 }
 
-.navbar-button {
-  padding: 0.3em 0.8em;
-  text-align: right;
-}
-
-.navbar-button:hover {
-  background-color: rgb(189, 184, 177);
-  cursor: pointer;
-}
-
-.navbar-mobile {
-  text-transform: uppercase;
-  height: auto;
-  max-height: 0;
-  overflow: hidden;
-  width: 100vw;
-  text-align: center;
-}
-
-.navbar-mobile li {
-  margin: 1em 0;
-}
-
-.navbar-mobile a,
 .navbar a {
   color: gray;
   border: none;
+}
+
+/* A tmux-style status bar along the bottom of a phone, within reach of the thumb. */
+.has-tmux {
+  --tmux-height: 2.6rem;
+}
+
+.navbar-tmux {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  background-color: rgb(223, 217, 208);
+  font-size: 0.58rem;
+  line-height: var(--tmux-height);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.navbar-tmux a {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0.3rem;
+  color: gray;
+  border: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-tmux a:hover,
+.navbar-tmux a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.navbar-tmux a.active {
+  background-color: rgb(231, 57, 57);
+  color: rgb(245, 241, 234);
+}
+
+.tmux-host {
+  display: none;
+  padding: 0 0.6rem;
+  background-color: rgb(60, 60, 60);
+  color: rgb(245, 241, 234);
+}
+
+/* Keeps the end of the page clear of the bar. */
+@media (max-width: 767px) {
+  .has-tmux {
+    padding-bottom: var(--tmux-height);
+  }
+}
+
+@media (min-width: 400px) {
+  .tmux-host {
+    display: block;
+  }
 }
 
 h1,
@@ -127,11 +163,6 @@ h4 {
   margin-top: 0.2em;
 }
 
-/* A hint of the accent, close enough to the subtitle colour to stay part of the line. */
-.ampersand {
-  color: rgb(225, 177, 170);
-}
-
 .typed-char {
   opacity: 0;
 }
@@ -154,13 +185,11 @@ h4 {
   background-color: rgb(231, 57, 57);
 }
 
-.navbar a,
-.navbar-mobile a {
+.navbar a {
   transition: color 0.3s ease;
 }
 
-.navbar a.active,
-.navbar-mobile a.active {
+.navbar a.active {
   color: rgb(60, 60, 60);
 }
 
@@ -360,7 +389,7 @@ h4 {
   }
 
   .navbar a,
-  .navbar-mobile a,
+  .navbar-tmux a,
   .nav-marker.ready {
     transition: none;
   }
@@ -374,6 +403,7 @@ h4 {
 
   .spotlight,
   .skill-logos,
+  .navbar-tmux,
   #home::before,
   #contact::before,
   .project-page::before,
