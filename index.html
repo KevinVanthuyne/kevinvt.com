@@ -662,7 +662,7 @@
             </div>
           </div>
 
-          <!-- Phones start with the first dozen projects. The script shows this button when more are waiting. -->
+          <!-- Hidden by default, so without JavaScript every card shows and there is nothing to expand. -->
           <div class="row hidden projects-more-row">
             <div class="col-xs-12 text-center">
               <button type="button" class="btn btn-link projects-more">
@@ -867,7 +867,7 @@
     <script>
       (function () {
         var columns = Array.from(document.querySelectorAll(".projects > div"));
-        // The markup deals the cards out over the columns row by row, so reading them back that way gives the newest-first order.
+        // The markup deals the cards out over the columns row by row, so reading them back that way gives the curated order.
         var cards = [];
         var rowCount = Math.max.apply(null, columns.map((column) => column.children.length));
         for (var row = 0; row < rowCount; row++) {
@@ -895,15 +895,21 @@
             (card) => activeFilter === "all" || card.dataset.category.split(" ").includes(activeFilter)
           );
           var visible = media.matches || showAllOnPhone ? matching : matching.slice(0, phoneCardLimit);
+          var shownBefore = cards.filter((card) => card.isConnected);
           cards.forEach((card) => card.remove());
           visible.forEach((card, index) => usedColumns[index % usedColumns.length].appendChild(card));
+          // AOS measured the cards that were not on the page as being at the top and marked them as done.
+          // Clear that, so they fade in when they appear.
+          visible
+            .filter((card) => !shownBefore.includes(card))
+            .forEach((card) => card.querySelector(".project").classList.remove("aos-animate"));
 
           var waiting = matching.length - visible.length;
           moreCount.textContent = waiting;
           moreRow.classList.toggle("hidden", waiting === 0);
 
           lazyLoadInstance.update();
-          AOS.refresh();
+          AOS.refreshHard();
           // Parallax positions below the grid were measured for the old height.
           if (rellax) {
             rellax.refresh();
