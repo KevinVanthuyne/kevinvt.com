@@ -661,6 +661,15 @@
               </a>
             </div>
           </div>
+
+          <!-- Hidden by default, so without JavaScript every card shows and there is nothing to expand. -->
+          <div class="row hidden projects-more-row">
+            <div class="col-xs-12 text-center">
+              <button type="button" class="btn btn-link projects-more">
+                show <span class="projects-more-count"></span> more <span class="projects-more-chevron"></span>
+              </button>
+            </div>
+          </div>
         </section>
 
         <!-- Contact -->
@@ -858,7 +867,7 @@
     <script>
       (function () {
         var columns = Array.from(document.querySelectorAll(".projects > div"));
-        // The markup deals the cards out over the columns row by row, so reading them back that way gives the newest-first order.
+        // The markup deals the cards out over the columns row by row, so reading them back that way gives the curated order.
         var cards = [];
         var rowCount = Math.max.apply(null, columns.map((column) => column.children.length));
         for (var row = 0; row < rowCount; row++) {
@@ -873,17 +882,34 @@
         var buttons = filterBar.querySelectorAll("button");
         var activeFilter = "all";
 
+        // One long column is a lot of scrolling, so phones start with the strongest projects.
+        var phoneCardLimit = 12;
+        var showAllOnPhone = false;
+        var moreRow = document.querySelector(".projects-more-row");
+        var moreCount = moreRow.querySelector(".projects-more-count");
+
         function layOut() {
           // On phones the columns stack, so dealing over them would break the order.
           var usedColumns = media.matches ? columns : columns.slice(0, 1);
-          var visible = cards.filter(
+          var matching = cards.filter(
             (card) => activeFilter === "all" || card.dataset.category.split(" ").includes(activeFilter)
           );
+          var visible = media.matches || showAllOnPhone ? matching : matching.slice(0, phoneCardLimit);
+          var shownBefore = cards.filter((card) => card.isConnected);
           cards.forEach((card) => card.remove());
           visible.forEach((card, index) => usedColumns[index % usedColumns.length].appendChild(card));
+          // AOS measured the cards that were not on the page as being at the top and marked them as done.
+          // Clear that, so they fade in when they appear.
+          visible
+            .filter((card) => !shownBefore.includes(card))
+            .forEach((card) => card.querySelector(".project").classList.remove("aos-animate"));
+
+          var waiting = matching.length - visible.length;
+          moreCount.textContent = waiting;
+          moreRow.classList.toggle("hidden", waiting === 0);
 
           lazyLoadInstance.update();
-          AOS.refresh();
+          AOS.refreshHard();
           // Parallax positions below the grid were measured for the old height.
           if (rellax) {
             rellax.refresh();
@@ -898,6 +924,11 @@
             buttons.forEach((other) => other.classList.toggle("active", other === button));
             layOut();
           });
+        });
+
+        moreRow.querySelector("button").addEventListener("click", () => {
+          showAllOnPhone = true;
+          layOut();
         });
 
         filterBar.classList.remove("hidden");

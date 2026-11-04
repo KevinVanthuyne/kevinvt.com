@@ -545,6 +545,43 @@ em {
   border: none;
 }
 
+/* The text keeps its side margins, but the project images get nearly the full screen width. */
+@media (max-width: 767px) {
+  .row.projects {
+    margin-left: calc(-15px - 0.5rem);
+    margin-right: calc(-15px - 0.5rem);
+  }
+
+  .projects > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.projects-more {
+  padding: 0.3em 0.6em;
+  font-size: inherit;
+  color: rgb(60, 60, 60);
+}
+
+/* A V drawn with borders, so it looks the same in every font. */
+.projects-more-chevron {
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin: 0 0 0.2em 0.3em;
+  border-right: 2px solid rgb(231, 57, 57);
+  border-bottom: 2px solid rgb(231, 57, 57);
+  transform: rotate(45deg);
+}
+
+.projects-more:hover,
+.projects-more:focus {
+  color: rgb(231, 57, 57);
+  text-decoration: none;
+  outline: none;
+}
+
 /* Contact */
 
 .catchphrase {

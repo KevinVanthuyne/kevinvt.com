@@ -33,6 +33,7 @@ A project needs two edits:
 Grid rules:
 
 - **Order**: curated, not purely chronological: Kevin's strongest and most impressive projects first, then the rest roughly newest first. Cards are read row by row (top-left, across the three columns, then the next row): card 1 is the first card of column 1, card 2 the first of column 2, card 3 the first of column 3, card 4 the second of column 1, and so on. Inserting a card shifts every later card one column to the right. The inline script reads the cards back in that order and deals them out again on load and on every filter change (into one column on phones), so a card in the wrong slot shows up in the wrong place.
+- **Phones**: one column, with the images almost edge to edge (the text keeps its margins). Only the first 12 cards in the curated order show; a `show N more` button with a V (`.projects-more-row`) reveals the rest, so the top 12 should be the strongest projects. `phoneCardLimit` in the inline script sets the number.
 - **Categories** (`data-category`, exactly one): `software` (purely software), `websites` (purely websites), `electronics` (physical builds with electronics, mixed hardware and software included), `various` (anything else). They match the filter buttons in `.project-filter`; a new category needs a new button there.
 
 Removing a card from `index.html` hides a project without deleting its page (`game-pi.html` and `speaker.html` are unlinked this way).
