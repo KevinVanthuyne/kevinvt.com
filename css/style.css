@@ -545,6 +545,32 @@ em {
   border: none;
 }
 
+/* The text keeps its side margins, but the project images get nearly the full screen width. */
+@media (max-width: 767px) {
+  .row.projects {
+    margin-left: calc(-15px - 0.5rem);
+    margin-right: calc(-15px - 0.5rem);
+  }
+
+  .projects > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.projects-more {
+  padding: 0.3em 0.6em;
+  font-size: inherit;
+  color: rgb(60, 60, 60);
+}
+
+.projects-more:hover,
+.projects-more:focus {
+  color: rgb(231, 57, 57);
+  text-decoration: none;
+  outline: none;
+}
+
 /* Contact */
 
 .catchphrase {

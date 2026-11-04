@@ -661,6 +661,15 @@
               </a>
             </div>
           </div>
+
+          <!-- Phones start with the first dozen projects. The script shows this button when more are waiting. -->
+          <div class="row hidden projects-more-row">
+            <div class="col-xs-12 text-center">
+              <button type="button" class="btn btn-link projects-more">
+                <span class="secondary-color">$</span> show <span class="projects-more-count"></span> more
+              </button>
+            </div>
+          </div>
         </section>
 
         <!-- Contact -->
@@ -873,14 +882,25 @@
         var buttons = filterBar.querySelectorAll("button");
         var activeFilter = "all";
 
+        // One long column is a lot of scrolling, so phones start with the strongest projects.
+        var phoneCardLimit = 12;
+        var showAllOnPhone = false;
+        var moreRow = document.querySelector(".projects-more-row");
+        var moreCount = moreRow.querySelector(".projects-more-count");
+
         function layOut() {
           // On phones the columns stack, so dealing over them would break the order.
           var usedColumns = media.matches ? columns : columns.slice(0, 1);
-          var visible = cards.filter(
+          var matching = cards.filter(
             (card) => activeFilter === "all" || card.dataset.category.split(" ").includes(activeFilter)
           );
+          var visible = media.matches || showAllOnPhone ? matching : matching.slice(0, phoneCardLimit);
           cards.forEach((card) => card.remove());
           visible.forEach((card, index) => usedColumns[index % usedColumns.length].appendChild(card));
+
+          var waiting = matching.length - visible.length;
+          moreCount.textContent = waiting;
+          moreRow.classList.toggle("hidden", waiting === 0);
 
           lazyLoadInstance.update();
           AOS.refresh();
@@ -898,6 +918,11 @@
             buttons.forEach((other) => other.classList.toggle("active", other === button));
             layOut();
           });
+        });
+
+        moreRow.querySelector("button").addEventListener("click", () => {
+          showAllOnPhone = true;
+          layOut();
         });
 
         filterBar.classList.remove("hidden");
