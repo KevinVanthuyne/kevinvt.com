@@ -84,8 +84,12 @@ body {
 }
 
 .navbar-tmux a.active {
-  background-color: rgb(231, 57, 57);
-  color: rgb(245, 241, 234);
+  background-color: rgb(189, 178, 163);
+  color: rgb(60, 60, 60);
+}
+
+.navbar-tmux a.active .tmux-num {
+  color: rgb(231, 57, 57);
 }
 
 .tmux-host {
