@@ -10,10 +10,15 @@ Kevin Vanthuyne's personal portfolio site (kevinvt.com). Plain static HTML/CSS/J
 
 - `index.html` — single-page home: hero, about/skills, the projects grid (`#projects`) and contact. Holds the page's inline JS (mobile navbar toggle, Rellax parallax, VanillaTilt, fitty, a media query that disables parallax/tilt below 768px, and the project filter).
 - `projects/<name>.html` — one standalone page per project. Each repeats the full `<head>`, the "K" nav with a `/ Projects / <Name>` breadcrumb, and a "<< Back" link. They load AOS, LazyLoad and `terminal.js` from `../js/`.
-- `css/style.css` — all custom styling. `css/bootstrap4.min.css` and `css/style-old.css` are not referenced by any page.
+- `css/style.css` — all custom styling. `css/aos.css` (every page) and `css/vivify.min.css` (`index.html` only) are vendored. `css/bootstrap4.min.css` and `css/style-old.css` are not referenced by any page.
+- `.github/workflows/deploy.yml` — deploys the site to the VPS. See Deployment below.
 - `js/` — vendored, minified third-party libraries (AOS, Rellax, VanillaTilt, fitty, LazyLoad, SmoothScroll). Do not edit them. The exception is `js/terminal.js`, our own script for the terminal effects. On every page: typed headings and the `[####----]  40%` scroll progress bar. On the homepage only: the typed subtitle and the `>` marker on the active nav item. On project pages the `$ cd ~/projects/<name>` line types first, then the heading. On pages with a mouse, a dot grid shows in a soft circle around the cursor (`.spotlight`). Behind it sit faint static dot fields on the same grid, pure CSS: `#home` and `#contact` on the homepage, the top and bottom of `main.project-page` on project pages (fainter on touch screens via `--section-dot-alpha`).
 - Every page's `<head>` has `<meta name="theme-color" content="#dfd9d0">` (the `.navbar-container` color, tints the phone's status and address bars) and the favicon links: `favicon.ico` in the root plus `img/icons/favicon-32.png` and `img/icons/apple-touch-icon.png`, made from the GitHub avatar. If the navbar color changes, change `theme-color` on all pages too.
 - `projects/template.html` is gitignored: a local-only starting point that may not exist in a given checkout. Copy an existing project page such as `projects/agon.html` instead.
+
+## Deployment
+
+Every push to `master` (and a manual run of the `Deploy` workflow) publishes the site, so merging to `master` makes it live. The workflow SSHes to the VPS with a key that is locked to a forced command. That command checks out the pushed commit (it must be on `master`) and prints the commit the site checkout ended up on. The job fails if that commit differs from `GITHUB_SHA`. The connection details are GitHub secrets (`SSH_KEY`, `SSH_KNOWN_HOSTS`, `SSH_HOST`, `SSH_PORT`, `SSH_USER`). Pushes to other branches deploy nothing.
 
 ## Conventions
 
