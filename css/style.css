@@ -564,6 +564,17 @@ em {
   color: rgb(60, 60, 60);
 }
 
+/* A V drawn with borders, so it looks the same in every font. */
+.projects-more-chevron {
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin: 0 0 0.2em 0.3em;
+  border-right: 2px solid rgb(231, 57, 57);
+  border-bottom: 2px solid rgb(231, 57, 57);
+  transform: rotate(45deg);
+}
+
 .projects-more:hover,
 .projects-more:focus {
   color: rgb(231, 57, 57);
