@@ -22,20 +22,8 @@
 
   <body>
     <!-- Navbar -->
-    <div class="navbar-container">
-      <div class="navbar-button visible-xs">Menu</div>
-
-      <nav class="navbar-mobile" style="transition: all 0.3s linear">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <nav class="navbar hidden-xs">
+    <div class="navbar-container hidden-xs">
+      <nav class="navbar">
         <ul>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -45,6 +33,15 @@
         </ul>
       </nav>
     </div>
+
+    <nav class="navbar-tmux">
+      <span class="tmux-host">[kvt]</span>
+      <a href="#home">1:home</a>
+      <a href="#about">2:about</a>
+      <a href="#skills">3:skills</a>
+      <a href="#projects">4:projects</a>
+      <a href="#contact">5:contact</a>
+    </nav>
 
     <div class="container-fluid">
       <main>
@@ -789,36 +786,6 @@
     </script>
 
     <script>
-      // navbar
-      var isMenuVisible = false;
-
-      function toggleMenu() {
-        if (window.innerWidth < 768) {
-          if (isMenuVisible) {
-            document.querySelector(".navbar-mobile").style.maxHeight = "0";
-          } else {
-            document.querySelector(".navbar-mobile").style.maxHeight = "15em";
-          }
-
-          isMenuVisible = !isMenuVisible;
-        }
-      }
-      document
-        .querySelector(".navbar-button")
-        .addEventListener("click", toggleMenu, true);
-
-      document.addEventListener("scrollStart", toggleMenu, false);
-
-      document.querySelector("main").addEventListener(
-        "click",
-        () => {
-          console.log("clicked");
-          document.querySelector(".navbar-mobile").style.maxHeight = "0";
-          isMenuVisible = false;
-        },
-        true
-      );
-
       //responsive javascript stuff
 
       var rellax;
@@ -840,7 +807,6 @@
             speed: 5000,
           });
           fitty(".fit-text");
-          document.querySelector(".navbar-mobile").style.maxHeight = "0";
           // mobile
         } else {
           // Only the skill logos move on a phone; the headings stay put.
